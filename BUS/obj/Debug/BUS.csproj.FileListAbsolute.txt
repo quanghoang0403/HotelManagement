@@ -1,0 +1,15 @@
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\bin\Debug\BUS.exe.config
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\bin\Debug\BUS.exe
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\bin\Debug\BUS.pdb
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\bin\Debug\DAO.exe
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\bin\Debug\DTO.exe
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\bin\Debug\DAO.pdb
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\bin\Debug\DAO.exe.config
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\bin\Debug\DTO.pdb
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\bin\Debug\DTO.exe.config
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\obj\Debug\BUS.Properties.Resources.resources
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\obj\Debug\BUS.csproj.GenerateResource.cache
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\obj\Debug\BUS.exe
+C:\Users\User\Source\Repos\QuanLyKhachSan\BUS\obj\Debug\BUS.pdb
