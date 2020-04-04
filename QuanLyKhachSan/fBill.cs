@@ -24,6 +24,7 @@ namespace QuanLyKhachSan
         {
             //lvBill.Items.Clear();
             List<infoBill> listBillInfo = infoBillDAO.Instance.GetListBillInfo(id_bill, id_checkin);
+            float bill_price = Int32.Parse(txbTotalMoney.Text);
             foreach (infoBill item in listBillInfo)
             {
                 ListViewItem lvItem = new ListViewItem(item.Id_room.ToString());
@@ -32,8 +33,11 @@ namespace QuanLyKhachSan
                 lvItem.SubItems.Add(item.Type_ratio.ToString());
                 lvItem.SubItems.Add(item.Number_ratio.ToString());
                 lvItem.SubItems.Add(item.Total_price.ToString());
+                infoBillDAO.Instance.updateMoneyCheckin(item.Total_price, id_checkin);
+                bill_price += item.Total_price;
                 lvBill.Items.Add(lvItem);
             }
+            txbTotalMoney.Text = bill_price.ToString();
         }
 
         private void btnStart_Click(object sender, EventArgs e)

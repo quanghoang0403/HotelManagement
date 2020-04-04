@@ -36,6 +36,12 @@
             this.btnExport = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.lvBill = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label7 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,12 +52,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txbName = new System.Windows.Forms.TextBox();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -149,6 +149,35 @@
             this.lvBill.UseCompatibleStateImageBehavior = false;
             this.lvBill.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Phòng";
+            this.columnHeader1.Width = 55;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Số ngày thuê";
+            this.columnHeader2.Width = 95;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Đơn giá";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Phụ thu loại khách";
+            this.columnHeader4.Width = 90;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Phụ thu số lượng";
+            this.columnHeader5.Width = 90;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Thành tiền";
+            this.columnHeader6.Width = 100;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -180,10 +209,12 @@
             // 
             // txbTotalMoney
             // 
+            this.txbTotalMoney.Enabled = false;
             this.txbTotalMoney.Location = new System.Drawing.Point(124, 4);
             this.txbTotalMoney.Name = "txbTotalMoney";
             this.txbTotalMoney.Size = new System.Drawing.Size(165, 22);
             this.txbTotalMoney.TabIndex = 3;
+            this.txbTotalMoney.Text = "0";
             // 
             // panel8
             // 
@@ -236,35 +267,6 @@
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(171, 22);
             this.txbName.TabIndex = 3;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Phòng";
-            this.columnHeader1.Width = 55;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Số ngày thuê";
-            this.columnHeader2.Width = 95;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Đơn giá";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Phụ thu loại khách";
-            this.columnHeader4.Width = 90;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Phụ thu số lượng";
-            this.columnHeader5.Width = 90;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Thành tiền";
-            this.columnHeader6.Width = 100;
             // 
             // fBill
             // 

@@ -107,6 +107,13 @@ namespace QuanLyKhachSan.DAO
             }
         }
 
+        public bool updateMoneyCheckin(float money, int id_checkin)
+        {
+            string query = string.Format("update CHECKIN set money_checkin = {0} where id_checkin = {1}", money, id_checkin);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
         public bool updateBillInfo(int id_bill, int id_checkin, int amount_surchage, int number_customer, float ratio, int date_number)
         {
             if (amount_surchage<=number_customer)
