@@ -55,12 +55,12 @@
             this.panel_top = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label_tieude = new System.Windows.Forms.Label();
-            this.ucHome1 = new QuanLyKhachSan.ucHome();
-            this.ucRoom1 = new QuanLyKhachSan.ucRoom();
-            this.ucBill1 = new QuanLyKhachSan.ucBill();
-            this.ucCheckin1 = new QuanLyKhachSan.ucCheckin();
-            this.ucRevenue1 = new QuanLyKhachSan.ucRevenue();
             this.ucAccount1 = new QuanLyKhachSan.ucAccount();
+            this.ucRevenue1 = new QuanLyKhachSan.ucRevenue();
+            this.ucCheckin1 = new QuanLyKhachSan.ucCheckin();
+            this.ucBill1 = new QuanLyKhachSan.ucBill();
+            this.ucRoom1 = new QuanLyKhachSan.ucRoom();
+            this.ucHome1 = new QuanLyKhachSan.ucHome();
             this.panel_congcu.SuspendLayout();
             this.panel_left.SuspendLayout();
             this.panel_Menu.SuspendLayout();
@@ -377,9 +377,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(43, 59);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 61);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(416, 290);
+            this.pictureBox1.Size = new System.Drawing.Size(366, 242);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
@@ -426,21 +426,29 @@
             this.label_tieude.TabIndex = 0;
             this.label_tieude.Text = "Trang chủ";
             // 
-            // ucHome1
+            // ucAccount1
             // 
-            this.ucHome1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucHome1.Location = new System.Drawing.Point(467, 114);
-            this.ucHome1.Name = "ucHome1";
-            this.ucHome1.Size = new System.Drawing.Size(1440, 958);
-            this.ucHome1.TabIndex = 18;
+            this.ucAccount1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAccount1.Location = new System.Drawing.Point(467, 114);
+            this.ucAccount1.Name = "ucAccount1";
+            this.ucAccount1.Size = new System.Drawing.Size(1440, 958);
+            this.ucAccount1.TabIndex = 23;
             // 
-            // ucRoom1
+            // ucRevenue1
             // 
-            this.ucRoom1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucRoom1.Location = new System.Drawing.Point(467, 114);
-            this.ucRoom1.Name = "ucRoom1";
-            this.ucRoom1.Size = new System.Drawing.Size(1440, 958);
-            this.ucRoom1.TabIndex = 19;
+            this.ucRevenue1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucRevenue1.Location = new System.Drawing.Point(467, 114);
+            this.ucRevenue1.Name = "ucRevenue1";
+            this.ucRevenue1.Size = new System.Drawing.Size(1440, 958);
+            this.ucRevenue1.TabIndex = 22;
+            // 
+            // ucCheckin1
+            // 
+            this.ucCheckin1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCheckin1.Location = new System.Drawing.Point(467, 114);
+            this.ucCheckin1.Name = "ucCheckin1";
+            this.ucCheckin1.Size = new System.Drawing.Size(1440, 958);
+            this.ucCheckin1.TabIndex = 21;
             // 
             // ucBill1
             // 
@@ -451,29 +459,21 @@
             this.ucBill1.Size = new System.Drawing.Size(1440, 958);
             this.ucBill1.TabIndex = 20;
             // 
-            // ucCheckin1
+            // ucRoom1
             // 
-            this.ucCheckin1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucCheckin1.Location = new System.Drawing.Point(467, 114);
-            this.ucCheckin1.Name = "ucCheckin1";
-            this.ucCheckin1.Size = new System.Drawing.Size(1440, 958);
-            this.ucCheckin1.TabIndex = 21;
+            this.ucRoom1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucRoom1.Location = new System.Drawing.Point(467, 114);
+            this.ucRoom1.Name = "ucRoom1";
+            this.ucRoom1.Size = new System.Drawing.Size(1440, 958);
+            this.ucRoom1.TabIndex = 19;
             // 
-            // ucRevenue1
+            // ucHome1
             // 
-            this.ucRevenue1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucRevenue1.Location = new System.Drawing.Point(467, 114);
-            this.ucRevenue1.Name = "ucRevenue1";
-            this.ucRevenue1.Size = new System.Drawing.Size(1440, 958);
-            this.ucRevenue1.TabIndex = 22;
-            // 
-            // ucAccount1
-            // 
-            this.ucAccount1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucAccount1.Location = new System.Drawing.Point(467, 114);
-            this.ucAccount1.Name = "ucAccount1";
-            this.ucAccount1.Size = new System.Drawing.Size(1440, 958);
-            this.ucAccount1.TabIndex = 23;
+            this.ucHome1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucHome1.Location = new System.Drawing.Point(467, 114);
+            this.ucHome1.Name = "ucHome1";
+            this.ucHome1.Size = new System.Drawing.Size(1440, 958);
+            this.ucHome1.TabIndex = 18;
             // 
             // fHotelManager
             // 
