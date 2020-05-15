@@ -77,12 +77,14 @@
             // 
             // btnExport
             // 
+            this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnExport.ForeColor = System.Drawing.Color.White;
             this.btnExport.Location = new System.Drawing.Point(1290, 294);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(201, 94);
             this.btnExport.TabIndex = 13;
             this.btnExport.Text = "Xuất báo cáo ";
-            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.UseVisualStyleBackColor = false;
             // 
             // ucRevenue
             // 

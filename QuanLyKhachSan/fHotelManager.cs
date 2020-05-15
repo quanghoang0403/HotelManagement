@@ -24,7 +24,7 @@ namespace QuanLyKhachSan
             ucCheckin1.Visible = false;
             ucRevenue1.Visible = false;
             ucRoom1.Visible = false;
-            ucHome2.Visible = true;
+            ucHome1.Visible = true;
         }
 
         private void itLogout_Click(object sender, EventArgs e)
@@ -32,69 +32,147 @@ namespace QuanLyKhachSan
             Application.Exit();
         }
 
-        private void itRoom_Click(object sender, EventArgs e)
-        {
-            ucAccount1.Visible = false;
-            ucBill1.Visible = false;
-            ucCheckin1.Visible = false;
-            ucRevenue1.Visible = false;
-            ucRoom1.Visible = true;
-            ucHome2.Visible = false;
-        }
-
-        private void itBill_Click(object sender, EventArgs e)
-        {
-            ucAccount1.Visible = false;
-            ucBill1.Visible = true;
-            ucCheckin1.Visible = false;
-            ucRevenue1.Visible = false;
-            ucRoom1.Visible = false;
-            ucHome2.Visible = false;
-        }
-
-        private void itCheckin_Click(object sender, EventArgs e)
-        {
-            ucAccount1.Visible = false;
-            ucBill1.Visible = false;
-            ucCheckin1.Visible = true;
-            ucRevenue1.Visible = false;
-            ucRoom1.Visible = false;
-            ucHome2.Visible = false;
-        }
-
-        private void itRevenue_Click(object sender, EventArgs e)
-        {
-            ucAccount1.Visible = false;
-            ucBill1.Visible = false;
-            ucCheckin1.Visible = false;
-            ucRevenue1.Visible = true;
-            ucRoom1.Visible = false;
-            ucHome2.Visible = false;
-        }
-
-        private void itAccount_Click(object sender, EventArgs e)
-        {
-            ucAccount1.Visible = true;
-            ucBill1.Visible = false;
-            ucCheckin1.Visible = false;
-            ucRevenue1.Visible = false;
-            ucRoom1.Visible = false;
-            ucHome2.Visible = false;
-        }
+        
 
         private void fHotelManager_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-        private void itHome_Click(object sender, EventArgs e)
+
+
+        private void Button_exit_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+
+        private void Button_thugon_Click(object sender, EventArgs e)
+        {
+            if (panel_left.Width == 350)
+            {
+                panel_left.Width = 77;
+            }
+            else
+            {
+                panel_left.Width = 350;
+            }
+        }
+
+        private void Button_phong_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            label_tieude.Text = btn.Text;
+            foreach (Control item in panel_Menu.Controls)
+                item.BackColor = panel_Menu.BackColor;
+            btn.BackColor = Color.Orange;
+
+            ucAccount1.Visible = false;
+            ucBill1.Visible = false;
+            ucCheckin1.Visible = false;
+            ucRevenue1.Visible = false;
+            ucRoom1.Visible = true;
+            ucHome1.Visible = false;
+        }
+
+        private void Button_trangchu_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            label_tieude.Text = btn.Text;
+            foreach (Control item in panel_Menu.Controls)
+                item.BackColor = panel_Menu.BackColor;
+            btn.BackColor = Color.Orange;
+
             ucAccount1.Visible = false;
             ucBill1.Visible = false;
             ucCheckin1.Visible = false;
             ucRevenue1.Visible = false;
             ucRoom1.Visible = false;
-            ucHome2.Visible = true;
+            ucHome1.Visible = true;
+        }
+
+        private void Button_hoadon_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            label_tieude.Text = btn.Text;
+            foreach (Control item in panel_Menu.Controls)
+                item.BackColor = panel_Menu.BackColor;
+            btn.BackColor = Color.Orange;
+
+            ucAccount1.Visible = false;
+            ucBill1.Visible = true;
+            ucCheckin1.Visible = false;
+            ucRevenue1.Visible = false;
+            ucRoom1.Visible = false;
+            ucHome1.Visible = false;
+        }
+
+        private void Button_phieuthue_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            label_tieude.Text = btn.Text;
+            foreach (Control item in panel_Menu.Controls)
+                item.BackColor = panel_Menu.BackColor;
+            btn.BackColor = Color.Orange;
+
+            ucAccount1.Visible = false;
+            ucBill1.Visible = false;
+            ucCheckin1.Visible = true;
+            ucRevenue1.Visible = false;
+            ucRoom1.Visible = false;
+            ucHome1.Visible = false;
+        }
+
+        private void Button_doanhthu_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            label_tieude.Text = btn.Text;
+            foreach (Control item in panel_Menu.Controls)
+                item.BackColor = panel_Menu.BackColor;
+            btn.BackColor = Color.Orange;
+
+            ucAccount1.Visible = false;
+            ucBill1.Visible = false;
+            ucCheckin1.Visible = false;
+            ucRevenue1.Visible = true;
+            ucRoom1.Visible = false;
+            ucHome1.Visible = false;
+        }
+
+        private void Button_thietlap_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            label_tieude.Text = btn.Text;
+            foreach (Control item in panel_Menu.Controls)
+                item.BackColor = panel_Menu.BackColor;
+            btn.BackColor = Color.Orange;
+
+            ucAccount1.Visible = true;
+            ucBill1.Visible = false;
+            ucCheckin1.Visible = false;
+            ucRevenue1.Visible = false;
+            ucRoom1.Visible = false;
+            ucHome1.Visible = false;
+        }
+
+        private void Button_thoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void UcHome2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Panel_top_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }   
 }

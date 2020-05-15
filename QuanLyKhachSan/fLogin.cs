@@ -51,5 +51,15 @@ namespace QuanLyKhachSan
             }
             
         }
+
+        private void FLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PanelRight_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

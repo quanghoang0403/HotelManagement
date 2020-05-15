@@ -102,30 +102,36 @@
             // 
             // btnUpdateRoom
             // 
+            this.btnUpdateRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnUpdateRoom.ForeColor = System.Drawing.Color.White;
             this.btnUpdateRoom.Location = new System.Drawing.Point(230, 6);
             this.btnUpdateRoom.Name = "btnUpdateRoom";
             this.btnUpdateRoom.Size = new System.Drawing.Size(85, 55);
             this.btnUpdateRoom.TabIndex = 2;
             this.btnUpdateRoom.Text = "Sửa";
-            this.btnUpdateRoom.UseVisualStyleBackColor = true;
+            this.btnUpdateRoom.UseVisualStyleBackColor = false;
             // 
             // btnDeleteRoom
             // 
+            this.btnDeleteRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnDeleteRoom.ForeColor = System.Drawing.Color.White;
             this.btnDeleteRoom.Location = new System.Drawing.Point(116, 6);
             this.btnDeleteRoom.Name = "btnDeleteRoom";
             this.btnDeleteRoom.Size = new System.Drawing.Size(87, 55);
             this.btnDeleteRoom.TabIndex = 1;
             this.btnDeleteRoom.Text = "Xóa";
-            this.btnDeleteRoom.UseVisualStyleBackColor = true;
+            this.btnDeleteRoom.UseVisualStyleBackColor = false;
             // 
             // btnAddRoom
             // 
+            this.btnAddRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnAddRoom.ForeColor = System.Drawing.Color.White;
             this.btnAddRoom.Location = new System.Drawing.Point(9, 6);
             this.btnAddRoom.Name = "btnAddRoom";
             this.btnAddRoom.Size = new System.Drawing.Size(84, 55);
             this.btnAddRoom.TabIndex = 0;
             this.btnAddRoom.Text = "Thêm";
-            this.btnAddRoom.UseVisualStyleBackColor = true;
+            this.btnAddRoom.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -145,12 +151,14 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(203, 3);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(76, 43);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -344,6 +352,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1527, 355);
             this.panel2.TabIndex = 10;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
             // 
             // panel14
             // 
@@ -436,30 +445,36 @@
             // 
             // btnUpdateType
             // 
+            this.btnUpdateType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnUpdateType.ForeColor = System.Drawing.Color.White;
             this.btnUpdateType.Location = new System.Drawing.Point(228, 3);
             this.btnUpdateType.Name = "btnUpdateType";
             this.btnUpdateType.Size = new System.Drawing.Size(88, 55);
             this.btnUpdateType.TabIndex = 2;
             this.btnUpdateType.Text = "Sửa";
-            this.btnUpdateType.UseVisualStyleBackColor = true;
+            this.btnUpdateType.UseVisualStyleBackColor = false;
             // 
             // btnDeleteType
             // 
+            this.btnDeleteType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnDeleteType.ForeColor = System.Drawing.Color.White;
             this.btnDeleteType.Location = new System.Drawing.Point(117, 3);
             this.btnDeleteType.Name = "btnDeleteType";
             this.btnDeleteType.Size = new System.Drawing.Size(87, 55);
             this.btnDeleteType.TabIndex = 1;
             this.btnDeleteType.Text = "Xóa";
-            this.btnDeleteType.UseVisualStyleBackColor = true;
+            this.btnDeleteType.UseVisualStyleBackColor = false;
             // 
             // btnAddType
             // 
+            this.btnAddType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnAddType.ForeColor = System.Drawing.Color.White;
             this.btnAddType.Location = new System.Drawing.Point(10, 3);
             this.btnAddType.Name = "btnAddType";
             this.btnAddType.Size = new System.Drawing.Size(84, 55);
             this.btnAddType.TabIndex = 0;
             this.btnAddType.Text = "Thêm";
-            this.btnAddType.UseVisualStyleBackColor = true;
+            this.btnAddType.UseVisualStyleBackColor = false;
             // 
             // label7
             // 

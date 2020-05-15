@@ -34,10 +34,10 @@ namespace QuanLyKhachSan
                 switch (item.Status)
                 {
                     case "EMPTY":
-                        btn.BackColor = Color.Aqua;
+                        btn.BackColor = Color.SandyBrown;
                         break;
                     default:
-                        btn.BackColor = Color.Red;
+                        btn.BackColor = Color.LightCoral;
                         break;
                 }
                 flpHome.Controls.Add(btn);
@@ -80,6 +80,11 @@ namespace QuanLyKhachSan
         {
             flpHome.Controls.Clear();
             LoadHome();
+        }
+
+        private void UcHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

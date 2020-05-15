@@ -31,5 +31,10 @@ namespace QuanLyKhachSan
             string query = "SELECT * FROM DBO.ROOMTYPE";
             dtgvType.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
+
+        private void Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

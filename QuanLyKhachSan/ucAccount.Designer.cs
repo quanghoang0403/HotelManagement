@@ -105,22 +105,26 @@
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Location = new System.Drawing.Point(430, 328);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(84, 40);
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "Hủy";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(323, 328);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(84, 40);
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -211,6 +215,7 @@
             // 
             // txbUserName
             // 
+            this.txbUserName.BackColor = System.Drawing.SystemColors.Window;
             this.txbUserName.Location = new System.Drawing.Point(202, 15);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.ReadOnly = true;
@@ -308,13 +313,15 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(430, 391);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 40);
             this.button1.TabIndex = 10;
             this.button1.Text = "Hủy";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
@@ -327,6 +334,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
             this.textBox1.Location = new System.Drawing.Point(202, 15);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -345,12 +353,14 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(323, 391);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 40);
             this.button2.TabIndex = 9;
             this.button2.Text = "Tạo ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // panel8
             // 
@@ -432,12 +442,14 @@
             // 
             // btnUpdateSetting
             // 
+            this.btnUpdateSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnUpdateSetting.ForeColor = System.Drawing.Color.White;
             this.btnUpdateSetting.Location = new System.Drawing.Point(986, 110);
             this.btnUpdateSetting.Name = "btnUpdateSetting";
             this.btnUpdateSetting.Size = new System.Drawing.Size(84, 55);
             this.btnUpdateSetting.TabIndex = 38;
             this.btnUpdateSetting.Text = "Thay đổi";
-            this.btnUpdateSetting.UseVisualStyleBackColor = true;
+            this.btnUpdateSetting.UseVisualStyleBackColor = false;
             // 
             // txbMaxSurcharge
             // 
@@ -581,30 +593,36 @@
             // 
             // btnUpdateType
             // 
+            this.btnUpdateType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnUpdateType.ForeColor = System.Drawing.Color.White;
             this.btnUpdateType.Location = new System.Drawing.Point(228, 3);
             this.btnUpdateType.Name = "btnUpdateType";
             this.btnUpdateType.Size = new System.Drawing.Size(88, 55);
             this.btnUpdateType.TabIndex = 2;
             this.btnUpdateType.Text = "Sửa";
-            this.btnUpdateType.UseVisualStyleBackColor = true;
+            this.btnUpdateType.UseVisualStyleBackColor = false;
             // 
             // btnDeleteType
             // 
+            this.btnDeleteType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnDeleteType.ForeColor = System.Drawing.Color.White;
             this.btnDeleteType.Location = new System.Drawing.Point(117, 3);
             this.btnDeleteType.Name = "btnDeleteType";
             this.btnDeleteType.Size = new System.Drawing.Size(87, 55);
             this.btnDeleteType.TabIndex = 1;
             this.btnDeleteType.Text = "Xóa";
-            this.btnDeleteType.UseVisualStyleBackColor = true;
+            this.btnDeleteType.UseVisualStyleBackColor = false;
             // 
             // btnAddType
             // 
+            this.btnAddType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnAddType.ForeColor = System.Drawing.Color.White;
             this.btnAddType.Location = new System.Drawing.Point(10, 3);
             this.btnAddType.Name = "btnAddType";
             this.btnAddType.Size = new System.Drawing.Size(84, 55);
             this.btnAddType.TabIndex = 0;
             this.btnAddType.Text = "Thêm";
-            this.btnAddType.UseVisualStyleBackColor = true;
+            this.btnAddType.UseVisualStyleBackColor = false;
             // 
             // label17
             // 
