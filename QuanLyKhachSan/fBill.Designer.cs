@@ -110,6 +110,7 @@
             this.txbIDCheckin.Name = "txbIDCheckin";
             this.txbIDCheckin.Size = new System.Drawing.Size(68, 22);
             this.txbIDCheckin.TabIndex = 13;
+            this.txbIDCheckin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbIDCheckin_KeyPress);
             // 
             // btnExport
             // 
@@ -215,6 +216,7 @@
             this.txbTotalMoney.Size = new System.Drawing.Size(165, 22);
             this.txbTotalMoney.TabIndex = 3;
             this.txbTotalMoney.Text = "0";
+            this.txbTotalMoney.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTotalMoney_KeyPress);
             // 
             // panel8
             // 

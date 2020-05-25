@@ -96,5 +96,13 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Có lỗi khi xuất phiếu");
             }
         }
+
+        private void txbCMND_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

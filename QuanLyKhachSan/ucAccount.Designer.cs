@@ -114,6 +114,7 @@
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "Hủy";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnUpdate
             // 
@@ -140,6 +141,7 @@
             // 
             this.txbPassword.Location = new System.Drawing.Point(202, 15);
             this.txbPassword.Name = "txbPassword";
+            this.txbPassword.PasswordChar = '*';
             this.txbPassword.Size = new System.Drawing.Size(279, 22);
             this.txbPassword.TabIndex = 1;
             // 
@@ -166,6 +168,7 @@
             // 
             this.txbNewPass.Location = new System.Drawing.Point(202, 15);
             this.txbNewPass.Name = "txbNewPass";
+            this.txbNewPass.PasswordChar = '*';
             this.txbNewPass.Size = new System.Drawing.Size(279, 22);
             this.txbNewPass.TabIndex = 1;
             // 
@@ -192,6 +195,7 @@
             // 
             this.txbReEnterPass.Location = new System.Drawing.Point(202, 15);
             this.txbReEnterPass.Name = "txbReEnterPass";
+            this.txbReEnterPass.PasswordChar = '*';
             this.txbReEnterPass.Size = new System.Drawing.Size(279, 22);
             this.txbReEnterPass.TabIndex = 1;
             // 
@@ -338,7 +342,6 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.Window;
             this.textBox1.Location = new System.Drawing.Point(202, 15);
             this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(279, 22);
             this.textBox1.TabIndex = 1;
             // 
@@ -362,6 +365,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Tạo ";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel8
             // 
@@ -376,6 +380,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(202, 15);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(279, 22);
             this.textBox2.TabIndex = 1;
             // 
@@ -428,6 +433,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(202, 15);
             this.textBox4.Name = "textBox4";
+            this.textBox4.PasswordChar = '*';
             this.textBox4.Size = new System.Drawing.Size(279, 22);
             this.textBox4.TabIndex = 1;
             // 
@@ -451,6 +457,7 @@
             this.btnUpdateSetting.TabIndex = 38;
             this.btnUpdateSetting.Text = "Thay đổi";
             this.btnUpdateSetting.UseVisualStyleBackColor = false;
+            this.btnUpdateSetting.Click += new System.EventHandler(this.btnUpdateSetting_Click);
             // 
             // txbMaxSurcharge
             // 
@@ -458,6 +465,7 @@
             this.txbMaxSurcharge.Name = "txbMaxSurcharge";
             this.txbMaxSurcharge.Size = new System.Drawing.Size(66, 22);
             this.txbMaxSurcharge.TabIndex = 37;
+            this.txbMaxSurcharge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbMaxSurcharge_KeyPress);
             // 
             // txbMax
             // 
@@ -465,6 +473,7 @@
             this.txbMax.Name = "txbMax";
             this.txbMax.Size = new System.Drawing.Size(67, 22);
             this.txbMax.TabIndex = 36;
+            this.txbMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbMax_KeyPress);
             // 
             // txbRatio
             // 
@@ -472,6 +481,7 @@
             this.txbRatio.Name = "txbRatio";
             this.txbRatio.Size = new System.Drawing.Size(67, 22);
             this.txbRatio.TabIndex = 35;
+            this.txbRatio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbRatio_KeyPress);
             // 
             // label12
             // 
@@ -555,6 +565,7 @@
             this.txbPrice.Name = "txbPrice";
             this.txbPrice.Size = new System.Drawing.Size(131, 22);
             this.txbPrice.TabIndex = 3;
+            this.txbPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrice_KeyPress);
             // 
             // panel19
             // 
@@ -602,6 +613,7 @@
             this.btnUpdateType.TabIndex = 2;
             this.btnUpdateType.Text = "Sửa";
             this.btnUpdateType.UseVisualStyleBackColor = false;
+            this.btnUpdateType.Click += new System.EventHandler(this.btnUpdateType_Click);
             // 
             // btnDeleteType
             // 
@@ -613,6 +625,7 @@
             this.btnDeleteType.TabIndex = 1;
             this.btnDeleteType.Text = "Xóa";
             this.btnDeleteType.UseVisualStyleBackColor = false;
+            this.btnDeleteType.Click += new System.EventHandler(this.btnDeleteType_Click);
             // 
             // btnAddType
             // 
@@ -624,6 +637,7 @@
             this.btnAddType.TabIndex = 0;
             this.btnAddType.Text = "Thêm";
             this.btnAddType.UseVisualStyleBackColor = false;
+            this.btnAddType.Click += new System.EventHandler(this.btnAddType_Click);
             // 
             // label17
             // 

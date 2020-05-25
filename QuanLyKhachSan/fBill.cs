@@ -42,11 +42,17 @@ namespace QuanLyKhachSan
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            if(txbName.Text == "" || txbAddress.Text== "")
+            {
+                MessageBox.Show("Vui lòng nhập tên khách hoặc địa chỉ");
+            }
+            else
             if (infoBillDAO.Instance.insertBill(txbName.Text, txbAddress.Text))
             {
                 MessageBox.Show("Tạo thành công, vui lòng nhập mã phiếu của phòng cần thanh toán");
                 lvBill.Items.Clear();
                 panel1.Visible = true;
+                txbName.ReadOnly = true;
             }
             else
             {
@@ -56,6 +62,11 @@ namespace QuanLyKhachSan
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (txbIDCheckin.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mã phiếu");
+                return;
+            }
             int id_bill = infoBillDAO.Instance.GetMaxIDBill();
             int id_checkin = int.Parse(txbIDCheckin.Text.ToString());
             int amount_surchage = infoBillDAO.Instance.GetAmountSurchage();
@@ -77,6 +88,11 @@ namespace QuanLyKhachSan
 
         private void btnExport_Click(object sender, EventArgs e)
         {
+            if(txbIDCheckin.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mã phiếu");
+                return;
+            }
             int id_checkin = int.Parse(txbIDCheckin.Text.ToString());
             string id_room = infoBillDAO.Instance.GetIdRoom(id_checkin);
             if (HomeDAO.Instance.updateHomeByCreateBill(id_room))
@@ -88,6 +104,22 @@ namespace QuanLyKhachSan
             else
             {
                 MessageBox.Show("Có lỗi khi xuất hóa đơn");
+            }
+        }
+
+        private void txbTotalMoney_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbIDCheckin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

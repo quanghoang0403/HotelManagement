@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnUpdateRoom = new System.Windows.Forms.Button();
             this.btnDeleteRoom = new System.Windows.Forms.Button();
@@ -186,7 +186,7 @@
             // txbStatus
             // 
             this.txbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbStatus.Location = new System.Drawing.Point(163, 8);
+            this.txbStatus.Location = new System.Drawing.Point(174, 8);
             this.txbStatus.Name = "txbStatus";
             this.txbStatus.Size = new System.Drawing.Size(461, 34);
             this.txbStatus.TabIndex = 3;
@@ -213,7 +213,7 @@
             // txbNotes
             // 
             this.txbNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNotes.Location = new System.Drawing.Point(163, 10);
+            this.txbNotes.Location = new System.Drawing.Point(177, 8);
             this.txbNotes.Name = "txbNotes";
             this.txbNotes.Size = new System.Drawing.Size(461, 34);
             this.txbNotes.TabIndex = 3;
@@ -240,10 +240,11 @@
             // txbUnitPrice
             // 
             this.txbUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbUnitPrice.Location = new System.Drawing.Point(163, 8);
+            this.txbUnitPrice.Location = new System.Drawing.Point(177, 8);
             this.txbUnitPrice.Name = "txbUnitPrice";
-            this.txbUnitPrice.Size = new System.Drawing.Size(461, 34);
+            this.txbUnitPrice.Size = new System.Drawing.Size(458, 34);
             this.txbUnitPrice.TabIndex = 3;
+            this.txbUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbUnitPrice_KeyPress);
             // 
             // panel8
             // 
@@ -267,9 +268,9 @@
             // txbType
             // 
             this.txbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbType.Location = new System.Drawing.Point(160, 13);
+            this.txbType.Location = new System.Drawing.Point(177, 8);
             this.txbType.Name = "txbType";
-            this.txbType.Size = new System.Drawing.Size(461, 34);
+            this.txbType.Size = new System.Drawing.Size(458, 34);
             this.txbType.TabIndex = 3;
             // 
             // panel7
@@ -295,9 +296,9 @@
             // txbID
             // 
             this.txbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbID.Location = new System.Drawing.Point(160, 12);
+            this.txbID.Location = new System.Drawing.Point(177, 12);
             this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(461, 34);
+            this.txbID.Size = new System.Drawing.Size(458, 34);
             this.txbID.TabIndex = 3;
             // 
             // panel3
@@ -362,14 +363,14 @@
             // 
             // dtgvType
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvType.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvType.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgvType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvType.Location = new System.Drawing.Point(18, 16);
             this.dtgvType.Name = "dtgvType";
@@ -413,6 +414,7 @@
             this.txbPrice.Name = "txbPrice";
             this.txbPrice.Size = new System.Drawing.Size(559, 34);
             this.txbPrice.TabIndex = 3;
+            this.txbPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrice_KeyPress);
             // 
             // panel19
             // 
