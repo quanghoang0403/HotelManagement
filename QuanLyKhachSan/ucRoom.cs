@@ -36,5 +36,75 @@ namespace QuanLyKhachSan
         {
 
         }
+
+        private void btnAddType_Click(object sender, EventArgs e)
+        {
+            if (txbTypeRoom.Text == "" || txbPrice.Text == "")
+                MessageBox.Show("Loại phòng hoặc đơn giá chưa được nhập");
+           
+        }
+
+        private void btnDeleteType_Click(object sender, EventArgs e)
+        {
+            if (txbTypeRoom.Text == "")
+                MessageBox.Show("Loại phòng chưa được nhập");
+        }
+
+        private void btnUpdateType_Click(object sender, EventArgs e)
+        {
+            if (txbTypeRoom.Text == "" || txbPrice.Text == "")
+                MessageBox.Show("Loại phòng hoặc đơn giá chưa được nhập");
+            
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txbSearch.Text == "")
+                MessageBox.Show("Vui lòng nhập mã số phòng");
+        }
+
+        private void txbSearch_TextChanged(object sender, EventArgs e)
+        {
+          
+
+        }
+
+        private void btnAddRoom_Click(object sender, EventArgs e)
+        {
+           
+            if (txbID.Text == "")
+                MessageBox.Show("Vui lòng nhập ID phòng");
+            else
+            if (txbType.Text == "")
+                MessageBox.Show("Vui lòng nhập loại phòng");
+            else
+            if (txbUnitPrice.Text == "")
+                MessageBox.Show("Vui lòng nhập đơn giá");
+            else
+            if (txbStatus.Text == "")
+                MessageBox.Show("Vui lòng nhập trình trạng phòng");
+
+        }
+
+        private void btnDeleteRoom_Click(object sender, EventArgs e)
+        {
+            if (txbID.Text == "")
+                MessageBox.Show("Vui lòng nhập ID phòng");
+        }
+
+        private void btnUpdateRoom_Click(object sender, EventArgs e)
+        {
+            if (txbID.Text == "")
+                MessageBox.Show("Vui lòng nhập ID phòng");
+            else
+            if (txbType.Text == "")
+                MessageBox.Show("Vui lòng nhập loại phòng");
+            else
+            if (txbUnitPrice.Text == "")
+                MessageBox.Show("Vui lòng nhập đơn giá");
+            else
+            if (txbStatus.Text == "")
+                MessageBox.Show("Vui lòng nhập trình trạng phòng");
+        }
     }
 }

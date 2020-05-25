@@ -110,6 +110,7 @@
             this.btnUpdateRoom.TabIndex = 2;
             this.btnUpdateRoom.Text = "Sửa";
             this.btnUpdateRoom.UseVisualStyleBackColor = false;
+            this.btnUpdateRoom.Click += new System.EventHandler(this.btnUpdateRoom_Click);
             // 
             // btnDeleteRoom
             // 
@@ -121,6 +122,7 @@
             this.btnDeleteRoom.TabIndex = 1;
             this.btnDeleteRoom.Text = "Xóa";
             this.btnDeleteRoom.UseVisualStyleBackColor = false;
+            this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
             // 
             // btnAddRoom
             // 
@@ -132,6 +134,7 @@
             this.btnAddRoom.TabIndex = 0;
             this.btnAddRoom.Text = "Thêm";
             this.btnAddRoom.UseVisualStyleBackColor = false;
+            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
             // 
             // panel5
             // 
@@ -148,6 +151,7 @@
             this.txbSearch.Name = "txbSearch";
             this.txbSearch.Size = new System.Drawing.Size(153, 22);
             this.txbSearch.TabIndex = 2;
+            this.txbSearch.TextChanged += new System.EventHandler(this.txbSearch_TextChanged);
             // 
             // btnSearch
             // 
@@ -159,6 +163,7 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel4
             // 
@@ -453,6 +458,7 @@
             this.btnUpdateType.TabIndex = 2;
             this.btnUpdateType.Text = "Sửa";
             this.btnUpdateType.UseVisualStyleBackColor = false;
+            this.btnUpdateType.Click += new System.EventHandler(this.btnUpdateType_Click);
             // 
             // btnDeleteType
             // 
@@ -464,6 +470,7 @@
             this.btnDeleteType.TabIndex = 1;
             this.btnDeleteType.Text = "Xóa";
             this.btnDeleteType.UseVisualStyleBackColor = false;
+            this.btnDeleteType.Click += new System.EventHandler(this.btnDeleteType_Click);
             // 
             // btnAddType
             // 
@@ -475,6 +482,7 @@
             this.btnAddType.TabIndex = 0;
             this.btnAddType.Text = "Thêm";
             this.btnAddType.UseVisualStyleBackColor = false;
+            this.btnAddType.Click += new System.EventHandler(this.btnAddType_Click);
             // 
             // label7
             // 
