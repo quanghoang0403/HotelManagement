@@ -59,8 +59,9 @@ namespace QuanLyKhachSan
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txbSearch.Text == "")
+            if (txbID.Text == "")
                 MessageBox.Show("Vui lòng nhập mã số phòng");
+
         }
 
         private void txbSearch_TextChanged(object sender, EventArgs e)
