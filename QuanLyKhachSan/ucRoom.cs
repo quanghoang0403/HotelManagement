@@ -36,5 +36,134 @@ namespace QuanLyKhachSan
         {
 
         }
+
+        private void btnAddType_Click(object sender, EventArgs e)
+        {
+            if (txbTypeRoom.Text == "" || txbPrice.Text == "")
+            {
+                MessageBox.Show("Loại phòng hoặc đơn giá chưa được nhập");
+                return;
+            }
+               
+           
+        }
+
+        private void btnDeleteType_Click(object sender, EventArgs e)
+        {
+            if (txbTypeRoom.Text == "")
+            {
+                MessageBox.Show("Loại phòng chưa được nhập");
+                return;
+            }
+        }
+
+        private void btnUpdateType_Click(object sender, EventArgs e)
+        {
+            if (txbTypeRoom.Text == "" || txbPrice.Text == "")
+            {
+                MessageBox.Show("Loại phòng hoặc đơn giá chưa được nhập");
+                return;
+            }
+                
+            
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txbID.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mã số phòng");
+                return;
+            }
+               
+
+        }
+
+        private void txbSearch_TextChanged(object sender, EventArgs e)
+        {
+          
+
+        }
+
+        private void btnAddRoom_Click(object sender, EventArgs e)
+        {
+           
+            if (txbID.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập ID phòng");
+                return;
+            }    
+            else
+            if (txbType.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập loại phòng");
+                return;
+            }
+            else
+            if (txbUnitPrice.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đơn giá");
+                return;
+            }
+            else
+            if (txbStatus.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập trình trạng phòng");
+                return;
+            }
+        }
+
+        private void btnDeleteRoom_Click(object sender, EventArgs e)
+        {
+            if (txbID.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập ID phòng");
+                return;
+            }
+                
+        }
+
+        private void btnUpdateRoom_Click(object sender, EventArgs e)
+        {
+            if (txbID.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập ID phòng");
+                return;
+            }
+            else
+          if (txbType.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập loại phòng");
+                return;
+            }
+            else
+          if (txbUnitPrice.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đơn giá");
+                return;
+            }
+            else
+          if (txbStatus.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập trình trạng phòng");
+                return;
+            }
+        }
+
+        private void txbUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -44,9 +44,14 @@ namespace QuanLyKhachSan
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if(txbName.Text == "" || cbType.Text== "" || txbCMND.Text== "" || txbAddress.Text== "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng");
+            }
             if (infoCheckinDAO.Instance.insertCheckinInfo(txbName.Text, cbType.Text, txbCMND.Text, txbAddress.Text, infoCheckinDAO.Instance.GetMaxIDCheckin()))
             {
                 ShowInfo(infoCheckinDAO.Instance.GetMaxIDCheckin());
+
             }
             else
             {
@@ -56,10 +61,16 @@ namespace QuanLyKhachSan
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            if(txbID.Text=="")
+            {
+                MessageBox.Show("Vui lòng nhập ID phòng");
+            }
+            else
             if (infoCheckinDAO.Instance.insertCheckin(dateStartDate.Value, txbID.Text))
             {
                 MessageBox.Show("Tạo thành công, vui lòng nhập thông tin khách hàng");
-                panel1.Visible = true; 
+                panel1.Visible = true;
+                txbID.ReadOnly = true;
             }
             else
             {
@@ -83,6 +94,14 @@ namespace QuanLyKhachSan
             else
             {
                 MessageBox.Show("Có lỗi khi xuất phiếu");
+            }
+        }
+
+        private void txbCMND_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

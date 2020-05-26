@@ -194,6 +194,7 @@
             this.txbCMND.Name = "txbCMND";
             this.txbCMND.Size = new System.Drawing.Size(110, 22);
             this.txbCMND.TabIndex = 3;
+            this.txbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCMND_KeyPress);
             // 
             // panel11
             // 

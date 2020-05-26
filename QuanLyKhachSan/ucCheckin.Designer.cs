@@ -91,6 +91,7 @@
             this.txbSearch.Name = "txbSearch";
             this.txbSearch.Size = new System.Drawing.Size(161, 22);
             this.txbSearch.TabIndex = 2;
+            this.txbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSearch_KeyPress);
             // 
             // btnSearch
             // 
@@ -102,6 +103,7 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel6
             // 
