@@ -282,6 +282,7 @@
             // 
             // dateStartDate
             // 
+            this.dateStartDate.Enabled = false;
             this.dateStartDate.Location = new System.Drawing.Point(222, 4);
             this.dateStartDate.Name = "dateStartDate";
             this.dateStartDate.Size = new System.Drawing.Size(257, 22);

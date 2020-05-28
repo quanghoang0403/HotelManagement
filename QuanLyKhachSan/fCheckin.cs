@@ -47,6 +47,7 @@ namespace QuanLyKhachSan
             if(txbName.Text == "" || cbType.Text== "" || txbCMND.Text== "" || txbAddress.Text== "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng");
+                return ;
             }
             if (infoCheckinDAO.Instance.insertCheckinInfo(txbName.Text, cbType.Text, txbCMND.Text, txbAddress.Text, infoCheckinDAO.Instance.GetMaxIDCheckin()))
             {
@@ -87,7 +88,8 @@ namespace QuanLyKhachSan
             if (infoCheckinDAO.Instance.updateCheckin(ratio, count, id_checkin))
             {
                 HomeDAO.Instance.updateHomeByCreateCheckin(txbID.Text);
-                MessageBox.Show("Xuất phiếu thành công");
+                string output = string.Format("Xuất phiếu thành công, mã phiếu của bạn là {0}", id_checkin);
+                MessageBox.Show(output);
                 panel1.Visible = false;
                 this.Close();
             }

@@ -90,7 +90,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(74, 53);
             this.btnAdd.TabIndex = 5;
-            this.btnAdd.Text = "Thêm phòng ";
+            this.btnAdd.Text = "Thêm ID phiếu";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
