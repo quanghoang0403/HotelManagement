@@ -23,6 +23,11 @@ namespace QuanLyKhachSan.DAO
 
         private HomeDAO() { }
 
+        public int GetStatusRoom()
+        {
+            return 0;
+        }
+
         public List<Home> LoadRoomList()
         {
             List<Home> RoomList = new List<Home>();
