@@ -53,6 +53,7 @@ namespace QuanLyKhachSan
                 lvBill.Items.Clear();
                 panel1.Visible = true;
                 txbName.ReadOnly = true;
+                txbAddress.ReadOnly = true;
             }
             else
             {
@@ -90,9 +91,9 @@ namespace QuanLyKhachSan
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            if(txbIDCheckin.Text == "")
+            if(lvBill.Items.Count==0)
             {
-                MessageBox.Show("Vui lòng nhập mã phiếu");
+                MessageBox.Show("Thêm ID phiếu trước khi xuất hóa đơn");
                 return;
             }
             int id_bill = infoBillDAO.Instance.GetMaxIDBill();
@@ -123,6 +124,14 @@ namespace QuanLyKhachSan
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void fBill_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && panel1.Visible == false)
+            {
+                btnStart_Click(sender, e);
             }
         }
     }

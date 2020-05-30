@@ -79,6 +79,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1116, 364);
             this.panel4.TabIndex = 6;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel1
             // 
@@ -91,8 +92,9 @@
             this.panel1.Location = new System.Drawing.Point(663, 118);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(450, 232);
-            this.panel1.TabIndex = 22;
+            this.panel1.TabIndex = 5;
             this.panel1.Visible = false;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -101,7 +103,8 @@
             this.panel2.Location = new System.Drawing.Point(13, 17);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(288, 32);
-            this.panel2.TabIndex = 16;
+            this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label3
             // 
@@ -112,6 +115,7 @@
             this.label3.Size = new System.Drawing.Size(109, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "Khách hàng:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txbName
             // 
@@ -119,6 +123,7 @@
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(110, 22);
             this.txbName.TabIndex = 3;
+            this.txbName.TextChanged += new System.EventHandler(this.txbName_TextChanged);
             // 
             // btnExport
             // 
@@ -149,7 +154,8 @@
             this.panel9.Location = new System.Drawing.Point(13, 93);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(288, 32);
-            this.panel9.TabIndex = 17;
+            this.panel9.TabIndex = 3;
+            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // cbType
             // 
@@ -157,7 +163,8 @@
             this.cbType.Location = new System.Drawing.Point(162, 2);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(109, 24);
-            this.cbType.TabIndex = 5;
+            this.cbType.TabIndex = 1;
+            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -168,6 +175,7 @@
             this.label4.Size = new System.Drawing.Size(100, 19);
             this.label4.TabIndex = 4;
             this.label4.Text = "Loại khách:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel10
             // 
@@ -176,7 +184,8 @@
             this.panel10.Location = new System.Drawing.Point(13, 55);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(288, 32);
-            this.panel10.TabIndex = 18;
+            this.panel10.TabIndex = 2;
+            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
             // label6
             // 
@@ -187,13 +196,15 @@
             this.label6.Size = new System.Drawing.Size(64, 19);
             this.label6.TabIndex = 4;
             this.label6.Text = "CMND:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txbCMND
             // 
             this.txbCMND.Location = new System.Drawing.Point(161, 4);
             this.txbCMND.Name = "txbCMND";
             this.txbCMND.Size = new System.Drawing.Size(110, 22);
-            this.txbCMND.TabIndex = 3;
+            this.txbCMND.TabIndex = 1;
+            this.txbCMND.TextChanged += new System.EventHandler(this.txbCMND_TextChanged);
             this.txbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCMND_KeyPress);
             // 
             // panel11
@@ -203,7 +214,8 @@
             this.panel11.Location = new System.Drawing.Point(14, 131);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(287, 32);
-            this.panel11.TabIndex = 17;
+            this.panel11.TabIndex = 4;
+            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
             // 
             // label8
             // 
@@ -214,6 +226,7 @@
             this.label8.Size = new System.Drawing.Size(68, 19);
             this.label8.TabIndex = 4;
             this.label8.Text = "Địa chỉ:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txbAddress
             // 
@@ -221,6 +234,7 @@
             this.txbAddress.Name = "txbAddress";
             this.txbAddress.Size = new System.Drawing.Size(109, 22);
             this.txbAddress.TabIndex = 3;
+            this.txbAddress.TextChanged += new System.EventHandler(this.txbAddress_TextChanged);
             // 
             // btnStart
             // 
@@ -250,6 +264,7 @@
             this.lvRoom.TabIndex = 20;
             this.lvRoom.UseCompatibleStateImageBehavior = false;
             this.lvRoom.View = System.Windows.Forms.View.Details;
+            this.lvRoom.SelectedIndexChanged += new System.EventHandler(this.lvRoom_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -279,6 +294,7 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(491, 32);
             this.panel8.TabIndex = 12;
+            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
             // dateStartDate
             // 
@@ -287,6 +303,7 @@
             this.dateStartDate.Name = "dateStartDate";
             this.dateStartDate.Size = new System.Drawing.Size(257, 22);
             this.dateStartDate.TabIndex = 5;
+            this.dateStartDate.ValueChanged += new System.EventHandler(this.dateStartDate_ValueChanged);
             // 
             // label2
             // 
@@ -297,6 +314,7 @@
             this.label2.Size = new System.Drawing.Size(159, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "Ngày bắt đầu thuê:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel7
             // 
@@ -306,6 +324,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(334, 32);
             this.panel7.TabIndex = 11;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // label1
             // 
@@ -316,13 +335,15 @@
             this.label1.Size = new System.Drawing.Size(66, 19);
             this.label1.TabIndex = 4;
             this.label1.Text = "Phòng:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txbID
             // 
             this.txbID.Location = new System.Drawing.Point(161, 4);
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(159, 22);
-            this.txbID.TabIndex = 3;
+            this.txbID.TabIndex = 0;
+            this.txbID.TextChanged += new System.EventHandler(this.txbID_TextChanged);
             // 
             // label7
             // 
@@ -333,6 +354,7 @@
             this.label7.Size = new System.Drawing.Size(439, 51);
             this.label7.TabIndex = 10;
             this.label7.Text = "Tạo phiếu thuê phòng";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // fCheckin
             // 
@@ -340,10 +362,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1138, 428);
             this.Controls.Add(this.panel4);
+            this.KeyPreview = true;
             this.Name = "fCheckin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "";
             this.Text = "fCheckin";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fCheckin_KeyDown);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
