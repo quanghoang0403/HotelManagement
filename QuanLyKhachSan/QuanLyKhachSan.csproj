@@ -53,6 +53,7 @@
     <Compile Include="DAO\infoBillDAO.cs" />
     <Compile Include="DAO\infoCheckinDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\PermissionDAO.cs" />
     <Compile Include="DTO\CustomerType.cs" />
     <Compile Include="DTO\Home.cs" />
     <Compile Include="DTO\infoBill.cs" />
