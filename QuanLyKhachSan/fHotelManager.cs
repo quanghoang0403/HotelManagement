@@ -12,18 +12,34 @@ namespace QuanLyKhachSan
 {
     public partial class fHotelManager : Form
     {
+        private bool Accessibility=true;
         public fHotelManager()
         {
             InitializeComponent();
-        }
-
-        private void fHotelManager_Load(object sender, EventArgs e)
-        {
+            ucHome1.Visible = false;
             ucAccount1.Visible = false;
             ucBill1.Visible = false;
             ucCheckin1.Visible = false;
             ucRevenue1.Visible = false;
             ucRoom1.Visible = false;
+        }
+        public bool Permission_to_access
+        {
+            get { return Accessibility; }
+            set { Accessibility = value; }
+        }
+
+        private void fHotelManager_Load(object sender, EventArgs e)
+        {
+            ucRoom1.Permission_to_access = Accessibility;
+            ucBill1.Permission_to_access = Accessibility;
+            ucCheckin1.Permission_to_access = Accessibility;
+            ucAccount1.Permission_to_access = Accessibility;
+            if (Accessibility == false)
+            {
+                panel1.Visible = false;
+                button_doanhthu.Visible = false;
+            }
             ucHome1.Visible = true;
         }
 
