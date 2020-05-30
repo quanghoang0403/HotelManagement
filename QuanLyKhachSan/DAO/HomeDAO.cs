@@ -23,8 +23,14 @@ namespace QuanLyKhachSan.DAO
 
         private HomeDAO() { }
 
-        public int GetStatusRoom()
+        public int GetStatusRoom(string id_room)
         {
+            string query = string.Format("select statuss from ROOM where id_room = @id_room");
+            object Status = DataProvider.Instance.ExecuteScalar(query, new object[] { id_room });
+            if (Status == null)
+                return -1;
+            if (Status.ToString() == "USING")
+                return 1;
             return 0;
         }
 

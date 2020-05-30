@@ -72,3 +72,21 @@ C:\Users\Thi Chuong\Desktop\CNPM\Do an\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.u
 C:\Users\Thi Chuong\Desktop\CNPM\Do an\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
 C:\Users\Thi Chuong\Desktop\CNPM\Do an\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\Thi Chuong\Desktop\CNPM\Do an\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojAssemblyReference.cache
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBill.resources
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fCheckin.resources
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.ucAccount.resources
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.ucBill.resources
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fHotelManager.resources
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.ucCheckin.resources
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.ucHome.resources
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.ucRevenue.resources
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.ucRoom.resources
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb

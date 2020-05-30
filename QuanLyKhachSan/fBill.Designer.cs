@@ -276,9 +276,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 405);
             this.Controls.Add(this.panel4);
+            this.KeyPreview = true;
             this.Name = "fBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fBill";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fBill_KeyDown);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);

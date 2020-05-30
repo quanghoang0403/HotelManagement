@@ -52,7 +52,10 @@ namespace QuanLyKhachSan
             if (infoCheckinDAO.Instance.insertCheckinInfo(txbName.Text, cbType.Text, txbCMND.Text, txbAddress.Text, infoCheckinDAO.Instance.GetMaxIDCheckin()))
             {
                 ShowInfo(infoCheckinDAO.Instance.GetMaxIDCheckin());
-
+                txbName.Text = "";
+                cbType.Text = "";
+                txbCMND.Text = "";
+                txbAddress.Text = "";
             }
             else
             {
@@ -65,8 +68,19 @@ namespace QuanLyKhachSan
             if(txbID.Text=="")
             {
                 MessageBox.Show("Vui lòng nhập ID phòng");
+                return;
             }
-            else
+            if(HomeDAO.Instance.GetStatusRoom(txbID.Text)==1)
+            {
+                MessageBox.Show("Phòng đang được thuê");
+                return;
+            }
+            if(HomeDAO.Instance.GetStatusRoom(txbID.Text) == -1)
+            {
+                MessageBox.Show("Phòng không tồn tại");
+                return;
+            }
+            
             if (infoCheckinDAO.Instance.insertCheckin(dateStartDate.Value, txbID.Text))
             {
                 MessageBox.Show("Tạo thành công, vui lòng nhập thông tin khách hàng");
@@ -82,6 +96,11 @@ namespace QuanLyKhachSan
 
         private void btnExport_Click(object sender, EventArgs e)
         {
+            if(lvRoom.Items.Count == 0)
+            {
+                MessageBox.Show("Thêm khách trước khi xuất phiếu");
+                return;
+            }
             int id_checkin = infoCheckinDAO.Instance.GetMaxIDCheckin();
             float ratio = infoCheckinDAO.Instance.GetMaxRatio(id_checkin);
             int count = infoCheckinDAO.Instance.GetAmountCustomer(id_checkin);
@@ -105,6 +124,125 @@ namespace QuanLyKhachSan
             {
                 e.Handled = true;
             }
+        }
+
+
+        private void fCheckin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && panel1.Visible == false)
+            {
+                btnStart_Click(sender, e);
+            }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txbAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbCMND_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dateStartDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

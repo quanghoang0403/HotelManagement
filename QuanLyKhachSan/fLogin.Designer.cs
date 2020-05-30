@@ -125,7 +125,7 @@
             this.txbPass.Location = new System.Drawing.Point(22, 17);
             this.txbPass.Multiline = true;
             this.txbPass.Name = "txbPass";
-            this.txbPass.PasswordChar = '@';
+            this.txbPass.PasswordChar = '●';
             this.txbPass.Size = new System.Drawing.Size(388, 30);
             this.txbPass.TabIndex = 2;
             // 
