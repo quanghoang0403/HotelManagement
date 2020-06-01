@@ -22,14 +22,13 @@ namespace QuanLyKhachSan
 
         void LoadRoom()
         {
-            string query = "SELECT * FROM DBO.ROOM";
-            dtgvRoom.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            dtgvRoom.DataSource = HomeDAO.Instance.LoadRoom();
         }
 
         void LoadRoomType()
         {
-            string query = "SELECT * FROM DBO.ROOMTYPE";
-            dtgvType.DataSource = DataProvider.Instance.ExecuteQuery(query);
+
+            dtgvType.DataSource = HomeDAO.Instance.LoadRoomType();
         }
 
         private void Panel2_Paint(object sender, PaintEventArgs e)

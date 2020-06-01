@@ -90,3 +90,10 @@ C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhach
 C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
 C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\bin\Debug\BUS_QLKS.dll
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\bin\Debug\DTO_QLKS.dll
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\bin\Debug\DTA_QLKS.dll
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\bin\Debug\BUS_QLKS.pdb
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\bin\Debug\DTO_QLKS.pdb
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\bin\Debug\DTA_QLKS.pdb
+C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CopyComplete
