@@ -47,9 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
- Duong
+    <Compile Include="DAO\CustomerTypeDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\HomeDAO.cs" />
+    <Compile Include="DAO\infoBillDAO.cs" />
+    <Compile Include="DAO\infoCheckinDAO.cs" />
+    <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\PermissionDAO.cs" />
- trphduy
+    <Compile Include="DTO\CustomerType.cs" />
+    <Compile Include="DTO\Home.cs" />
+    <Compile Include="DTO\infoBill.cs" />
+    <Compile Include="DTO\infoCheckin.cs" />
+    <Compile Include="DTO\RoomType.cs" />
     <Compile Include="fBill.cs">
       <SubType>Form</SubType>
     </Compile>
