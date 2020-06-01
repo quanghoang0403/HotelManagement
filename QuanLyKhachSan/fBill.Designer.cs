@@ -294,11 +294,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 329);
             this.Controls.Add(this.panel4);
- Duong
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-
             this.KeyPreview = true;
- trphduy
             this.Name = "fBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fBill";
