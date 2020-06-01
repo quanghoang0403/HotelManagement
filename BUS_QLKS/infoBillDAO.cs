@@ -1,4 +1,5 @@
 ﻿using QuanLyKhachSan.DTO;
+using QuanLyKhachSan.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -33,6 +34,17 @@ namespace QuanLyKhachSan.DAO
                 listBillInfo.Add(info);
             }
             return listBillInfo;
+        }
+
+        public int GetStatusCheckin(int id_checkin)
+        {
+            string query = string.Format("select status_checkin from CHECKIN where id_checkin = @id_checkin");
+            object Status = DataProvider.Instance.ExecuteScalar(query, new object[] { id_checkin});
+            if (Status == null)
+                return -1;
+            if (Status.ToString() == "DONE")
+                return 1;
+            return 0;
         }
 
         public string GetIdRoom(int id_checkin)
@@ -110,6 +122,13 @@ namespace QuanLyKhachSan.DAO
         public bool updateCheckin(float money, int id_checkin)
         {
             string query = string.Format("update CHECKIN set money_checkin = {0}, status_checkin = 'DONE' where id_checkin = {1}", money, id_checkin);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool updateBill(float totalmoney, int id_bill)
+        {
+            string query = string.Format("update BILL set total_money = {0} where id_bill = {1}", totalmoney, id_bill);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

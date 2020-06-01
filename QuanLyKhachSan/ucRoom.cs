@@ -30,8 +30,12 @@ namespace QuanLyKhachSan
 
         public bool Permission_to_access
         {
+ Duong
             get { return Accessibility; }
             set { Accessibility = value; }
+
+            dtgvRoom.DataSource = HomeDAO.Instance.LoadRoom();
+ trphduy
         }
 
         private void ucRoom_Load(object sender, EventArgs e)
@@ -49,8 +53,8 @@ namespace QuanLyKhachSan
 
         void LoadRoomType()
         {
-            string query = "SELECT * FROM DBO.ROOMTYPE";
-            dtgvType.DataSource = DataProvider.Instance.ExecuteQuery(query);
+
+            dtgvType.DataSource = HomeDAO.Instance.LoadRoomType();
         }
 
         void CleanTextinRoomType()

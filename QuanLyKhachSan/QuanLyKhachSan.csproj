@@ -47,18 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\CustomerTypeDAO.cs" />
-    <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="DAO\HomeDAO.cs" />
-    <Compile Include="DAO\infoBillDAO.cs" />
-    <Compile Include="DAO\infoCheckinDAO.cs" />
-    <Compile Include="DAO\LoginDAO.cs" />
+ Duong
     <Compile Include="DAO\PermissionDAO.cs" />
-    <Compile Include="DTO\CustomerType.cs" />
-    <Compile Include="DTO\Home.cs" />
-    <Compile Include="DTO\infoBill.cs" />
-    <Compile Include="DTO\infoCheckin.cs" />
-    <Compile Include="DTO\RoomType.cs" />
+ trphduy
     <Compile Include="fBill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +164,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BUS_QLKS\BUS_QLKS.csproj">
+      <Project>{afd0ef1c-709d-4e23-89cb-045c1b2b9c0d}</Project>
+      <Name>BUS_QLKS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO_QLKS\DTO_QLKS.csproj">
+      <Project>{adbf8eee-7037-4118-a058-5d92f26544ca}</Project>
+      <Name>DTO_QLKS</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

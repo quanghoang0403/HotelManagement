@@ -1,4 +1,5 @@
 ﻿using QuanLyKhachSan.DTO;
+using QuanLyKhachSan.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -22,6 +23,17 @@ namespace QuanLyKhachSan.DAO
         public static int RoomHeight= 170;
 
         private HomeDAO() { }
+
+        public int GetStatusRoom(string id_room)
+        {
+            string query = string.Format("select statuss from ROOM where id_room = @id_room");
+            object Status = DataProvider.Instance.ExecuteScalar(query, new object[] { id_room });
+            if (Status == null)
+                return -1;
+            if (Status.ToString() == "USING")
+                return 1;
+            return 0;
+        }
 
         public List<Home> LoadRoomList()
         {
@@ -47,6 +59,16 @@ namespace QuanLyKhachSan.DAO
             string query = string.Format("update ROOM set statuss = 'EMPTY' where id_room = {0}", id_room);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
+        }
+        public DataTable LoadRoom()
+        {
+            string query = "SELECT * FROM DBO.ROOM";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+        public DataTable LoadRoomType()
+        {
+            string query = "SELECT * FROM DBO.ROOMTYPE";
+            return  DataProvider.Instance.ExecuteQuery(query);
         }
     }
 }

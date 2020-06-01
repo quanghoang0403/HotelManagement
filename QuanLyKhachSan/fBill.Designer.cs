@@ -93,7 +93,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(56, 43);
             this.btnAdd.TabIndex = 5;
-            this.btnAdd.Text = "Thêm phòng ";
+            this.btnAdd.Text = "Thêm ID phiếu";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -294,10 +294,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 329);
             this.Controls.Add(this.panel4);
+ Duong
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+            this.KeyPreview = true;
+ trphduy
             this.Name = "fBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fBill";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fBill_KeyDown);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);

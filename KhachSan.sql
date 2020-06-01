@@ -1,4 +1,4 @@
-CREATE DATABASE KhachSan
+﻿CREATE DATABASE KhachSan
 Go
 
 USE KhachSan
@@ -31,6 +31,10 @@ CREATE TABLE ROOMTYPE
 	price MONEY
 )
 
+INSERT INTO ROOMTYPE VALUES('A','150000')
+INSERT INTO ROOMTYPE VALUES('B','170000')
+INSERT INTO ROOMTYPE VALUES('C','200000')
+
 CREATE TABLE AMOUNT
 (
 	customer_ratio FLOAT,
@@ -38,10 +42,7 @@ CREATE TABLE AMOUNT
 	amount_surchage INT
 )
 
-
-INSERT INTO ROOMTYPE VALUES('A','150000')
-INSERT INTO ROOMTYPE VALUES('B','170000')
-INSERT INTO ROOMTYPE VALUES('C','200000')
+INSERT INTO AMOUNT VALUES('1.25','3','3')
 
 CREATE TABLE ROOM
 (
@@ -59,7 +60,6 @@ INSERT INTO ROOM VALUES('3','B','','EMPTY')
 INSERT INTO ROOM VALUES('4','B','','EMPTY')
 INSERT INTO ROOM VALUES('5','C','','EMPTY')
 INSERT INTO ROOM VALUES('6','C','','EMPTY')
-INSERT INTO ROOM VALUES('7','C','','EMPTY')
 
 CREATE TABLE CUSTOMER_TYPE
 (
@@ -109,7 +109,6 @@ CREATE TABLE BILL_DETAILS
 	id_checkin INT FOREIGN KEY REFERENCES CHECKIN(id_checkin),	
 	date_number	INT,
 	surchage_ratio FLOAT,
-	ADD date_payment DATE,
 	CONSTRAINT PK_BILL_DETAILS primary key (id_bill, id_checkin)
 )
 
@@ -178,7 +177,6 @@ end
 go
 
 --thêm bill
-
 CREATE PROC USP_InsertBill
 (@name nvarchar(100),
  @address nvarchar(100))
@@ -201,7 +199,6 @@ CREATE PROC USP_InsertBillInfo
 (@id_bill int,
  @id_checkin int,
  @date_number int,
- @date_payment date,
  @surchage_ratio float)
 as 
 begin 
@@ -209,13 +206,11 @@ begin
 		  ( id_bill,
 		    id_checkin,
 		    date_number, 
-			date_payment,
 			surchage_ratio
 		  )
 	values ( @id_bill,
 			@id_checkin,
 			@date_number,
-			@date_payment,
 			@surchage_ratio
 		  )
 end
@@ -228,4 +223,6 @@ WHERE BD.id_checkin = C.id_checkin
   and R.room_type = RT.room_type
   and BD.id_checkin = 22 
   and BD.id_bill = 8
+select * from CHECKIN
+select * from BILL
 --SHOW THONG TIN PHONG CUA HON DON THANH TOAN

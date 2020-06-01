@@ -53,6 +53,7 @@ namespace QuanLyKhachSan
                 lvBill.Items.Clear();
                 panel1.Visible = true;
                 txbName.ReadOnly = true;
+                txbAddress.ReadOnly = true;
             }
             else
             {
@@ -62,13 +63,23 @@ namespace QuanLyKhachSan
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            int id_checkin = int.Parse(txbIDCheckin.Text.ToString());
             if (txbIDCheckin.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập mã phiếu");
                 return;
             }
+            if (infoBillDAO.Instance.GetStatusCheckin(id_checkin) == 1)
+            {
+                MessageBox.Show("Phiếu đã được thanh toán");
+                return;
+            }
+            if (infoBillDAO.Instance.GetStatusCheckin(id_checkin) == -1)
+            {
+                MessageBox.Show("Phiếu không tồn tại");
+                return;
+            }
             int id_bill = infoBillDAO.Instance.GetMaxIDBill();
-            int id_checkin = int.Parse(txbIDCheckin.Text.ToString());
             int amount_surchage = infoBillDAO.Instance.GetAmountSurchage();
             int number_customer = infoBillDAO.Instance.GetNumberCustomer(id_checkin);
             float ratio = infoBillDAO.Instance.GetRatioCustomer();
@@ -79,6 +90,8 @@ namespace QuanLyKhachSan
             {
                 ShowInfo(id_bill, id_checkin);
                 MessageBox.Show("Thêm phòng thành công");
+                string id_room = infoBillDAO.Instance.GetIdRoom(id_checkin);
+                HomeDAO.Instance.updateHomeByCreateBill(id_room);
             }
             else
             {
@@ -88,14 +101,14 @@ namespace QuanLyKhachSan
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            if(txbIDCheckin.Text == "")
+            if(lvBill.Items.Count==0)
             {
-                MessageBox.Show("Vui lòng nhập mã phiếu");
+                MessageBox.Show("Thêm ID phiếu trước khi xuất hóa đơn");
                 return;
             }
-            int id_checkin = int.Parse(txbIDCheckin.Text.ToString());
-            string id_room = infoBillDAO.Instance.GetIdRoom(id_checkin);
-            if (HomeDAO.Instance.updateHomeByCreateBill(id_room))
+            int id_bill = infoBillDAO.Instance.GetMaxIDBill();
+            float total_money = Int32.Parse(txbTotalMoney.Text);
+            if (infoBillDAO.Instance.updateBill(total_money, id_bill))
             {
                 MessageBox.Show("Xuất hóa đơn thành công");
                 panel1.Visible = false;
@@ -103,8 +116,9 @@ namespace QuanLyKhachSan
             }
             else
             {
-                MessageBox.Show("Có lỗi khi xuất hóa đơn");
+                MessageBox.Show("Xuất hóa thất bại");
             }
+
         }
 
         private void txbTotalMoney_KeyPress(object sender, KeyPressEventArgs e)
@@ -120,6 +134,14 @@ namespace QuanLyKhachSan
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void fBill_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && panel1.Visible == false)
+            {
+                btnStart_Click(sender, e);
             }
         }
     }
