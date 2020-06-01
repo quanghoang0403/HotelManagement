@@ -97,3 +97,10 @@ C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\bin\Debug\BUS_QLKS.pd
 C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\bin\Debug\DTO_QLKS.pdb
 C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\bin\Debug\DTA_QLKS.pdb
 C:\Users\Thi Chuong\Desktop\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CopyComplete
+C:\Users\User\Source\Repos\quanghoang0403\HotelManagement\QuanLyKhachSan\bin\Debug\BUS_QLKS.dll
+C:\Users\User\Source\Repos\quanghoang0403\HotelManagement\QuanLyKhachSan\bin\Debug\DTO_QLKS.dll
+C:\Users\User\Source\Repos\quanghoang0403\HotelManagement\QuanLyKhachSan\bin\Debug\DTA_QLKS.dll
+C:\Users\User\Source\Repos\quanghoang0403\HotelManagement\QuanLyKhachSan\bin\Debug\BUS_QLKS.pdb
+C:\Users\User\Source\Repos\quanghoang0403\HotelManagement\QuanLyKhachSan\bin\Debug\DTO_QLKS.pdb
+C:\Users\User\Source\Repos\quanghoang0403\HotelManagement\QuanLyKhachSan\bin\Debug\DTA_QLKS.pdb
+C:\Users\User\Source\Repos\quanghoang0403\HotelManagement\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CopyComplete

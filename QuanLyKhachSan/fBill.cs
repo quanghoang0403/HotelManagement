@@ -63,13 +63,23 @@ namespace QuanLyKhachSan
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            int id_checkin = int.Parse(txbIDCheckin.Text.ToString());
             if (txbIDCheckin.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập mã phiếu");
                 return;
             }
+            if (infoBillDAO.Instance.GetStatusCheckin(id_checkin) == 1)
+            {
+                MessageBox.Show("Phiếu đã được thanh toán");
+                return;
+            }
+            if (infoBillDAO.Instance.GetStatusCheckin(id_checkin) == -1)
+            {
+                MessageBox.Show("Phiếu không tồn tại");
+                return;
+            }
             int id_bill = infoBillDAO.Instance.GetMaxIDBill();
-            int id_checkin = int.Parse(txbIDCheckin.Text.ToString());
             int amount_surchage = infoBillDAO.Instance.GetAmountSurchage();
             int number_customer = infoBillDAO.Instance.GetNumberCustomer(id_checkin);
             float ratio = infoBillDAO.Instance.GetRatioCustomer();
