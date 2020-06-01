@@ -24,18 +24,15 @@ namespace QuanLyKhachSan
             panel17.Visible = false;
             btnCancelRoomType.Visible = false;
             btnCancelRoom.Visible = false;
+            dtgvRoom.DataSource = HomeDAO.Instance.LoadRoom();
         }
 
     #region Xu li phan quyen
 
         public bool Permission_to_access
         {
- Duong
             get { return Accessibility; }
             set { Accessibility = value; }
-
-            dtgvRoom.DataSource = HomeDAO.Instance.LoadRoom();
- trphduy
         }
 
         private void ucRoom_Load(object sender, EventArgs e)
