@@ -127,6 +127,16 @@ CREATE PROC USP_GetinfoBillList
 AS select BILL.id_bill,bill_name,bill_address,total_money,id_checkin,date_number,surchage_ratio from dbo.BILL,dbo.BILL_DETAILS where BILL.id_bill=BILL_DETAILS.id_bill
 go
 
+--tạo proc hiển thị checkinlist
+CREATE PROC USP_GetCheckinlist
+AS SELECT * FROM CHECKIN
+GO
+
+--tạo proc hiển thị customertypelist
+CREATE PROC USP_GetCustomertypeList
+AS SELECT * FROM CUSTOMER_TYPE
+GO
+
 --tạo proc đăng nhập tránh injection
 CREATE PROC USP_LOGIN
 (@username nvarchar(100),
