@@ -31,30 +31,31 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCancelEdit = new System.Windows.Forms.Button();
-            this.txbtotal_money = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txbbill_name = new System.Windows.Forms.TextBox();
-            this.txbbill_address = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txbid_bill = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.checkbox6 = new System.Windows.Forms.CheckBox();
+            this.checkbox5 = new System.Windows.Forms.CheckBox();
+            this.checkbox4 = new System.Windows.Forms.CheckBox();
+            this.checkbox3 = new System.Windows.Forms.CheckBox();
+            this.checkbox2 = new System.Windows.Forms.CheckBox();
+            this.checkbox1 = new System.Windows.Forms.CheckBox();
+            this.textboxsearch6 = new System.Windows.Forms.ComboBox();
+            this.textboxsearch5 = new System.Windows.Forms.TextBox();
+            this.textboxsearch4 = new System.Windows.Forms.TextBox();
+            this.textboxsearch3 = new System.Windows.Forms.TextBox();
+            this.textboxsearch1 = new System.Windows.Forms.TextBox();
+            this.textboxsearch2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtgvListBill = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnAdvancedSearch = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.txbSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvListBill)).BeginInit();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,11 +70,9 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.panel2);
-            this.panel3.Controls.Add(this.btnRefresh);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.dtgvListBill);
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.panel6);
             this.panel3.Location = new System.Drawing.Point(28, 2);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
@@ -82,124 +81,146 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnCancelEdit);
-            this.panel2.Controls.Add(this.txbtotal_money);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.txbbill_name);
-            this.panel2.Controls.Add(this.txbbill_address);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.txbid_bill);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(880, 274);
+            this.panel2.Controls.Add(this.checkbox6);
+            this.panel2.Controls.Add(this.checkbox5);
+            this.panel2.Controls.Add(this.checkbox4);
+            this.panel2.Controls.Add(this.checkbox3);
+            this.panel2.Controls.Add(this.checkbox2);
+            this.panel2.Controls.Add(this.checkbox1);
+            this.panel2.Controls.Add(this.textboxsearch6);
+            this.panel2.Controls.Add(this.textboxsearch5);
+            this.panel2.Controls.Add(this.textboxsearch4);
+            this.panel2.Controls.Add(this.textboxsearch3);
+            this.panel2.Controls.Add(this.textboxsearch1);
+            this.panel2.Controls.Add(this.textboxsearch2);
+            this.panel2.Location = new System.Drawing.Point(837, 71);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(213, 338);
+            this.panel2.Size = new System.Drawing.Size(274, 342);
             this.panel2.TabIndex = 12;
             // 
-            // btnCancelEdit
+            // checkbox6
             // 
-            this.btnCancelEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.btnCancelEdit.ForeColor = System.Drawing.Color.White;
-            this.btnCancelEdit.Location = new System.Drawing.Point(144, 290);
-            this.btnCancelEdit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelEdit.Name = "btnCancelEdit";
-            this.btnCancelEdit.Size = new System.Drawing.Size(57, 35);
-            this.btnCancelEdit.TabIndex = 3;
-            this.btnCancelEdit.Text = "Hủy";
-            this.btnCancelEdit.UseVisualStyleBackColor = false;
-            this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
+            this.checkbox6.AutoSize = true;
+            this.checkbox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbox6.Location = new System.Drawing.Point(7, 268);
+            this.checkbox6.Name = "checkbox6";
+            this.checkbox6.Size = new System.Drawing.Size(153, 28);
+            this.checkbox6.TabIndex = 26;
+            this.checkbox6.Text = "surchage_ratio";
+            this.checkbox6.UseVisualStyleBackColor = true;
             // 
-            // txbtotal_money
+            // checkbox5
             // 
-            this.txbtotal_money.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbtotal_money.Location = new System.Drawing.Point(11, 243);
-            this.txbtotal_money.Name = "txbtotal_money";
-            this.txbtotal_money.Size = new System.Drawing.Size(190, 26);
-            this.txbtotal_money.TabIndex = 7;
+            this.checkbox5.AutoSize = true;
+            this.checkbox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbox5.Location = new System.Drawing.Point(133, 202);
+            this.checkbox5.Name = "checkbox5";
+            this.checkbox5.Size = new System.Drawing.Size(141, 28);
+            this.checkbox5.TabIndex = 25;
+            this.checkbox5.Text = "date_number";
+            this.checkbox5.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // checkbox4
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(7, 130);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(148, 24);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Địa chỉ hóa đơn:";
+            this.checkbox4.AutoSize = true;
+            this.checkbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbox4.Location = new System.Drawing.Point(7, 202);
+            this.checkbox4.Name = "checkbox4";
+            this.checkbox4.Size = new System.Drawing.Size(120, 28);
+            this.checkbox4.TabIndex = 24;
+            this.checkbox4.Text = "id_checkin";
+            this.checkbox4.UseVisualStyleBackColor = true;
             // 
-            // label13
+            // checkbox3
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(7, 207);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(95, 24);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Tổng tiền:";
+            this.checkbox3.AutoSize = true;
+            this.checkbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbox3.Location = new System.Drawing.Point(7, 136);
+            this.checkbox3.Name = "checkbox3";
+            this.checkbox3.Size = new System.Drawing.Size(130, 28);
+            this.checkbox3.TabIndex = 23;
+            this.checkbox3.Text = "total_money";
+            this.checkbox3.UseVisualStyleBackColor = true;
             // 
-            // txbbill_name
+            // checkbox2
             // 
-            this.txbbill_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbbill_name.Location = new System.Drawing.Point(10, 89);
-            this.txbbill_name.Name = "txbbill_name";
-            this.txbbill_name.Size = new System.Drawing.Size(191, 26);
-            this.txbbill_name.TabIndex = 4;
+            this.checkbox2.AutoSize = true;
+            this.checkbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbox2.Location = new System.Drawing.Point(7, 69);
+            this.checkbox2.Name = "checkbox2";
+            this.checkbox2.Size = new System.Drawing.Size(134, 28);
+            this.checkbox2.TabIndex = 22;
+            this.checkbox2.Text = "bill_address ";
+            this.checkbox2.UseVisualStyleBackColor = true;
             // 
-            // txbbill_address
+            // checkbox1
             // 
-            this.txbbill_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbbill_address.Location = new System.Drawing.Point(10, 166);
-            this.txbbill_address.Name = "txbbill_address";
-            this.txbbill_address.Size = new System.Drawing.Size(191, 26);
-            this.txbbill_address.TabIndex = 3;
+            this.checkbox1.AutoSize = true;
+            this.checkbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbox1.Location = new System.Drawing.Point(7, 3);
+            this.checkbox1.Name = "checkbox1";
+            this.checkbox1.Size = new System.Drawing.Size(110, 28);
+            this.checkbox1.TabIndex = 21;
+            this.checkbox1.Text = "bill_name";
+            this.checkbox1.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // textboxsearch6
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Tên hóa đơn:";
+            this.textboxsearch6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxsearch6.FormattingEnabled = true;
+            this.textboxsearch6.Items.AddRange(new object[] {
+            "1",
+            "1.5"});
+            this.textboxsearch6.Location = new System.Drawing.Point(6, 302);
+            this.textboxsearch6.Name = "textboxsearch6";
+            this.textboxsearch6.Size = new System.Drawing.Size(111, 28);
+            this.textboxsearch6.TabIndex = 20;
             // 
-            // txbid_bill
+            // textboxsearch5
             // 
-            this.txbid_bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbid_bill.Location = new System.Drawing.Point(123, 8);
-            this.txbid_bill.Name = "txbid_bill";
-            this.txbid_bill.ReadOnly = true;
-            this.txbid_bill.Size = new System.Drawing.Size(77, 26);
-            this.txbid_bill.TabIndex = 1;
+            this.textboxsearch5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxsearch5.Location = new System.Drawing.Point(133, 236);
+            this.textboxsearch5.Name = "textboxsearch5";
+            this.textboxsearch5.Size = new System.Drawing.Size(129, 26);
+            this.textboxsearch5.TabIndex = 12;
             // 
-            // label1
+            // textboxsearch4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID Hóa đơn:";
+            this.textboxsearch4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxsearch4.Location = new System.Drawing.Point(6, 236);
+            this.textboxsearch4.Name = "textboxsearch4";
+            this.textboxsearch4.Size = new System.Drawing.Size(111, 26);
+            this.textboxsearch4.TabIndex = 9;
             // 
-            // btnRefresh
+            // textboxsearch3
             // 
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(777, 30);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(57, 35);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.textboxsearch3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxsearch3.Location = new System.Drawing.Point(6, 170);
+            this.textboxsearch3.Name = "textboxsearch3";
+            this.textboxsearch3.Size = new System.Drawing.Size(256, 26);
+            this.textboxsearch3.TabIndex = 7;
+            // 
+            // textboxsearch1
+            // 
+            this.textboxsearch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxsearch1.Location = new System.Drawing.Point(6, 37);
+            this.textboxsearch1.Name = "textboxsearch1";
+            this.textboxsearch1.Size = new System.Drawing.Size(256, 26);
+            this.textboxsearch1.TabIndex = 4;
+            // 
+            // textboxsearch2
+            // 
+            this.textboxsearch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxsearch2.Location = new System.Drawing.Point(6, 104);
+            this.textboxsearch2.Name = "textboxsearch2";
+            this.textboxsearch2.Size = new System.Drawing.Size(256, 26);
+            this.textboxsearch2.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(282, 26);
+            this.label5.Location = new System.Drawing.Point(5, 20);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(314, 39);
@@ -208,32 +229,76 @@
             // 
             // dtgvListBill
             // 
+            this.dtgvListBill.AllowUserToAddRows = false;
+            this.dtgvListBill.AllowUserToDeleteRows = false;
             this.dtgvListBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvListBill.Location = new System.Drawing.Point(26, 80);
+            this.dtgvListBill.Location = new System.Drawing.Point(12, 70);
             this.dtgvListBill.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvListBill.Name = "dtgvListBill";
+            this.dtgvListBill.ReadOnly = true;
             this.dtgvListBill.RowHeadersWidth = 51;
             this.dtgvListBill.RowTemplate.Height = 24;
-            this.dtgvListBill.Size = new System.Drawing.Size(808, 633);
+            this.dtgvListBill.Size = new System.Drawing.Size(1100, 633);
             this.dtgvListBill.TabIndex = 0;
             this.dtgvListBill.SelectionChanged += new System.EventHandler(this.dtgvListBill_SelectionChanged);
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btnAdvancedSearch);
+            this.panel5.Controls.Add(this.btnRefresh);
+            this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.txbSearch);
             this.panel5.Controls.Add(this.btnSearch);
-            this.panel5.Location = new System.Drawing.Point(880, 106);
+            this.panel5.Location = new System.Drawing.Point(495, 26);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(213, 40);
+            this.panel5.Size = new System.Drawing.Size(459, 40);
             this.panel5.TabIndex = 6;
+            // 
+            // btnAdvancedSearch
+            // 
+            this.btnAdvancedSearch.BackColor = System.Drawing.Color.DarkGray;
+            this.btnAdvancedSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdvancedSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnAdvancedSearch.Location = new System.Drawing.Point(342, 4);
+            this.btnAdvancedSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdvancedSearch.Name = "btnAdvancedSearch";
+            this.btnAdvancedSearch.Size = new System.Drawing.Size(94, 35);
+            this.btnAdvancedSearch.TabIndex = 14;
+            this.btnAdvancedSearch.Text = "Nâng cao ↓";
+            this.btnAdvancedSearch.UseVisualStyleBackColor = false;
+            this.btnAdvancedSearch.Click += new System.EventHandler(this.btnAdvancedSearch_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(281, 4);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(57, 35);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 24);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "ID Bill:";
             // 
             // txbSearch
             // 
-            this.txbSearch.Location = new System.Drawing.Point(10, 11);
+            this.txbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSearch.Location = new System.Drawing.Point(77, 7);
             this.txbSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txbSearch.Name = "txbSearch";
-            this.txbSearch.Size = new System.Drawing.Size(122, 20);
+            this.txbSearch.Size = new System.Drawing.Size(132, 24);
             this.txbSearch.TabIndex = 2;
             this.txbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSearch_KeyPress);
             // 
@@ -241,7 +306,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(144, 2);
+            this.btnSearch.Location = new System.Drawing.Point(220, 4);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(57, 35);
@@ -249,42 +314,6 @@
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btnUpdate);
-            this.panel6.Controls.Add(this.btnDelete);
-            this.panel6.Location = new System.Drawing.Point(880, 167);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(213, 84);
-            this.panel6.TabIndex = 7;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(118, 13);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(82, 58);
-            this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Text = "Sửa";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(10, 13);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(80, 58);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // ucBill
             // 
@@ -295,7 +324,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ucBill";
             this.Size = new System.Drawing.Size(1212, 782);
-            this.Load += new System.EventHandler(this.ucBill_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -304,16 +332,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvListBill)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dtgvListBill;
         private System.Windows.Forms.Panel panel5;
@@ -321,15 +345,20 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnAdvancedSearch;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txbid_bill;
-        private System.Windows.Forms.TextBox txbbill_name;
-        private System.Windows.Forms.TextBox txbbill_address;
-        private System.Windows.Forms.Button btnCancelEdit;
-        private System.Windows.Forms.TextBox txbtotal_money;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox textboxsearch6;
+        private System.Windows.Forms.TextBox textboxsearch5;
+        private System.Windows.Forms.TextBox textboxsearch4;
+        private System.Windows.Forms.TextBox textboxsearch3;
+        private System.Windows.Forms.TextBox textboxsearch1;
+        private System.Windows.Forms.TextBox textboxsearch2;
+        private System.Windows.Forms.CheckBox checkbox6;
+        private System.Windows.Forms.CheckBox checkbox5;
+        private System.Windows.Forms.CheckBox checkbox4;
+        private System.Windows.Forms.CheckBox checkbox3;
+        private System.Windows.Forms.CheckBox checkbox2;
+        private System.Windows.Forms.CheckBox checkbox1;
     }
 }

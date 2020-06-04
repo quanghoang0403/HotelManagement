@@ -13,7 +13,7 @@ namespace QuanLyKhachSan
 {
     public partial class ucBill : UserControl
     {
-        private bool Accessibility=true;
+        private bool Is_AdvancedSearch=false;
         public ucBill()
         {
             InitializeComponent();
@@ -21,120 +21,94 @@ namespace QuanLyKhachSan
             panel2.Visible = false;
         }
 
-    #region Xu li phan quyen
-
-        public bool Permission_to_access
-        {
-            get { return Accessibility; }
-            set { Accessibility = value; }
-        }
-
-        private void ucBill_Load(object sender, EventArgs e)
-        {
-            if (Accessibility == false)
-            {
-                panel6.Visible = false;
-            }
-        }
-
-        #endregion
-
-    #region Xu li chuc nang
+        #region Xử lí hàm
 
         void LoadBill()
         {
-            string query = "SELECT * FROM DBO.BILL";
-            dtgvListBill.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            dtgvListBill.DataSource = BillManagementDAO.Instance.LoadBillList();
         }
 
-        void SearchBill(string insert)
+        void AdvancedSearch(ref string insert)
         {
-            string query = "SELECT * from dbo.BILL where id_bill='" + insert + "' or bill_name='"+insert+"' or bill_address='"+insert+"' or total_money='"+insert+"'";
-            dtgvListBill.DataSource = DataProvider.Instance.ExecuteQuery(query);
-        }
-
-        void DeleteBill(string id_bill)
-        {
-            string query1 = "delete from dbo.BILL_DETAILS where id_bill='" + id_bill + "'";
-            string query2 = "delete from dbo.BILL where id_bill='" + id_bill + "'";
-            DataProvider.Instance.ExecuteQuery(query1);
-            DataProvider.Instance.ExecuteQuery(query2);
-            LoadBill();
-        }
-
-        void UpdateBill(string id_bill,string bill_name,string bill_address,string total_money)
-        {
-            string query = "Update dbo.BILL Set bill_name =N'" + bill_name + "',bill_address =N'" + bill_address + "',total_money ='" + total_money + "' Where id_bill ='" + id_bill + "'";
-            DataProvider.Instance.ExecuteQuery(query);
-            btnCancelEdit.PerformClick();
-            LoadBill();
-        }
-
-        private void dtgvListBill_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dtgvListBill.SelectedCells.Count > 0)
+            if (checkbox1.Checked == true)
             {
-                int selectedrowindex = dtgvListBill.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtgvListBill.Rows[selectedrowindex];
-                txbid_bill.Text = Convert.ToString(selectedRow.Cells["id_bill"].Value);
-                txbbill_name.Text = Convert.ToString(selectedRow.Cells["bill_name"].Value);
-                txbbill_address.Text = Convert.ToString(selectedRow.Cells["bill_address"].Value);
-                txbtotal_money.Text = Convert.ToString(selectedRow.Cells["total_money"].Value);
+                insert += " and " + checkbox1.Text + " like N'%" + textboxsearch1.Text + "%'";
+            }
+            if (checkbox2.Checked == true)
+            {
+                insert += " and " + checkbox2.Text + " like N'%" + textboxsearch2.Text + "%'";
+            }
+            if (checkbox3.Checked == true)
+            {
+                insert += " and " + checkbox3.Text + " = '" + textboxsearch3.Text + "'";
+            }
+            if (checkbox4.Checked == true)
+            {
+                insert += " and " + checkbox4.Text + " like '%" + textboxsearch4.Text + "%'";
+            }
+            if (checkbox5.Checked == true)
+            {
+                insert += " and " + checkbox5.Text + " like '%" + textboxsearch5.Text + "%'";
+            }
+            if (checkbox6.Checked == true)
+            {
+                insert += " and " + checkbox6.Text + " = '" + textboxsearch6.Text + "'";
             }
         }
 
         #endregion
 
-    #region Chuc nang quan li hoa don
+        #region Chức năng quản lí hóa đơn
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txbSearch.Text == "")
+            if (txbSearch.Text == "" && panel2.Visible==false)
             {
                 MessageBox.Show("Vui lòng nhập mã hóa đơn");
+                return;
             }
-            SearchBill(txbSearch.Text);
+            string insert="";
+            if (panel2.Visible == true)
+                AdvancedSearch(ref insert);
+            else
+            insert = " and Bill.id_bill='" + txbSearch.Text + "'";
+            dtgvListBill.DataSource = BillManagementDAO.Instance.SearchBill(insert);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadBill();
+            checkbox1.Checked = false;
+            checkbox2.Checked = false;
+            checkbox3.Checked = false;
+            checkbox4.Checked = false;
+            checkbox5.Checked = false;
+            checkbox6.Checked = false;
+            textboxsearch1.Text = "";
+            textboxsearch2.Text = "";
+            textboxsearch3.Text = "";
+            textboxsearch4.Text = "";
+            textboxsearch5.Text = "";
+            textboxsearch6.Text = "";
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnAdvancedSearch_Click(object sender, EventArgs e)
         {
-           DialogResult result = MessageBox.Show("Bạn có chắc chắn là muốn xóa hóa đơn này ?", "XÁC NHẬN XÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-           switch (result)
-           {
-               case DialogResult.Yes:
-                    DeleteBill(txbid_bill.Text);
-                    break;
-               case DialogResult.No:
-                    break;
-               default:
-                    break;
-           }
-        }
-
-        private void btnCancelEdit_Click(object sender, EventArgs e)
-        {
-            panel2.Visible = false;
-            txbbill_name.Text = "";
-            txbtotal_money.Text = "";
-            txbbill_address.Text = "";
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if(panel2.Visible==false)
+            if (Is_AdvancedSearch == false)
             {
                 panel2.Visible = true;
+                Is_AdvancedSearch = true;
                 return;
             }
-            UpdateBill(txbid_bill.Text, txbbill_name.Text, txbbill_address.Text, txbtotal_money.Text);
+            else
+            {
+                panel2.Visible = false;
+                Is_AdvancedSearch = false;
+                return;
+            }
         }
 
-    #endregion
+        #endregion
 
         private void txbSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -142,6 +116,11 @@ namespace QuanLyKhachSan
             {
                 e.Handled = true;
             }
+        }
+
+        private void dtgvListBill_SelectionChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

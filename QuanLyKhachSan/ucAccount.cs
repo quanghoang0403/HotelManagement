@@ -18,6 +18,7 @@ namespace QuanLyKhachSan
         {
             InitializeComponent();
             LoadAmount();
+            LoadCustomerType();
         }
 
         public bool Permission_to_access
@@ -27,16 +28,12 @@ namespace QuanLyKhachSan
         }
 
         #region Doi mat khau
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (txbUserName.Text == "" || txbPassword.Text == "" || txbNewPass.Text == "" || txbReEnterPass.Text == "")
             {
                 MessageBox.Show("Vui lòng điền đầy đủ các thông tin !");
-                return;
-            }
-            else if (Login(txbUserName.Text, txbPassword.Text) == false)
-            {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng !");
                 return;
             }
             else if (txbNewPass.Text == txbPassword.Text)
@@ -49,7 +46,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Mật khẩu nhập lại không khớp mật khẩu mới tạo !");
                 return;
             }          
-            ChangePass(txbUserName.Text, txbNewPass.Text);
+            SettingDAO.Instance.ChangePass(txbUserName.Text,txbNewPass.Text);
             MessageBox.Show("Đã đổi thành công !");
             btnRemoveChangePass.PerformClick();
         }
@@ -61,9 +58,11 @@ namespace QuanLyKhachSan
             txbNewPass.Text = "";
             txbReEnterPass.Text = "";
         }
+        
         #endregion
 
         #region Dang ky
+
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             if (txbSignin_Username.Text == "" || txbSignin_RePass.Text == "" || txbSignin_Name.Text == "" || txbSignin_Password.Text == "" || comboBox_Permission.Text=="")
@@ -76,7 +75,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Mật khẩu nhập lại không khớp mật khẩu mới tạo");
                 return;
             }
-            Signin(txbSignin_Username.Text, txbSignin_Password.Text, txbSignin_Name.Text, comboBox_Permission.Text);
+            SettingDAO.Instance.Signin(txbSignin_Username.Text, txbSignin_Password.Text, txbSignin_Name.Text, comboBox_Permission.Text);
             MessageBox.Show("Đã tạo tài khoản thành công !");
             btnRemoveSignin.PerformClick();          
         }
@@ -89,12 +88,17 @@ namespace QuanLyKhachSan
             txbSignin_Password.Text = "";
             comboBox_Permission.Text = "";
         }
+        
         #endregion
+
 
         void LoadAmount()
         {
-            string query = "select * from dbo.AMOUNT";
-            dtgvType.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            dtgvType.DataSource = SettingDAO.Instance.LoadAmountList();
+        }
+        void LoadCustomerType()
+        {
+            dtgvCustomertype.DataSource = SettingDAO.Instance.LoadCustomerTypeList();
         }
         private void txbMax_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -163,27 +167,25 @@ namespace QuanLyKhachSan
                 return;
             }
         }
-
-        bool Login(string userName, string passWord)
-        {
-            return LoginDAO.Instance.Login(userName, passWord);
-        }
-        void ChangePass(string userName, string passWord)
-        {
-            string query = "Update dbo.ACCOUNT Set pass = '" + passWord + "' Where username = '" + userName + "'; ";
-            DataProvider.Instance.ExecuteQuery(query);
-        }
-        void Signin(string username,string password,string name,string permission)
-        {
-            string query = "INSERT INTO ACCOUNT VALUES(N'" + name + "','" + username + "','" + password + "','" + permission + "')";
-            DataProvider.Instance.ExecuteQuery(query);
-        }
+        
         private void ucAccount_Load(object sender, EventArgs e)
         {
             if (Accessibility == false)
             {
                 panel6.Visible = false;
                 panel15.Visible = false;
+            }
+        }
+
+        private void dtgvType_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgvType.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtgvType.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtgvType.Rows[selectedrowindex];
+                txbMax.Text = Convert.ToString(selectedRow.Cells["max_customer"].Value);
+                txbRatio.Text = Convert.ToString(selectedRow.Cells["customer_ratio"].Value);
+                txbMaxSurcharge.Text = Convert.ToString(selectedRow.Cells["amount_surchage"].Value);
             }
         }
     }

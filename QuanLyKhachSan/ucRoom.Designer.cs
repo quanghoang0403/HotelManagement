@@ -598,10 +598,13 @@
             // 
             // dtgvRoom
             // 
+            this.dtgvRoom.AllowUserToAddRows = false;
+            this.dtgvRoom.AllowUserToDeleteRows = false;
             this.dtgvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvRoom.Location = new System.Drawing.Point(14, 11);
             this.dtgvRoom.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvRoom.Name = "dtgvRoom";
+            this.dtgvRoom.ReadOnly = true;
             this.dtgvRoom.RowHeadersWidth = 51;
             this.dtgvRoom.RowTemplate.Height = 24;
             this.dtgvRoom.Size = new System.Drawing.Size(456, 343);
@@ -924,6 +927,8 @@
             // 
             // dtgvType
             // 
+            this.dtgvType.AllowUserToAddRows = false;
+            this.dtgvType.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -936,6 +941,7 @@
             this.dtgvType.Location = new System.Drawing.Point(14, 13);
             this.dtgvType.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvType.Name = "dtgvType";
+            this.dtgvType.ReadOnly = true;
             this.dtgvType.RowHeadersWidth = 51;
             this.dtgvType.RowTemplate.Height = 24;
             this.dtgvType.Size = new System.Drawing.Size(456, 175);
@@ -1050,18 +1056,9 @@
         private System.Windows.Forms.Button btnDeleteType;
         private System.Windows.Forms.Button btnAddType;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txbNewPrice;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txbOldPrice;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txbNewTypeRoom;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txbOldTypeRoom;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnCancelRoomType;
+        private System.Windows.Forms.Button btnCancelRoom;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Label label17;
@@ -1081,7 +1078,16 @@
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txbOldID;
-        private System.Windows.Forms.Button btnCancelRoomType;
-        private System.Windows.Forms.Button btnCancelRoom;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txbNewPrice;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txbOldPrice;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txbNewTypeRoom;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txbOldTypeRoom;
     }
 }

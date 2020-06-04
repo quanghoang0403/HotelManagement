@@ -45,6 +45,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnRemoveChangePass = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnRemoveSignin = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.comboBox_Permission = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -84,7 +85,10 @@
             this.btnAddType = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.btnRemoveSignin = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.dtgvCustomertype = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -103,6 +107,8 @@
             this.panel19.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel15.SuspendLayout();
+            this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomertype)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -293,6 +299,19 @@
             this.panel6.Size = new System.Drawing.Size(422, 370);
             this.panel6.TabIndex = 13;
             // 
+            // btnRemoveSignin
+            // 
+            this.btnRemoveSignin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnRemoveSignin.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveSignin.Location = new System.Drawing.Point(341, 318);
+            this.btnRemoveSignin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveSignin.Name = "btnRemoveSignin";
+            this.btnRemoveSignin.Size = new System.Drawing.Size(63, 32);
+            this.btnRemoveSignin.TabIndex = 13;
+            this.btnRemoveSignin.Text = "Hủy";
+            this.btnRemoveSignin.UseVisualStyleBackColor = false;
+            this.btnRemoveSignin.Click += new System.EventHandler(this.btnRemoveSignin_Click);
+            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.comboBox_Permission);
@@ -473,7 +492,7 @@
             // 
             this.btnUpdateSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
             this.btnUpdateSetting.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateSetting.Location = new System.Drawing.Point(726, 67);
+            this.btnUpdateSetting.Location = new System.Drawing.Point(489, 178);
             this.btnUpdateSetting.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateSetting.Name = "btnUpdateSetting";
             this.btnUpdateSetting.Size = new System.Drawing.Size(63, 45);
@@ -484,7 +503,7 @@
             // 
             // txbMaxSurcharge
             // 
-            this.txbMaxSurcharge.Location = new System.Drawing.Point(572, 83);
+            this.txbMaxSurcharge.Location = new System.Drawing.Point(502, 84);
             this.txbMaxSurcharge.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaxSurcharge.Name = "txbMaxSurcharge";
             this.txbMaxSurcharge.Size = new System.Drawing.Size(50, 20);
@@ -493,7 +512,7 @@
             // 
             // txbMax
             // 
-            this.txbMax.Location = new System.Drawing.Point(188, 50);
+            this.txbMax.Location = new System.Drawing.Point(145, 50);
             this.txbMax.Margin = new System.Windows.Forms.Padding(2);
             this.txbMax.Name = "txbMax";
             this.txbMax.Size = new System.Drawing.Size(51, 20);
@@ -502,7 +521,7 @@
             // 
             // txbRatio
             // 
-            this.txbRatio.Location = new System.Drawing.Point(188, 80);
+            this.txbRatio.Location = new System.Drawing.Point(130, 84);
             this.txbRatio.Margin = new System.Windows.Forms.Padding(2);
             this.txbRatio.Name = "txbRatio";
             this.txbRatio.Size = new System.Drawing.Size(51, 20);
@@ -513,7 +532,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(58, 54);
+            this.label12.Location = new System.Drawing.Point(22, 51);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(119, 16);
@@ -524,7 +543,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(268, 84);
+            this.label13.Location = new System.Drawing.Point(198, 85);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(300, 16);
@@ -535,7 +554,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(58, 81);
+            this.label14.Location = new System.Drawing.Point(22, 85);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(99, 16);
@@ -544,29 +563,41 @@
             // 
             // panel14
             // 
+            this.panel14.Controls.Add(this.label18);
             this.panel14.Controls.Add(this.dtgvType);
-            this.panel14.Location = new System.Drawing.Point(61, 128);
+            this.panel14.Controls.Add(this.label12);
+            this.panel14.Controls.Add(this.txbMax);
+            this.panel14.Controls.Add(this.label14);
+            this.panel14.Controls.Add(this.btnUpdateSetting);
+            this.panel14.Controls.Add(this.txbRatio);
+            this.panel14.Controls.Add(this.txbMaxSurcharge);
+            this.panel14.Controls.Add(this.label13);
+            this.panel14.Location = new System.Drawing.Point(23, 50);
             this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(842, 171);
+            this.panel14.Size = new System.Drawing.Size(561, 292);
             this.panel14.TabIndex = 31;
             // 
             // dtgvType
             // 
+            this.dtgvType.AllowUserToAddRows = false;
+            this.dtgvType.AllowUserToDeleteRows = false;
             this.dtgvType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvType.Location = new System.Drawing.Point(14, 11);
+            this.dtgvType.Location = new System.Drawing.Point(25, 114);
             this.dtgvType.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvType.Name = "dtgvType";
+            this.dtgvType.ReadOnly = true;
             this.dtgvType.RowHeadersWidth = 51;
             this.dtgvType.RowTemplate.Height = 24;
-            this.dtgvType.Size = new System.Drawing.Size(808, 150);
+            this.dtgvType.Size = new System.Drawing.Size(527, 60);
             this.dtgvType.TabIndex = 0;
+            this.dtgvType.SelectionChanged += new System.EventHandler(this.dtgvType_SelectionChanged);
             // 
             // panel13
             // 
             this.panel13.Controls.Add(this.panel18);
             this.panel13.Controls.Add(this.panel19);
-            this.panel13.Location = new System.Drawing.Point(913, 139);
+            this.panel13.Location = new System.Drawing.Point(306, 109);
             this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(249, 114);
@@ -636,7 +667,7 @@
             this.panel12.Controls.Add(this.btnUpdateType);
             this.panel12.Controls.Add(this.btnDeleteType);
             this.panel12.Controls.Add(this.btnAddType);
-            this.panel12.Location = new System.Drawing.Point(913, 67);
+            this.panel12.Location = new System.Drawing.Point(306, 48);
             this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(249, 53);
@@ -694,34 +725,57 @@
             // 
             // panel15
             // 
+            this.panel15.Controls.Add(this.panel16);
             this.panel15.Controls.Add(this.label17);
-            this.panel15.Controls.Add(this.panel13);
             this.panel15.Controls.Add(this.panel14);
-            this.panel15.Controls.Add(this.panel12);
-            this.panel15.Controls.Add(this.btnUpdateSetting);
-            this.panel15.Controls.Add(this.label12);
-            this.panel15.Controls.Add(this.txbMaxSurcharge);
-            this.panel15.Controls.Add(this.txbMax);
-            this.panel15.Controls.Add(this.label13);
-            this.panel15.Controls.Add(this.txbRatio);
-            this.panel15.Controls.Add(this.label14);
             this.panel15.Location = new System.Drawing.Point(19, 415);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(1174, 354);
             this.panel15.TabIndex = 39;
             // 
-            // btnRemoveSignin
+            // label18
             // 
-            this.btnRemoveSignin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
-            this.btnRemoveSignin.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveSignin.Location = new System.Drawing.Point(341, 318);
-            this.btnRemoveSignin.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRemoveSignin.Name = "btnRemoveSignin";
-            this.btnRemoveSignin.Size = new System.Drawing.Size(63, 32);
-            this.btnRemoveSignin.TabIndex = 13;
-            this.btnRemoveSignin.Text = "Hủy";
-            this.btnRemoveSignin.UseVisualStyleBackColor = false;
-            this.btnRemoveSignin.Click += new System.EventHandler(this.btnRemoveSignin_Click);
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(20, 11);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(279, 25);
+            this.label18.TabIndex = 32;
+            this.label18.Text = "Phụ thu cho số lượng khách";
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.label19);
+            this.panel16.Controls.Add(this.panel12);
+            this.panel16.Controls.Add(this.panel13);
+            this.panel16.Controls.Add(this.dtgvCustomertype);
+            this.panel16.Location = new System.Drawing.Point(589, 50);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(573, 292);
+            this.panel16.TabIndex = 32;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(35, 10);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(231, 25);
+            this.label19.TabIndex = 39;
+            this.label19.Text = "Phụ thu cho loại khách";
+            // 
+            // dtgvCustomertype
+            // 
+            this.dtgvCustomertype.AllowUserToAddRows = false;
+            this.dtgvCustomertype.AllowUserToDeleteRows = false;
+            this.dtgvCustomertype.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCustomertype.Location = new System.Drawing.Point(40, 48);
+            this.dtgvCustomertype.Name = "dtgvCustomertype";
+            this.dtgvCustomertype.ReadOnly = true;
+            this.dtgvCustomertype.Size = new System.Drawing.Size(250, 175);
+            this.dtgvCustomertype.TabIndex = 40;
             // 
             // ucAccount
             // 
@@ -757,6 +811,7 @@
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvType)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
@@ -766,6 +821,9 @@
             this.panel12.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomertype)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -828,5 +886,9 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button btnRemoveChangePass;
         private System.Windows.Forms.Button btnRemoveSignin;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.DataGridView dtgvCustomertype;
+        private System.Windows.Forms.Label label19;
     }
 }

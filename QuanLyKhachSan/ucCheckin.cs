@@ -13,7 +13,8 @@ namespace QuanLyKhachSan
 {
     public partial class ucCheckin : UserControl
     {
-        private bool Accessibility=true;
+        private bool only1searchattribute = true;
+        private bool Is_AdvancedSearch = false;
         public ucCheckin()
         {
             InitializeComponent();
@@ -21,135 +22,121 @@ namespace QuanLyKhachSan
             panel2.Visible = false;
         }
 
-    #region Xu li phan quyen
-        public bool Permission_to_access
-        {
-            get { return Accessibility; }
-            set { Accessibility = value; }
-        }
-        private void ucCheckin_Load(object sender, EventArgs e)
-        {
-            if (Accessibility == false)
-            {
-                panel6.Visible = false;
-            }
-        }
-        #endregion
-
-    #region Xu li chuc nang
+        #region Xử lí hàm
 
         void LoadCheckin()
         {
-            string query = "SELECT * FROM DBO.CHECKIN";
-            dtgvList.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            dtgvList.DataSource=CheckinManagementDAO.Instance.LoadCheckinList();
         }
 
-        void SearchCheckin(string insert)
+        void AdvancedSearch(ref string insert)
         {
-            string query = "SELECT * " +
-                "from dbo.CHECKIN " +
-                "where id_checkin='" + insert
-                //+ "' or date_start='" + Convert.ToDateTime(insert)
-                + "' or id_room='" + insert
-                + "' or money_checkin='" + insert
-                +"' or type_ratioMAX='"+ insert 
-                + "' or number_customer='" + insert 
-                + "' or status_checkin='" + insert +"'";
-            dtgvList.DataSource = DataProvider.Instance.ExecuteQuery(query);
-        }
-
-        void DeleteCheckin(string id_checkin)
-        {
-            string query1 = "delete from dbo.CHECKIN_DETAILS where id_checkin='" + id_checkin + "'";
-            string query2 = "delete from dbo.CHECKIN where id_checkin='" + id_checkin + "'";
-            DataProvider.Instance.ExecuteQuery(query1);
-            DataProvider.Instance.ExecuteQuery(query2);
-            LoadCheckin();
-        }
-
-        void UpdateCheckin(string id_checkin,string id_room,string money_checkin,string type_ratioMax,string number_customer,string status_checkin)
-        {
-            string query = "Update dbo.CHECKIN " +
-                "Set id_room ='" + id_room 
-                + "',money_checkin ='" + money_checkin
-                + "',type_ratioMAX ='" + type_ratioMax
-                + "',number_customer ='" + number_customer 
-                +"',status_checkin ='" + status_checkin 
-                +"' Where id_checkin ='" + id_checkin + "'";
-            DataProvider.Instance.ExecuteQuery(query);
-            btnCancelEdit.PerformClick();
-            LoadCheckin();
-        }
-
-        private void dtgvList_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dtgvList.SelectedCells.Count > 0)
+            if (checkbox1.Checked == true)
             {
-                int selectedrowindex = dtgvList.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtgvList.Rows[selectedrowindex];
-                txbid_chekin.Text = Convert.ToString(selectedRow.Cells["id_checkin"].Value);
-                txbid_room.Text = Convert.ToString(selectedRow.Cells["id_room"].Value);
-                txbmoney_checkin.Text = Convert.ToString(selectedRow.Cells["money_checkin"].Value);
-                txbtyperatio_max.Text = Convert.ToString(selectedRow.Cells["type_ratioMAX"].Value);
-                txbnumber_customer.Text = Convert.ToString(selectedRow.Cells["number_customer"].Value);
-                txbstatus_checkin.Text = Convert.ToString(selectedRow.Cells["status_checkin"].Value);
+                insert += checkbox1.Text + " = '" + textboxsearch1.Value.Date.ToString("d") + "'";
+                only1searchattribute = false;
+            }
+            if (checkbox2.Checked == true)
+            {
+                if(only1searchattribute==false)
+                {
+                    insert += "and ";
+                }
+                insert +=checkbox2.Text + " = '" + textboxsearch2.Text + "'";
+                only1searchattribute = false;
+            }
+            if (checkbox3.Checked == true)
+            {
+                if (only1searchattribute == false)
+                {
+                    insert += "and ";
+                }
+                insert +=checkbox3.Text + " = '" + textboxsearch3.Text + "'";
+                only1searchattribute = false;
+            }
+            if (checkbox4.Checked == true)
+            {
+                if (only1searchattribute == false)
+                {
+                    insert += "and ";
+                }
+                insert +=checkbox4.Text + " = '" + textboxsearch4.Text + "'";
+                only1searchattribute = false;
+            }
+            if (checkbox5.Checked == true)
+            {
+                if (only1searchattribute == false)
+                {
+                    insert += "and ";
+                }
+                insert +=checkbox5.Text + " = '" + textboxsearch5.Text + "'";
+                only1searchattribute = false;
+            }
+            if (checkbox6.Checked == true)
+            {
+                if (only1searchattribute == false)
+                {
+                    insert += "and ";
+                }
+                insert +=checkbox6.Text + " = '" + textboxsearch6.Text + "'";
+                only1searchattribute = false;
             }
         }
 
         #endregion
 
-    #region Chuc nang quan li hoa don
+        #region Chức năng quản lí phiếu thuê
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txbSearch.Text == "")
+            if (txbSearch.Text == "" && panel2.Visible == false)
             {
                 MessageBox.Show("Vui lòng nhập mã phiếu");
-            }
-            SearchCheckin(txbSearch.Text);
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (panel2.Visible == false)
-            {
-                panel2.Visible = true;
                 return;
             }
-            UpdateCheckin(txbid_chekin.Text,txbid_room.Text,txbmoney_checkin.Text,txbtyperatio_max.Text,txbnumber_customer.Text,txbstatus_checkin.Text);
+            only1searchattribute = true;
+            string insert = "";
+            if (panel2.Visible == true)
+                AdvancedSearch(ref insert);
+            else
+                insert = " id_checkin='" + txbSearch.Text + "'";
+            dtgvList.DataSource = CheckinManagementDAO.Instance.SearchCheckin(insert);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadCheckin();
+            checkbox1.Checked = false;
+            checkbox2.Checked = false;
+            checkbox3.Checked = false;
+            checkbox4.Checked = false;
+            checkbox5.Checked = false;
+            checkbox6.Checked = false;
+            textboxsearch1.Value = DateTime.Now;
+            textboxsearch2.Text = "";
+            textboxsearch3.Text = "";
+            textboxsearch4.Text = "";
+            textboxsearch5.Text = "";
+            textboxsearch6.Text = "";
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnAdvancedSearch_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn là muốn xóa phiếu thuê phòng này này ?", "XÁC NHẬN XÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-            switch (result)
+            if (Is_AdvancedSearch == false)
             {
-               case DialogResult.Yes:
-                    DeleteCheckin(txbid_chekin.Text);
-                    break;
-               case DialogResult.No:
-                    break;
-               default:
-                    break;
+                panel2.Visible = true;
+                Is_AdvancedSearch = true;
+                return;
+            }
+            else
+            {
+                panel2.Visible = false;
+                Is_AdvancedSearch = false;
+                return;
             }
         }
-        
-        private void btnCancelEdit_Click(object sender, EventArgs e)
-        {
-            panel2.Visible = false;
-            txbid_room.Text = "";
-            txbmoney_checkin.Text = "";
-            txbtyperatio_max.Text = "";
-            txbnumber_customer.Text = "";
-            txbstatus_checkin.Text = "";
-        }
 
-    #endregion
+        #endregion
 
         private void txbSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -157,6 +144,6 @@ namespace QuanLyKhachSan
             {
                 e.Handled = true;
             }
-        }
+        }     
     }
 }

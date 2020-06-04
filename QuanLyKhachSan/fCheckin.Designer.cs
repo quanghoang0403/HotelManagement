@@ -51,12 +51,12 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel8 = new System.Windows.Forms.Panel();
-            this.dateStartDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txbID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.dateStartDate = new System.Windows.Forms.DateTimePicker();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -315,19 +315,6 @@
             this.panel8.TabIndex = 12;
             this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
-            // dateStartDate
-            // 
-            this.dateStartDate.Location = new System.Drawing.Point(166, 3);
-            this.dateStartDate.Margin = new System.Windows.Forms.Padding(2);
-            this.dateStartDate.MinDate = new System.DateTime(2020, 5, 27, 0, 0, 0, 0);
-            this.dateStartDate.Enabled = false;
-            this.dateStartDate.Location = new System.Drawing.Point(222, 4);
-            this.dateStartDate.Name = "dateStartDate";
-            this.dateStartDate.Size = new System.Drawing.Size(194, 20);
-            this.dateStartDate.TabIndex = 5;
-            this.dateStartDate.Value = new System.DateTime(2020, 5, 27, 0, 0, 0, 0);
-            this.dateStartDate.ValueChanged += new System.EventHandler(this.dateStartDate_ValueChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -384,14 +371,23 @@
             this.label7.Text = "Tạo phiếu thuê phòng";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // dateStartDate
+            // 
+            this.dateStartDate.Enabled = false;
+            this.dateStartDate.Location = new System.Drawing.Point(154, 3);
+            this.dateStartDate.Name = "dateStartDate";
+            this.dateStartDate.Size = new System.Drawing.Size(200, 20);
+            this.dateStartDate.TabIndex = 5;
+            this.dateStartDate.ValueChanged += new System.EventHandler(this.dateStartDate_ValueChanged);
+            // 
             // fCheckin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 348);
             this.Controls.Add(this.panel4);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fCheckin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "";
@@ -432,7 +428,6 @@
         private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.DateTimePicker dateStartDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
@@ -447,5 +442,6 @@
         private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.DateTimePicker dateStartDate;
     }
 }

@@ -32,8 +32,6 @@ namespace QuanLyKhachSan
         private void fHotelManager_Load(object sender, EventArgs e)
         {
             ucRoom1.Permission_to_access = Accessibility;
-            ucBill1.Permission_to_access = Accessibility;
-            ucCheckin1.Permission_to_access = Accessibility;
             ucAccount1.Permission_to_access = Accessibility;
             if (Accessibility == false)
             {

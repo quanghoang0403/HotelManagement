@@ -458,7 +458,7 @@
             this.ucAccount1.Location = new System.Drawing.Point(350, 92);
             this.ucAccount1.Margin = new System.Windows.Forms.Padding(2);
             this.ucAccount1.Name = "ucAccount1";
-            this.ucAccount1.Permission_to_access = false;
+            //this.ucAccount1.Permission_to_access = false;
             this.ucAccount1.Size = new System.Drawing.Size(1080, 779);
             this.ucAccount1.TabIndex = 23;
             // 
@@ -477,7 +477,7 @@
             this.ucCheckin1.Location = new System.Drawing.Point(350, 92);
             this.ucCheckin1.Margin = new System.Windows.Forms.Padding(2);
             this.ucCheckin1.Name = "ucCheckin1";
-            this.ucCheckin1.Permission_to_access = false;
+            //this.ucCheckin1.Permission_to_access = false;
             this.ucCheckin1.Size = new System.Drawing.Size(1080, 779);
             this.ucCheckin1.TabIndex = 21;
             // 
@@ -488,7 +488,7 @@
             this.ucBill1.Location = new System.Drawing.Point(350, 92);
             this.ucBill1.Margin = new System.Windows.Forms.Padding(2);
             this.ucBill1.Name = "ucBill1";
-            this.ucBill1.Permission_to_access = false;
+            //this.ucBill1.Permission_to_access = false;
             this.ucBill1.Size = new System.Drawing.Size(1080, 779);
             this.ucBill1.TabIndex = 20;
             // 
@@ -498,7 +498,7 @@
             this.ucRoom1.Location = new System.Drawing.Point(350, 92);
             this.ucRoom1.Margin = new System.Windows.Forms.Padding(2);
             this.ucRoom1.Name = "ucRoom1";
-            this.ucRoom1.Permission_to_access = false;
+            //this.ucRoom1.Permission_to_access = false;
             this.ucRoom1.Size = new System.Drawing.Size(1080, 779);
             this.ucRoom1.TabIndex = 19;
             // 
