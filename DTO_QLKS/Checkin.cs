@@ -23,7 +23,7 @@ namespace QuanLyKhachSan.DTO
         public Checkin(DataRow row)
         {
             this.Id_checkin = Convert.ToInt32(row["id_checkin"].ToString());
-            this.Date_start = row["date_start"].ToString();
+            this.Date_start = Convert.ToDateTime(row["date_start"]).ToString("d");
             this.Id_room = row["id_room"].ToString();
             this.Money_checkin = row["money_checkin"].ToString();
             this.Type_ratioMAX = (float)Convert.ToDouble(row["type_ratioMAX"].ToString());          

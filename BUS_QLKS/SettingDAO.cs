@@ -31,28 +31,43 @@ namespace QuanLyKhachSan.DAO
             }
             public List<CustomerType> LoadCustomerTypeList()
             {
-            List<CustomerType> CustomerTypeList = new List<CustomerType>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetCustomertypeList");
+                List<CustomerType> CustomerTypeList = new List<CustomerType>();
+                DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetCustomertypeList");
             foreach (DataRow item in data.Rows)
             {
                 CustomerType cst = new CustomerType(item);
                 CustomerTypeList.Add(cst);
             }
-            return CustomerTypeList;
+                return CustomerTypeList;
             }
-        public void ChangeAmount(float customer_ratio,int max_customer,int amount_surchage)
+            public void ChangeAmount(float customer_ratio,int max_customer,int amount_surchage)
             {
                 
             }
+            public void AddCustomertype(string customer_type,string ratio)
+            {
+                string query = "INSERT INTO CUSTOMER_TYPE VALUES('" + customer_type + "','" + ratio + "')";
+                DataProvider.Instance.ExecuteQuery(query);
+            }
+            public void DeleteCustomertype(string customer_type)
+            {
+                string query = "delete from dbo.CUSTOMER_TYPE where customer_type='" + customer_type +"'";
+                DataProvider.Instance.ExecuteQuery(query);
+            }
+            public void UpdateCustomertype(string customer_type, string ratio)
+            {
+                string query = "Update dbo.CUSTOMER_TYPE Set ratio ='" +ratio+ "' Where customer_type ='" + customer_type + "'";
+                DataProvider.Instance.ExecuteQuery(query);
+            }
             public void ChangePass(string userName,string passWord)
             {
-            string query = "Update dbo.ACCOUNT Set pass = '" + passWord + "' Where username = '" + userName + "'; ";
-            DataProvider.Instance.ExecuteQuery(query);
+                string query = "Update dbo.ACCOUNT Set pass = '" + passWord + "' Where username = '" + userName + "'; ";
+                DataProvider.Instance.ExecuteQuery(query);
             }
             public void Signin(string username, string password, string name, string permission)
             {
-            string query = "INSERT INTO ACCOUNT VALUES(N'" + name + "','" + username + "','" + password + "','" + permission + "')";
-            DataProvider.Instance.ExecuteQuery(query);
+                string query = "INSERT INTO ACCOUNT VALUES(N'" + name + "','" + username + "','" + password + "','" + permission + "')";
+                DataProvider.Instance.ExecuteQuery(query);
             }
     }
 }

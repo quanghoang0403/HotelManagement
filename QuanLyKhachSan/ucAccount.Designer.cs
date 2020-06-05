@@ -71,6 +71,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.dtgvType = new System.Windows.Forms.DataGridView();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -78,17 +79,24 @@
             this.txbPrice = new System.Windows.Forms.TextBox();
             this.panel19 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
-            this.txbTypeRoom = new System.Windows.Forms.TextBox();
+            this.txbTypeCustomer = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.btnUpdateType = new System.Windows.Forms.Button();
             this.btnDeleteType = new System.Windows.Forms.Button();
             this.btnAddType = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.dtgvCustomertype = new System.Windows.Forms.DataGridView();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txbOldratio = new System.Windows.Forms.TextBox();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txbOldct = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -109,6 +117,9 @@
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomertype)).BeginInit();
+            this.panel17.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -578,6 +589,17 @@
             this.panel14.Size = new System.Drawing.Size(561, 292);
             this.panel14.TabIndex = 31;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(20, 11);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(279, 25);
+            this.label18.TabIndex = 32;
+            this.label18.Text = "Phụ thu cho số lượng khách";
+            // 
             // dtgvType
             // 
             this.dtgvType.AllowUserToAddRows = false;
@@ -597,10 +619,10 @@
             // 
             this.panel13.Controls.Add(this.panel18);
             this.panel13.Controls.Add(this.panel19);
-            this.panel13.Location = new System.Drawing.Point(306, 109);
+            this.panel13.Location = new System.Drawing.Point(306, 105);
             this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(249, 114);
+            this.panel13.Size = new System.Drawing.Size(249, 94);
             this.panel13.TabIndex = 30;
             // 
             // panel18
@@ -636,7 +658,7 @@
             // panel19
             // 
             this.panel19.Controls.Add(this.label16);
-            this.panel19.Controls.Add(this.txbTypeRoom);
+            this.panel19.Controls.Add(this.txbTypeCustomer);
             this.panel19.Location = new System.Drawing.Point(9, 13);
             this.panel19.Margin = new System.Windows.Forms.Padding(2);
             this.panel19.Name = "panel19";
@@ -654,13 +676,13 @@
             this.label16.TabIndex = 4;
             this.label16.Text = "Loại KH:";
             // 
-            // txbTypeRoom
+            // txbTypeCustomer
             // 
-            this.txbTypeRoom.Location = new System.Drawing.Point(111, 10);
-            this.txbTypeRoom.Margin = new System.Windows.Forms.Padding(2);
-            this.txbTypeRoom.Name = "txbTypeRoom";
-            this.txbTypeRoom.Size = new System.Drawing.Size(99, 20);
-            this.txbTypeRoom.TabIndex = 3;
+            this.txbTypeCustomer.Location = new System.Drawing.Point(111, 10);
+            this.txbTypeCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.txbTypeCustomer.Name = "txbTypeCustomer";
+            this.txbTypeCustomer.Size = new System.Drawing.Size(99, 20);
+            this.txbTypeCustomer.TabIndex = 3;
             // 
             // panel12
             // 
@@ -733,20 +755,11 @@
             this.panel15.Size = new System.Drawing.Size(1174, 354);
             this.panel15.TabIndex = 39;
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(20, 11);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(279, 25);
-            this.label18.TabIndex = 32;
-            this.label18.Text = "Phụ thu cho số lượng khách";
-            // 
             // panel16
             // 
+            this.panel16.Controls.Add(this.btnCancel);
             this.panel16.Controls.Add(this.label19);
+            this.panel16.Controls.Add(this.panel17);
             this.panel16.Controls.Add(this.panel12);
             this.panel16.Controls.Add(this.panel13);
             this.panel16.Controls.Add(this.dtgvCustomertype);
@@ -776,6 +789,89 @@
             this.dtgvCustomertype.ReadOnly = true;
             this.dtgvCustomertype.Size = new System.Drawing.Size(250, 175);
             this.dtgvCustomertype.TabIndex = 40;
+            this.dtgvCustomertype.SelectionChanged += new System.EventHandler(this.dtgvCustomertype_SelectionChanged);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(227, 228);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(63, 32);
+            this.btnCancel.TabIndex = 14;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.panel20);
+            this.panel17.Controls.Add(this.panel21);
+            this.panel17.Location = new System.Drawing.Point(294, 105);
+            this.panel17.Margin = new System.Windows.Forms.Padding(2);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(277, 99);
+            this.panel17.TabIndex = 40;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.label20);
+            this.panel20.Controls.Add(this.txbOldratio);
+            this.panel20.Location = new System.Drawing.Point(23, 56);
+            this.panel20.Margin = new System.Windows.Forms.Padding(2);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(223, 38);
+            this.panel20.TabIndex = 1;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(4, 11);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(99, 16);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "Tỉ lệ phụ thu:";
+            // 
+            // txbOldratio
+            // 
+            this.txbOldratio.Location = new System.Drawing.Point(111, 10);
+            this.txbOldratio.Margin = new System.Windows.Forms.Padding(2);
+            this.txbOldratio.Name = "txbOldratio";
+            this.txbOldratio.Size = new System.Drawing.Size(97, 20);
+            this.txbOldratio.TabIndex = 3;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.txbOldct);
+            this.panel21.Controls.Add(this.label21);
+            this.panel21.Location = new System.Drawing.Point(23, 14);
+            this.panel21.Margin = new System.Windows.Forms.Padding(2);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(223, 38);
+            this.panel21.TabIndex = 0;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(4, 11);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(65, 16);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Loại KH:";
+            // 
+            // txbOldct
+            // 
+            this.txbOldct.Enabled = false;
+            this.txbOldct.Location = new System.Drawing.Point(111, 8);
+            this.txbOldct.Margin = new System.Windows.Forms.Padding(2);
+            this.txbOldct.Name = "txbOldct";
+            this.txbOldct.Size = new System.Drawing.Size(97, 20);
+            this.txbOldct.TabIndex = 5;
             // 
             // ucAccount
             // 
@@ -824,6 +920,11 @@
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomertype)).EndInit();
+            this.panel17.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -877,7 +978,7 @@
         private System.Windows.Forms.TextBox txbPrice;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txbTypeRoom;
+        private System.Windows.Forms.TextBox txbTypeCustomer;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button btnUpdateType;
         private System.Windows.Forms.Button btnDeleteType;
@@ -890,5 +991,13 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.DataGridView dtgvCustomertype;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txbOldratio;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.TextBox txbOldct;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

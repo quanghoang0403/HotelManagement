@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.DTO;
 
 namespace QuanLyKhachSan
 {
@@ -19,6 +20,7 @@ namespace QuanLyKhachSan
         {
             InitializeComponent();
             LoadCheckin();
+            LoadRatio();
             panel2.Visible = false;
         }
 
@@ -27,6 +29,13 @@ namespace QuanLyKhachSan
         void LoadCheckin()
         {
             dtgvList.DataSource=CheckinManagementDAO.Instance.LoadCheckinList();
+        }
+
+        void LoadRatio()
+        {
+            List<CustomerType> listRatio = CustomerTypeDAO.Instance.GetListType();
+            textboxsearch4.DataSource = listRatio;
+            textboxsearch4.DisplayMember = "ratio";
         }
 
         void AdvancedSearch(ref string insert)

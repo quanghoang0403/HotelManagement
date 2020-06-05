@@ -31,15 +31,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkbox6 = new System.Windows.Forms.CheckBox();
-            this.checkbox5 = new System.Windows.Forms.CheckBox();
-            this.checkbox4 = new System.Windows.Forms.CheckBox();
             this.checkbox3 = new System.Windows.Forms.CheckBox();
             this.checkbox2 = new System.Windows.Forms.CheckBox();
             this.checkbox1 = new System.Windows.Forms.CheckBox();
-            this.textboxsearch6 = new System.Windows.Forms.ComboBox();
-            this.textboxsearch5 = new System.Windows.Forms.TextBox();
-            this.textboxsearch4 = new System.Windows.Forms.TextBox();
             this.textboxsearch3 = new System.Windows.Forms.TextBox();
             this.textboxsearch1 = new System.Windows.Forms.TextBox();
             this.textboxsearch2 = new System.Windows.Forms.TextBox();
@@ -81,55 +75,16 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.checkbox6);
-            this.panel2.Controls.Add(this.checkbox5);
-            this.panel2.Controls.Add(this.checkbox4);
             this.panel2.Controls.Add(this.checkbox3);
             this.panel2.Controls.Add(this.checkbox2);
             this.panel2.Controls.Add(this.checkbox1);
-            this.panel2.Controls.Add(this.textboxsearch6);
-            this.panel2.Controls.Add(this.textboxsearch5);
-            this.panel2.Controls.Add(this.textboxsearch4);
             this.panel2.Controls.Add(this.textboxsearch3);
             this.panel2.Controls.Add(this.textboxsearch1);
             this.panel2.Controls.Add(this.textboxsearch2);
             this.panel2.Location = new System.Drawing.Point(837, 71);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(274, 342);
+            this.panel2.Size = new System.Drawing.Size(274, 211);
             this.panel2.TabIndex = 12;
-            // 
-            // checkbox6
-            // 
-            this.checkbox6.AutoSize = true;
-            this.checkbox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkbox6.Location = new System.Drawing.Point(7, 268);
-            this.checkbox6.Name = "checkbox6";
-            this.checkbox6.Size = new System.Drawing.Size(153, 28);
-            this.checkbox6.TabIndex = 26;
-            this.checkbox6.Text = "surchage_ratio";
-            this.checkbox6.UseVisualStyleBackColor = true;
-            // 
-            // checkbox5
-            // 
-            this.checkbox5.AutoSize = true;
-            this.checkbox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkbox5.Location = new System.Drawing.Point(133, 202);
-            this.checkbox5.Name = "checkbox5";
-            this.checkbox5.Size = new System.Drawing.Size(141, 28);
-            this.checkbox5.TabIndex = 25;
-            this.checkbox5.Text = "date_number";
-            this.checkbox5.UseVisualStyleBackColor = true;
-            // 
-            // checkbox4
-            // 
-            this.checkbox4.AutoSize = true;
-            this.checkbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkbox4.Location = new System.Drawing.Point(7, 202);
-            this.checkbox4.Name = "checkbox4";
-            this.checkbox4.Size = new System.Drawing.Size(120, 28);
-            this.checkbox4.TabIndex = 24;
-            this.checkbox4.Text = "id_checkin";
-            this.checkbox4.UseVisualStyleBackColor = true;
             // 
             // checkbox3
             // 
@@ -163,34 +118,6 @@
             this.checkbox1.TabIndex = 21;
             this.checkbox1.Text = "bill_name";
             this.checkbox1.UseVisualStyleBackColor = true;
-            // 
-            // textboxsearch6
-            // 
-            this.textboxsearch6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxsearch6.FormattingEnabled = true;
-            this.textboxsearch6.Items.AddRange(new object[] {
-            "1",
-            "1.5"});
-            this.textboxsearch6.Location = new System.Drawing.Point(6, 302);
-            this.textboxsearch6.Name = "textboxsearch6";
-            this.textboxsearch6.Size = new System.Drawing.Size(111, 28);
-            this.textboxsearch6.TabIndex = 20;
-            // 
-            // textboxsearch5
-            // 
-            this.textboxsearch5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxsearch5.Location = new System.Drawing.Point(133, 236);
-            this.textboxsearch5.Name = "textboxsearch5";
-            this.textboxsearch5.Size = new System.Drawing.Size(129, 26);
-            this.textboxsearch5.TabIndex = 12;
-            // 
-            // textboxsearch4
-            // 
-            this.textboxsearch4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxsearch4.Location = new System.Drawing.Point(6, 236);
-            this.textboxsearch4.Name = "textboxsearch4";
-            this.textboxsearch4.Size = new System.Drawing.Size(111, 26);
-            this.textboxsearch4.TabIndex = 9;
             // 
             // textboxsearch3
             // 
@@ -240,7 +167,6 @@
             this.dtgvListBill.RowTemplate.Height = 24;
             this.dtgvListBill.Size = new System.Drawing.Size(1100, 633);
             this.dtgvListBill.TabIndex = 0;
-            this.dtgvListBill.SelectionChanged += new System.EventHandler(this.dtgvListBill_SelectionChanged);
             // 
             // panel5
             // 
@@ -348,15 +274,9 @@
         private System.Windows.Forms.Button btnAdvancedSearch;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox textboxsearch6;
-        private System.Windows.Forms.TextBox textboxsearch5;
-        private System.Windows.Forms.TextBox textboxsearch4;
         private System.Windows.Forms.TextBox textboxsearch3;
         private System.Windows.Forms.TextBox textboxsearch1;
         private System.Windows.Forms.TextBox textboxsearch2;
-        private System.Windows.Forms.CheckBox checkbox6;
-        private System.Windows.Forms.CheckBox checkbox5;
-        private System.Windows.Forms.CheckBox checkbox4;
         private System.Windows.Forms.CheckBox checkbox3;
         private System.Windows.Forms.CheckBox checkbox2;
         private System.Windows.Forms.CheckBox checkbox1;

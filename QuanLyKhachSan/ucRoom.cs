@@ -139,8 +139,9 @@ namespace QuanLyKhachSan
                 return;
             }
             RoomManagementDAO.Instance.AddRoomType(txbTypeRoom.Text, txbPrice.Text);
-            btnCancelRoomType.PerformClick();
+            MessageBox.Show("Đã thêm thành công !");
             LoadRoomType();
+            btnCancelRoomType.PerformClick();
         }
 
         private void btnDeleteType_Click(object sender, EventArgs e)
@@ -179,9 +180,10 @@ namespace QuanLyKhachSan
                 return;
             }
             RoomManagementDAO.Instance.UpdateRoomType(txbOldTypeRoom.Text, txbOldPrice.Text, txbNewTypeRoom.Text, txbNewPrice.Text);
-            btnCancelRoomType.PerformClick();
+            MessageBox.Show("Cập nhật thành công !");
             LoadRoomType();
             LoadRoom();
+            btnCancelRoomType.PerformClick();
         }
 
     #endregion
@@ -249,8 +251,9 @@ namespace QuanLyKhachSan
                 return;
             }
             RoomManagementDAO.Instance.AddRoom(txbID.Text, txbType.Text, txbNotes.Text, txbStatus.Text);
-            btnCancelRoom.PerformClick();
+            MessageBox.Show("Đã thêm thành công !");
             LoadRoom();
+            btnCancelRoom.PerformClick();
         }
 
         private void btnDeleteRoom_Click(object sender, EventArgs e)
@@ -293,8 +296,9 @@ namespace QuanLyKhachSan
                 return;
             }
             RoomManagementDAO.Instance.UpdateRoom(txbOldID.Text,txbNewType.Text, txbNewNote.Text, txbNewStatus.Text);
-            btnCancelRoom.PerformClick();
+            MessageBox.Show("Cập nhật thành công !");
             LoadRoom();
+            btnCancelRoom.PerformClick();
         }
 
     #endregion

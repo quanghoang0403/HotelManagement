@@ -19,6 +19,9 @@ namespace QuanLyKhachSan
             InitializeComponent();
             LoadAmount();
             LoadCustomerType();
+            panel17.Visible = false;
+            panel13.Visible = false;
+            btnCancel.Visible = false;
         }
 
         public bool Permission_to_access
@@ -143,29 +146,59 @@ namespace QuanLyKhachSan
 
         private void btnAddType_Click(object sender, EventArgs e)
         {
-            if(txbTypeRoom.Text== "" || txbPrice.Text== "")
+            if(panel13.Visible==false)
+            {
+                panel13.Visible = true;
+                panel17.Visible = false;
+                btnCancel.Visible = true;
+                CleanCt();
+                return;
+            }
+            if(txbTypeCustomer.Text== "" || txbPrice.Text== "")
             {
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
+            SettingDAO.Instance.AddCustomertype(txbTypeCustomer.Text, txbPrice.Text);
+            MessageBox.Show("Đã thêm thành công !");
+            LoadCustomerType();
+            btnCancel.PerformClick();
         }
 
         private void btnDeleteType_Click(object sender, EventArgs e)
         {
-            if (txbTypeRoom.Text == "")
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn là muốn loại khách hàng này ?", "XÁC NHẬN XÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            switch (result)
             {
-                MessageBox.Show("Không bỏ trống tên loại khách hàng");
-                return;
+                case DialogResult.Yes:
+                    SettingDAO.Instance.DeleteCustomertype(txbOldct.Text);
+                    LoadCustomerType();
+                    break;
+                case DialogResult.No:
+                    break;
+                default:
+                    break;
             }
         }
 
         private void btnUpdateType_Click(object sender, EventArgs e)
         {
-            if (txbTypeRoom.Text == "" || txbPrice.Text == "")
+            if(panel17.Visible==false)
+            {
+                panel13.Visible = false;
+                panel17.Visible = true;
+                btnCancel.Visible = true;
+                return;
+            }
+            if (txbOldct.Text == "" || txbOldratio.Text == "")
             {
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
+            SettingDAO.Instance.UpdateCustomertype(txbOldct.Text,txbOldratio.Text);
+            MessageBox.Show("Cập nhật thành công !");
+            LoadCustomerType();
+            btnCancel.PerformClick();
         }
         
         private void ucAccount_Load(object sender, EventArgs e)
@@ -187,6 +220,31 @@ namespace QuanLyKhachSan
                 txbRatio.Text = Convert.ToString(selectedRow.Cells["customer_ratio"].Value);
                 txbMaxSurcharge.Text = Convert.ToString(selectedRow.Cells["amount_surchage"].Value);
             }
+        }
+
+        private void dtgvCustomertype_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgvCustomertype.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtgvCustomertype.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtgvCustomertype.Rows[selectedrowindex];
+                txbOldct.Text = Convert.ToString(selectedRow.Cells["name"].Value);
+                txbOldratio.Text = Convert.ToString(selectedRow.Cells["ratio"].Value);
+            }
+        }
+        private void CleanCt()
+        {
+            txbPrice.Text = "";
+            txbTypeCustomer.Text = "";
+            txbOldct.Text = "";
+            txbOldratio.Text = "";
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            CleanCt();
+            panel13.Visible = false;
+            panel17.Visible = false;
+            btnCancel.Visible = false;
         }
     }
 }

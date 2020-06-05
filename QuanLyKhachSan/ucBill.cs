@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.DTO;
 
 namespace QuanLyKhachSan
 {
     public partial class ucBill : UserControl
     {
         private bool Is_AdvancedSearch=false;
+        private bool only1attribute = true;
         public ucBill()
         {
             InitializeComponent();
@@ -32,27 +34,20 @@ namespace QuanLyKhachSan
         {
             if (checkbox1.Checked == true)
             {
-                insert += " and " + checkbox1.Text + " like N'%" + textboxsearch1.Text + "%'";
+                insert += checkbox1.Text + " like N'%" + textboxsearch1.Text + "%'";
+                only1attribute = false;
             }
             if (checkbox2.Checked == true)
             {
-                insert += " and " + checkbox2.Text + " like N'%" + textboxsearch2.Text + "%'";
+                if (only1attribute == false) insert += " and ";
+                insert += checkbox2.Text + " like N'%" + textboxsearch2.Text + "%'";
+                only1attribute = false;
             }
             if (checkbox3.Checked == true)
             {
-                insert += " and " + checkbox3.Text + " = '" + textboxsearch3.Text + "'";
-            }
-            if (checkbox4.Checked == true)
-            {
-                insert += " and " + checkbox4.Text + " like '%" + textboxsearch4.Text + "%'";
-            }
-            if (checkbox5.Checked == true)
-            {
-                insert += " and " + checkbox5.Text + " like '%" + textboxsearch5.Text + "%'";
-            }
-            if (checkbox6.Checked == true)
-            {
-                insert += " and " + checkbox6.Text + " = '" + textboxsearch6.Text + "'";
+                if (only1attribute == false) insert += " and ";
+                insert += checkbox3.Text + " = '" + textboxsearch3.Text + "'";
+                only1attribute = false;
             }
         }
 
@@ -67,11 +62,12 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng nhập mã hóa đơn");
                 return;
             }
+            only1attribute = true;
             string insert="";
             if (panel2.Visible == true)
                 AdvancedSearch(ref insert);
             else
-            insert = " and Bill.id_bill='" + txbSearch.Text + "'";
+            insert = " id_bill='" + txbSearch.Text + "'";
             dtgvListBill.DataSource = BillManagementDAO.Instance.SearchBill(insert);
         }
 
@@ -81,15 +77,9 @@ namespace QuanLyKhachSan
             checkbox1.Checked = false;
             checkbox2.Checked = false;
             checkbox3.Checked = false;
-            checkbox4.Checked = false;
-            checkbox5.Checked = false;
-            checkbox6.Checked = false;
             textboxsearch1.Text = "";
             textboxsearch2.Text = "";
             textboxsearch3.Text = "";
-            textboxsearch4.Text = "";
-            textboxsearch5.Text = "";
-            textboxsearch6.Text = "";
         }
 
         private void btnAdvancedSearch_Click(object sender, EventArgs e)
@@ -118,9 +108,5 @@ namespace QuanLyKhachSan
             }
         }
 
-        private void dtgvListBill_SelectionChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

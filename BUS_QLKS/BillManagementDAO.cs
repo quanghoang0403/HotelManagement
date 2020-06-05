@@ -21,7 +21,7 @@ namespace QuanLyKhachSan.DAO
         public List<Bill> LoadBillList()
         {
             List<Bill> BillList = new List<Bill>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetinfoBillList");
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetBillList");
             foreach (DataRow item in data.Rows)
             {
                 Bill ib = new Bill(item);
@@ -31,7 +31,7 @@ namespace QuanLyKhachSan.DAO
         }
         public DataTable SearchBill(string condition)
         {
-            string query = "select BILL.id_bill,bill_name,bill_address,total_money,id_checkin,date_number,surchage_ratio from dbo.BILL,dbo.BILL_DETAILS where BILL.id_bill=BILL_DETAILS.id_bill"+condition;
+            string query = "select * from dbo.BILL where "+condition;
             return DataProvider.Instance.ExecuteQuery(query);
         }
     }

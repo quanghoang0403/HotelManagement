@@ -123,8 +123,8 @@ AS SELECT * FROM AMOUNT
 GO
 
 --tạo proc hiển thị billist
-CREATE PROC USP_GetinfoBillList
-AS select BILL.id_bill,bill_name,bill_address,total_money,id_checkin,date_number,surchage_ratio from dbo.BILL,dbo.BILL_DETAILS where BILL.id_bill=BILL_DETAILS.id_bill
+CREATE PROC USP_GetBillList
+AS select * from dbo.BILL
 go
 
 --tạo proc hiển thị checkinlist
@@ -246,4 +246,3 @@ WHERE BD.id_checkin = C.id_checkin
 select * from CHECKIN
 select * from BILL
 --SHOW THONG TIN PHONG CUA HON DON THANH TOAN
-
