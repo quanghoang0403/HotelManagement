@@ -40,9 +40,12 @@ namespace QuanLyKhachSan.DAO
             }
                 return CustomerTypeList;
             }
-            public void ChangeAmount(float customer_ratio,int max_customer,int amount_surchage)
+            public void ChangeAmount(string customer_ratio,string max_customer,string amount_surchage)
             {
-                
+                string query1 = "delete from dbo.AMOUNT";
+                DataProvider.Instance.ExecuteQuery(query1);
+                string query = "INSERT INTO AMOUNT VALUES('" + customer_ratio + "','" + max_customer + "','" + amount_surchage + "')";
+                DataProvider.Instance.ExecuteQuery(query);
             }
             public void AddCustomertype(string customer_type,string ratio)
             {

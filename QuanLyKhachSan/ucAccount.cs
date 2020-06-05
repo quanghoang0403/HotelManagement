@@ -142,6 +142,11 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
+            SettingDAO.Instance.ChangeAmount(txbRatio.Text, txbMax.Text, txbMaxSurcharge.Text);
+            LoadAmount();
+            txbRatio.Text = "";
+            txbMax.Text = "";
+            txbMaxSurcharge.Text = "";
         }
 
         private void btnAddType_Click(object sender, EventArgs e)
@@ -207,18 +212,6 @@ namespace QuanLyKhachSan
             {
                 panel6.Visible = false;
                 panel15.Visible = false;
-            }
-        }
-
-        private void dtgvType_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dtgvType.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dtgvType.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtgvType.Rows[selectedrowindex];
-                txbMax.Text = Convert.ToString(selectedRow.Cells["max_customer"].Value);
-                txbRatio.Text = Convert.ToString(selectedRow.Cells["customer_ratio"].Value);
-                txbMaxSurcharge.Text = Convert.ToString(selectedRow.Cells["amount_surchage"].Value);
             }
         }
 
