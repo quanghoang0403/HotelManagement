@@ -87,16 +87,16 @@
             this.label17 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.dtgvCustomertype = new System.Windows.Forms.DataGridView();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
             this.txbOldratio = new System.Windows.Forms.TextBox();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
             this.txbOldct = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dtgvCustomertype = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -116,10 +116,10 @@
             this.panel12.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomertype)).BeginInit();
             this.panel17.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomertype)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -613,7 +613,6 @@
             this.dtgvType.RowTemplate.Height = 24;
             this.dtgvType.Size = new System.Drawing.Size(527, 60);
             this.dtgvType.TabIndex = 0;
-            this.dtgvType.SelectionChanged += new System.EventHandler(this.dtgvType_SelectionChanged);
             // 
             // panel13
             // 
@@ -768,29 +767,6 @@
             this.panel16.Size = new System.Drawing.Size(573, 292);
             this.panel16.TabIndex = 32;
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(35, 10);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(231, 25);
-            this.label19.TabIndex = 39;
-            this.label19.Text = "Phụ thu cho loại khách";
-            // 
-            // dtgvCustomertype
-            // 
-            this.dtgvCustomertype.AllowUserToAddRows = false;
-            this.dtgvCustomertype.AllowUserToDeleteRows = false;
-            this.dtgvCustomertype.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCustomertype.Location = new System.Drawing.Point(40, 48);
-            this.dtgvCustomertype.Name = "dtgvCustomertype";
-            this.dtgvCustomertype.ReadOnly = true;
-            this.dtgvCustomertype.Size = new System.Drawing.Size(250, 175);
-            this.dtgvCustomertype.TabIndex = 40;
-            this.dtgvCustomertype.SelectionChanged += new System.EventHandler(this.dtgvCustomertype_SelectionChanged);
-            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
@@ -803,6 +779,17 @@
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(35, 10);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(231, 25);
+            this.label19.TabIndex = 39;
+            this.label19.Text = "Phụ thu cho loại khách";
             // 
             // panel17
             // 
@@ -853,6 +840,15 @@
             this.panel21.Size = new System.Drawing.Size(223, 38);
             this.panel21.TabIndex = 0;
             // 
+            // txbOldct
+            // 
+            this.txbOldct.Enabled = false;
+            this.txbOldct.Location = new System.Drawing.Point(111, 8);
+            this.txbOldct.Margin = new System.Windows.Forms.Padding(2);
+            this.txbOldct.Name = "txbOldct";
+            this.txbOldct.Size = new System.Drawing.Size(97, 20);
+            this.txbOldct.TabIndex = 5;
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -864,14 +860,17 @@
             this.label21.TabIndex = 4;
             this.label21.Text = "Loại KH:";
             // 
-            // txbOldct
+            // dtgvCustomertype
             // 
-            this.txbOldct.Enabled = false;
-            this.txbOldct.Location = new System.Drawing.Point(111, 8);
-            this.txbOldct.Margin = new System.Windows.Forms.Padding(2);
-            this.txbOldct.Name = "txbOldct";
-            this.txbOldct.Size = new System.Drawing.Size(97, 20);
-            this.txbOldct.TabIndex = 5;
+            this.dtgvCustomertype.AllowUserToAddRows = false;
+            this.dtgvCustomertype.AllowUserToDeleteRows = false;
+            this.dtgvCustomertype.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCustomertype.Location = new System.Drawing.Point(40, 48);
+            this.dtgvCustomertype.Name = "dtgvCustomertype";
+            this.dtgvCustomertype.ReadOnly = true;
+            this.dtgvCustomertype.Size = new System.Drawing.Size(250, 175);
+            this.dtgvCustomertype.TabIndex = 40;
+            this.dtgvCustomertype.SelectionChanged += new System.EventHandler(this.dtgvCustomertype_SelectionChanged);
             // 
             // ucAccount
             // 
@@ -919,12 +918,12 @@
             this.panel15.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomertype)).EndInit();
             this.panel17.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomertype)).EndInit();
             this.ResumeLayout(false);
 
         }
