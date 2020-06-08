@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.BUS;
 
 namespace QuanLyKhachSan
 {
@@ -49,7 +49,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Mật khẩu nhập lại không khớp mật khẩu mới tạo !");
                 return;
             }          
-            SettingDAO.Instance.ChangePass(txbUserName.Text,txbNewPass.Text);
+            SettingBUS.Instance.ChangePass(txbUserName.Text,txbNewPass.Text);
             MessageBox.Show("Đã đổi thành công !");
             btnRemoveChangePass.PerformClick();
         }
@@ -78,7 +78,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Mật khẩu nhập lại không khớp mật khẩu mới tạo");
                 return;
             }
-            SettingDAO.Instance.Signin(txbSignin_Username.Text, txbSignin_Password.Text, txbSignin_Name.Text, comboBox_Permission.Text);
+            SettingBUS.Instance.Signin(txbSignin_Username.Text, txbSignin_Password.Text, txbSignin_Name.Text, comboBox_Permission.Text);
             MessageBox.Show("Đã tạo tài khoản thành công !");
             btnRemoveSignin.PerformClick();          
         }
@@ -97,11 +97,11 @@ namespace QuanLyKhachSan
 
         void LoadAmount()
         {
-            dtgvType.DataSource = SettingDAO.Instance.LoadAmountList();
+            dtgvType.DataSource = SettingBUS.Instance.LoadAmountList();
         }
         void LoadCustomerType()
         {
-            dtgvCustomertype.DataSource = SettingDAO.Instance.LoadCustomerTypeList();
+            dtgvCustomertype.DataSource = SettingBUS.Instance.LoadCustomerTypeList();
         }
         private void txbMax_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -142,7 +142,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
-            SettingDAO.Instance.ChangeAmount(txbRatio.Text, txbMax.Text, txbMaxSurcharge.Text);
+            SettingBUS.Instance.ChangeAmount(txbRatio.Text, txbMax.Text, txbMaxSurcharge.Text);
             LoadAmount();
             txbRatio.Text = "";
             txbMax.Text = "";
@@ -164,7 +164,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
-            SettingDAO.Instance.AddCustomertype(txbTypeCustomer.Text, txbPrice.Text);
+            SettingBUS.Instance.AddCustomertype(txbTypeCustomer.Text, txbPrice.Text);
             MessageBox.Show("Đã thêm thành công !");
             LoadCustomerType();
             btnCancel.PerformClick();
@@ -176,7 +176,7 @@ namespace QuanLyKhachSan
             switch (result)
             {
                 case DialogResult.Yes:
-                    SettingDAO.Instance.DeleteCustomertype(txbOldct.Text);
+                    SettingBUS.Instance.DeleteCustomertype(txbOldct.Text);
                     LoadCustomerType();
                     break;
                 case DialogResult.No:
@@ -200,7 +200,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
-            SettingDAO.Instance.UpdateCustomertype(txbOldct.Text,txbOldratio.Text);
+            SettingBUS.Instance.UpdateCustomertype(txbOldct.Text,txbOldratio.Text);
             MessageBox.Show("Cập nhật thành công !");
             LoadCustomerType();
             btnCancel.PerformClick();

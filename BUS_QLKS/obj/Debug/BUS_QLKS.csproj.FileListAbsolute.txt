@@ -30,3 +30,13 @@ C:\Users\Admin\Documents\GitHub\HotelManagement\BUS_QLKS\obj\Debug\BUS_QLKS.cspr
 C:\Users\Admin\Documents\GitHub\HotelManagement\BUS_QLKS\obj\Debug\BUS_QLKS.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\HotelManagement\BUS_QLKS\obj\Debug\BUS_QLKS.dll
 C:\Users\Admin\Documents\GitHub\HotelManagement\BUS_QLKS\obj\Debug\BUS_QLKS.pdb
+C:\Users\Thi Chuong\source\repos\HotelManagement\BUS_QLKS\bin\Debug\BUS_QLKS.dll
+C:\Users\Thi Chuong\source\repos\HotelManagement\BUS_QLKS\bin\Debug\BUS_QLKS.pdb
+C:\Users\Thi Chuong\source\repos\HotelManagement\BUS_QLKS\bin\Debug\DTA_QLKS.dll
+C:\Users\Thi Chuong\source\repos\HotelManagement\BUS_QLKS\bin\Debug\DTO_QLKS.dll
+C:\Users\Thi Chuong\source\repos\HotelManagement\BUS_QLKS\bin\Debug\DTA_QLKS.pdb
+C:\Users\Thi Chuong\source\repos\HotelManagement\BUS_QLKS\bin\Debug\DTO_QLKS.pdb
+C:\Users\Thi Chuong\source\repos\HotelManagement\BUS_QLKS\obj\Debug\BUS_QLKS.csprojAssemblyReference.cache
+C:\Users\Thi Chuong\source\repos\HotelManagement\BUS_QLKS\obj\Debug\BUS_QLKS.csproj.CopyComplete
+C:\Users\Thi Chuong\source\repos\HotelManagement\BUS_QLKS\obj\Debug\BUS_QLKS.dll
+C:\Users\Thi Chuong\source\repos\HotelManagement\BUS_QLKS\obj\Debug\BUS_QLKS.pdb

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyKhachSan.DTO;
-using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.BUS;
 
 namespace QuanLyKhachSan
 {
@@ -22,11 +22,11 @@ namespace QuanLyKhachSan
 
         void LoadHome()
         {
-            List<Home> RoomList = HomeDAO.Instance.LoadRoomList();
+            List<Home> RoomList = HomeBUS.Instance.LoadRoomList();
 
             foreach (Home item in RoomList)
             {
-                Button btn = new Button() { Width = HomeDAO.RoomWidth, Height = HomeDAO.RoomHeight };
+                Button btn = new Button() { Width = HomeBUS.RoomWidth, Height = HomeBUS.RoomHeight };
                 btn.Text = item.ID + Environment.NewLine + item.Status;
                 btn.Tag = item;
                 btn.Click += btn_Click;

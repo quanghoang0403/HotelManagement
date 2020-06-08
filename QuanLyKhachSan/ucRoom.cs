@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.BUS;
 
 namespace QuanLyKhachSan
 {
@@ -50,7 +50,7 @@ namespace QuanLyKhachSan
 
         void LoadRoomType()
         {
-            dtgvType.DataSource = HomeDAO.Instance.LoadRoomType();
+            dtgvType.DataSource = HomeBUS.Instance.LoadRoomType();
         }
 
         void CleanTextinRoomType()
@@ -80,7 +80,7 @@ namespace QuanLyKhachSan
 
         void LoadRoom()
         {
-            dtgvRoom.DataSource = HomeDAO.Instance.LoadRoom();
+            dtgvRoom.DataSource = HomeBUS.Instance.LoadRoom();
         }
 
         void CleanTextinRoom()
@@ -138,7 +138,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Loại phòng hoặc đơn giá chưa được nhập");
                 return;
             }
-            RoomManagementDAO.Instance.AddRoomType(txbTypeRoom.Text, txbPrice.Text);
+            RoomManagementBUS.Instance.AddRoomType(txbTypeRoom.Text, txbPrice.Text);
             MessageBox.Show("Đã thêm thành công !");
             LoadRoomType();
             btnCancelRoomType.PerformClick();
@@ -150,7 +150,7 @@ namespace QuanLyKhachSan
             switch (result)
             {
                case DialogResult.Yes:
-                    RoomManagementDAO.Instance.DeleteRoomType(txbOldTypeRoom.Text);
+                    RoomManagementBUS.Instance.DeleteRoomType(txbOldTypeRoom.Text);
                     LoadRoomType();
                     break;
                case DialogResult.No:
@@ -179,7 +179,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Thông tin chưa được thay đổi !");
                 return;
             }
-            RoomManagementDAO.Instance.UpdateRoomType(txbOldTypeRoom.Text, txbOldPrice.Text, txbNewTypeRoom.Text, txbNewPrice.Text);
+            RoomManagementBUS.Instance.UpdateRoomType(txbOldTypeRoom.Text, txbOldPrice.Text, txbNewTypeRoom.Text, txbNewPrice.Text);
             MessageBox.Show("Cập nhật thành công !");
             LoadRoomType();
             LoadRoom();
@@ -213,7 +213,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng nhập mã số phòng");
                 return;
             }
-            DataTable result=RoomManagementDAO.Instance.SearchRoom(txbID.Text);
+            DataTable result=RoomManagementBUS.Instance.SearchRoom(txbID.Text);
             txbType.Text = result.Rows[0].Field<string>(1);
             txbUnitPrice.Text = Convert.ToString(result.Rows[0].Field<Decimal>(2));
             txbNotes.Text = result.Rows[0].Field<string>(3);
@@ -250,7 +250,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng nhập trình trạng phòng");
                 return;
             }
-            RoomManagementDAO.Instance.AddRoom(txbID.Text, txbType.Text, txbNotes.Text, txbStatus.Text);
+            RoomManagementBUS.Instance.AddRoom(txbID.Text, txbType.Text, txbNotes.Text, txbStatus.Text);
             MessageBox.Show("Đã thêm thành công !");
             LoadRoom();
             btnCancelRoom.PerformClick();
@@ -262,7 +262,7 @@ namespace QuanLyKhachSan
             switch (result)
             {
                 case DialogResult.Yes:
-                    RoomManagementDAO.Instance.DeleteRoom(txbOldID.Text);
+                    RoomManagementBUS.Instance.DeleteRoom(txbOldID.Text);
                     LoadRoom();
                     break;
                 case DialogResult.No:
@@ -295,7 +295,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng nhập trình trạng phòng");
                 return;
             }
-            RoomManagementDAO.Instance.UpdateRoom(txbOldID.Text,txbNewType.Text, txbNewNote.Text, txbNewStatus.Text);
+            RoomManagementBUS.Instance.UpdateRoom(txbOldID.Text,txbNewType.Text, txbNewNote.Text, txbNewStatus.Text);
             MessageBox.Show("Cập nhật thành công !");
             LoadRoom();
             btnCancelRoom.PerformClick();

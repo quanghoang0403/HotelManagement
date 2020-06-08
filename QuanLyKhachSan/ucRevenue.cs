@@ -6,7 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.BUS;
 using QuanLyKhachSan.DTO;
 using System.Windows.Forms;
 
@@ -21,7 +21,7 @@ namespace QuanLyKhachSan
         }
         private void LoadIncomelist()
         {
-            dtgvIncome.DataSource=RevenueDAO.Instance.LoadRevenueList(dateMonth.Value.Month.ToString(), dateMonth.Value.Year.ToString());
+            dtgvIncome.DataSource=RevenueBUS.Instance.LoadRevenueList(dateMonth.Value.Month.ToString(), dateMonth.Value.Year.ToString());
         }
         private void btnExport_Click(object sender, EventArgs e)
         {

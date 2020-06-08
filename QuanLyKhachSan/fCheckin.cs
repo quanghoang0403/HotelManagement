@@ -1,4 +1,4 @@
-﻿using QuanLyKhachSan.DAO;
+﻿using QuanLyKhachSan.BUS;
 using QuanLyKhachSan.DTO;
 using System;
 using System.Collections.Generic;
@@ -24,7 +24,7 @@ namespace QuanLyKhachSan
         void ShowInfo(int id)
         {
             lvRoom.Items.Clear();
-            List<infoCheckin> listCheckinInfo = infoCheckinDAO.Instance.GetListCheckinInfo(id);
+            List<infoCheckin> listCheckinInfo = infoCheckinBUS.Instance.GetListCheckinInfo(id);
             foreach (infoCheckin item in listCheckinInfo)
             {
                 ListViewItem lvItem = new ListViewItem(item.Name.ToString());
@@ -37,7 +37,7 @@ namespace QuanLyKhachSan
 
         void LoadType()
         {
-            List<CustomerType> listType = CustomerTypeDAO.Instance.GetListType();
+            List<CustomerType> listType = CustomerTypeBUS.Instance.GetListType();
             cbType.DataSource = listType;
             cbType.DisplayMember = "name";
         }
@@ -49,9 +49,9 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng");
                 return ;
             }
-            if (infoCheckinDAO.Instance.insertCheckinInfo(txbName.Text, cbType.Text, txbCMND.Text, txbAddress.Text, infoCheckinDAO.Instance.GetMaxIDCheckin()))
+            if (infoCheckinBUS.Instance.insertCheckinInfo(txbName.Text, cbType.Text, txbCMND.Text, txbAddress.Text, infoCheckinBUS.Instance.GetMaxIDCheckin()))
             {
-                ShowInfo(infoCheckinDAO.Instance.GetMaxIDCheckin());
+                ShowInfo(infoCheckinBUS.Instance.GetMaxIDCheckin());
                 txbName.Text = "";
                 cbType.Text = "";
                 txbCMND.Text = "";
@@ -70,18 +70,18 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng nhập ID phòng");
                 return;
             }
-            if(HomeDAO.Instance.GetStatusRoom(txbID.Text)==1)
+            if(HomeBUS.Instance.GetStatusRoom(txbID.Text)==1)
             {
                 MessageBox.Show("Phòng đang được thuê");
                 return;
             }
-            if(HomeDAO.Instance.GetStatusRoom(txbID.Text) == -1)
+            if(HomeBUS.Instance.GetStatusRoom(txbID.Text) == -1)
             {
                 MessageBox.Show("Phòng không tồn tại");
                 return;
             }
             
-            if (infoCheckinDAO.Instance.insertCheckin(dateStartDate.Value, txbID.Text))
+            if (infoCheckinBUS.Instance.insertCheckin(dateStartDate.Value, txbID.Text))
             {
                 MessageBox.Show("Tạo thành công, vui lòng nhập thông tin khách hàng");
                 panel1.Visible = true;
@@ -101,12 +101,12 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Thêm khách trước khi xuất phiếu");
                 return;
             }
-            int id_checkin = infoCheckinDAO.Instance.GetMaxIDCheckin();
-            float ratio = infoCheckinDAO.Instance.GetMaxRatio(id_checkin);
-            int count = infoCheckinDAO.Instance.GetAmountCustomer(id_checkin);
-            if (infoCheckinDAO.Instance.updateCheckin(ratio, count, id_checkin))
+            int id_checkin = infoCheckinBUS.Instance.GetMaxIDCheckin();
+            float ratio = infoCheckinBUS.Instance.GetMaxRatio(id_checkin);
+            int count = infoCheckinBUS.Instance.GetAmountCustomer(id_checkin);
+            if (infoCheckinBUS.Instance.updateCheckin(ratio, count, id_checkin))
             {
-                HomeDAO.Instance.updateHomeByCreateCheckin(txbID.Text);
+                HomeBUS.Instance.updateHomeByCreateCheckin(txbID.Text);
                 string output = string.Format("Xuất phiếu thành công, mã phiếu của bạn là {0}", id_checkin);
                 MessageBox.Show(output);
                 panel1.Visible = false;
