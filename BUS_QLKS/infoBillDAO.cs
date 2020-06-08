@@ -36,6 +36,17 @@ namespace QuanLyKhachSan.DAO
             return listBillInfo;
         }
 
+        public int GetStatusCheckin(int id_checkin)
+        {
+            string query = string.Format("select status_checkin from CHECKIN where id_checkin = @id_checkin");
+            object Status = DataProvider.Instance.ExecuteScalar(query, new object[] { id_checkin});
+            if (Status == null)
+                return -1;
+            if (Status.ToString() == "DONE")
+                return 1;
+            return 0;
+        }
+
         public string GetIdRoom(int id_checkin)
         {
             try

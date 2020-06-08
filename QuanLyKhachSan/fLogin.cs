@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.BUS;
 
 namespace QuanLyKhachSan
 {
@@ -27,6 +27,7 @@ namespace QuanLyKhachSan
             {
                 fHotelManager f = new fHotelManager();
                 this.Hide();
+                f.Permission_to_access = IsManager(userName);
                 f.ShowDialog();
             }
             else
@@ -37,7 +38,14 @@ namespace QuanLyKhachSan
 
         bool Login(string userName, string passWord)
         {
-            return LoginDAO.Instance.Login(userName, passWord);
+            return LoginBUS.Instance.Login(userName, passWord);
+        }
+        bool IsManager(string username)
+        {
+            if (PermissionBUS.Instance.Permission(username) == "Manager")
+                return true;
+            else
+                return false;
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

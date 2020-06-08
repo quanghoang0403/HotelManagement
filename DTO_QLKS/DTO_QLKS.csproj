@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amount.cs" />
+    <Compile Include="Bill.cs" />
+    <Compile Include="Checkin.cs" />
     <Compile Include="CustomerType.cs" />
     <Compile Include="Home.cs" />
     <Compile Include="infoBill.cs" />

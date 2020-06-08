@@ -1,4 +1,4 @@
-﻿using QuanLyKhachSan.DAO;
+﻿using QuanLyKhachSan.BUS;
 using QuanLyKhachSan.DTO;
 using System;
 using System.Collections.Generic;
@@ -23,7 +23,7 @@ namespace QuanLyKhachSan
         void ShowInfo(int id_bill, int id_checkin)
         {
             //lvBill.Items.Clear();
-            List<infoBill> listBillInfo = infoBillDAO.Instance.GetListBillInfo(id_bill, id_checkin);
+            List<infoBill> listBillInfo = infoBillBUS.Instance.GetListBillInfo(id_bill, id_checkin);
             float bill_price = Int32.Parse(txbTotalMoney.Text);
             foreach (infoBill item in listBillInfo)
             {
@@ -33,7 +33,7 @@ namespace QuanLyKhachSan
                 lvItem.SubItems.Add(item.Type_ratio.ToString());
                 lvItem.SubItems.Add(item.Number_ratio.ToString());
                 lvItem.SubItems.Add(item.Total_price.ToString());
-                infoBillDAO.Instance.updateCheckin(item.Total_price, id_checkin);
+                infoBillBUS.Instance.updateCheckin(item.Total_price, id_checkin);
                 bill_price += item.Total_price;
                 lvBill.Items.Add(lvItem);
             }
@@ -47,7 +47,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng nhập tên khách hoặc địa chỉ");
             }
             else
-            if (infoBillDAO.Instance.insertBill(txbName.Text, txbAddress.Text))
+            if (infoBillBUS.Instance.insertBill(txbName.Text, txbAddress.Text))
             {
                 MessageBox.Show("Tạo thành công, vui lòng nhập mã phiếu của phòng cần thanh toán");
                 lvBill.Items.Clear();
@@ -63,25 +63,35 @@ namespace QuanLyKhachSan
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            int id_checkin = int.Parse(txbIDCheckin.Text.ToString());
             if (txbIDCheckin.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập mã phiếu");
                 return;
             }
-            int id_bill = infoBillDAO.Instance.GetMaxIDBill();
-            int id_checkin = int.Parse(txbIDCheckin.Text.ToString());
-            int amount_surchage = infoBillDAO.Instance.GetAmountSurchage();
-            int number_customer = infoBillDAO.Instance.GetNumberCustomer(id_checkin);
-            float ratio = infoBillDAO.Instance.GetRatioCustomer();
-            DateTime date_start = infoBillDAO.Instance.GetDate(id_checkin);
+            if (infoBillBUS.Instance.GetStatusCheckin(id_checkin) == 1)
+            {
+                MessageBox.Show("Phiếu đã được thanh toán");
+                return;
+            }
+            if (infoBillBUS.Instance.GetStatusCheckin(id_checkin) == -1)
+            {
+                MessageBox.Show("Phiếu không tồn tại");
+                return;
+            }
+            int id_bill = infoBillBUS.Instance.GetMaxIDBill();
+            int amount_surchage = infoBillBUS.Instance.GetAmountSurchage();
+            int number_customer = infoBillBUS.Instance.GetNumberCustomer(id_checkin);
+            float ratio = infoBillBUS.Instance.GetRatioCustomer();
+            DateTime date_start = infoBillBUS.Instance.GetDate(id_checkin);
             TimeSpan time = DateTime.Now - date_start;
             int date_number = time.Days + 1;
-            if (infoBillDAO.Instance.updateBillInfo(id_bill, id_checkin, amount_surchage, number_customer, ratio, date_number))
+            if (infoBillBUS.Instance.updateBillInfo(id_bill, id_checkin, amount_surchage, number_customer, ratio, date_number))
             {
                 ShowInfo(id_bill, id_checkin);
                 MessageBox.Show("Thêm phòng thành công");
-                string id_room = infoBillDAO.Instance.GetIdRoom(id_checkin);
-                HomeDAO.Instance.updateHomeByCreateBill(id_room);
+                string id_room = infoBillBUS.Instance.GetIdRoom(id_checkin);
+                HomeBUS.Instance.updateHomeByCreateBill(id_room);
             }
             else
             {
@@ -96,9 +106,9 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Thêm ID phiếu trước khi xuất hóa đơn");
                 return;
             }
-            int id_bill = infoBillDAO.Instance.GetMaxIDBill();
+            int id_bill = infoBillBUS.Instance.GetMaxIDBill();
             float total_money = Int32.Parse(txbTotalMoney.Text);
-            if (infoBillDAO.Instance.updateBill(total_money, id_bill))
+            if (infoBillBUS.Instance.updateBill(total_money, id_bill))
             {
                 MessageBox.Show("Xuất hóa đơn thành công");
                 panel1.Visible = false;
