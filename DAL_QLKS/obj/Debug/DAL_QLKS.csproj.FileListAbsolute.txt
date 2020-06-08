@@ -24,3 +24,11 @@ C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\obj\Debug\DAL_QLKS.cspr
 C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\obj\Debug\DAL_QLKS.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\obj\Debug\DTA_QLKS.dll
 C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\obj\Debug\DTA_QLKS.pdb
+C:\Users\Thi Chuong\source\repos\HotelManagement\DAL_QLKS\bin\Debug\DTA_QLKS.dll
+C:\Users\Thi Chuong\source\repos\HotelManagement\DAL_QLKS\bin\Debug\DTA_QLKS.pdb
+C:\Users\Thi Chuong\source\repos\HotelManagement\DAL_QLKS\bin\Debug\DTO_QLKS.dll
+C:\Users\Thi Chuong\source\repos\HotelManagement\DAL_QLKS\bin\Debug\DTO_QLKS.pdb
+C:\Users\Thi Chuong\source\repos\HotelManagement\DAL_QLKS\obj\Debug\DAL_QLKS.csprojAssemblyReference.cache
+C:\Users\Thi Chuong\source\repos\HotelManagement\DAL_QLKS\obj\Debug\DAL_QLKS.csproj.CopyComplete
+C:\Users\Thi Chuong\source\repos\HotelManagement\DAL_QLKS\obj\Debug\DTA_QLKS.dll
+C:\Users\Thi Chuong\source\repos\HotelManagement\DAL_QLKS\obj\Debug\DTA_QLKS.pdb
