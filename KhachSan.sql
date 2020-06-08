@@ -51,7 +51,7 @@ CREATE TABLE ROOM
 	notes NVARCHAR(100),
 	statuss NVARCHAR(100),
 
-	FOREIGN KEY (room_type) REFERENCES ROOMTYPE(room_type)
+	FOREIGN KEY (room_type) REFERENCES ROOMTYPE(room_type) ON UPDATE CASCADE 
 )
 
 INSERT INTO ROOM VALUES('1','A','','EMPTY')
@@ -115,6 +115,26 @@ CREATE TABLE BILL_DETAILS
 --tạo proc hiển thị roomlist
 CREATE PROC USP_GetRoomList
 AS SELECT * FROM ROOM
+GO
+
+--tạo proc hiển thị amountlist
+CREATE PROC USP_GetAmountList
+AS SELECT * FROM AMOUNT
+GO
+
+--tạo proc hiển thị billist
+CREATE PROC USP_GetBillList
+AS select * from dbo.BILL
+go
+
+--tạo proc hiển thị checkinlist
+CREATE PROC USP_GetCheckinlist
+AS SELECT * FROM CHECKIN
+GO
+
+--tạo proc hiển thị customertypelist
+CREATE PROC USP_GetCustomertypeList
+AS SELECT * FROM CUSTOMER_TYPE
 GO
 
 --tạo proc đăng nhập tránh injection

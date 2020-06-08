@@ -215,11 +215,6 @@ namespace QuanLyKhachSan
 
         }
 
-        private void dateStartDate_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -241,6 +236,11 @@ namespace QuanLyKhachSan
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateStartDate_ValueChanged(object sender, EventArgs e)
         {
 
         }

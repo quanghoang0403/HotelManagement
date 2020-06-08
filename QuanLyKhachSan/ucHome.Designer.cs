@@ -36,9 +36,10 @@
             // 
             // flpHome
             // 
-            this.flpHome.Location = new System.Drawing.Point(99, 110);
+            this.flpHome.Location = new System.Drawing.Point(74, 89);
+            this.flpHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flpHome.Name = "flpHome";
-            this.flpHome.Size = new System.Drawing.Size(1044, 600);
+            this.flpHome.Size = new System.Drawing.Size(783, 488);
             this.flpHome.TabIndex = 11;
             // 
             // btnAddCheckin
@@ -46,9 +47,10 @@
             this.btnAddCheckin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
             this.btnAddCheckin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCheckin.ForeColor = System.Drawing.Color.White;
-            this.btnAddCheckin.Location = new System.Drawing.Point(1210, 165);
+            this.btnAddCheckin.Location = new System.Drawing.Point(908, 134);
+            this.btnAddCheckin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddCheckin.Name = "btnAddCheckin";
-            this.btnAddCheckin.Size = new System.Drawing.Size(250, 104);
+            this.btnAddCheckin.Size = new System.Drawing.Size(188, 84);
             this.btnAddCheckin.TabIndex = 12;
             this.btnAddCheckin.Text = "Tạo phiếu thuê phòng ";
             this.btnAddCheckin.UseVisualStyleBackColor = false;
@@ -59,9 +61,10 @@
             this.btnAddBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
             this.btnAddBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddBill.ForeColor = System.Drawing.Color.White;
-            this.btnAddBill.Location = new System.Drawing.Point(1210, 354);
+            this.btnAddBill.Location = new System.Drawing.Point(908, 288);
+            this.btnAddBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddBill.Name = "btnAddBill";
-            this.btnAddBill.Size = new System.Drawing.Size(250, 109);
+            this.btnAddBill.Size = new System.Drawing.Size(188, 89);
             this.btnAddBill.TabIndex = 13;
             this.btnAddBill.Text = "Thanh toán hóa đơn";
             this.btnAddBill.UseVisualStyleBackColor = false;
@@ -72,9 +75,10 @@
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(1210, 558);
+            this.btnRefresh.Location = new System.Drawing.Point(908, 453);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(250, 103);
+            this.btnRefresh.Size = new System.Drawing.Size(188, 84);
             this.btnRefresh.TabIndex = 14;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
@@ -82,14 +86,15 @@
             // 
             // ucHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAddBill);
             this.Controls.Add(this.btnAddCheckin);
             this.Controls.Add(this.flpHome);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ucHome";
-            this.Size = new System.Drawing.Size(1504, 801);
+            this.Size = new System.Drawing.Size(1128, 651);
             this.Load += new System.EventHandler(this.UcHome_Load);
             this.ResumeLayout(false);
 

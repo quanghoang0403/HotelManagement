@@ -41,12 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillManagementDAO.cs" />
+    <Compile Include="CheckinManagementDAO.cs" />
     <Compile Include="CustomerTypeDAO.cs" />
     <Compile Include="HomeDAO.cs" />
     <Compile Include="infoBillDAO.cs" />
     <Compile Include="infoCheckinDAO.cs" />
     <Compile Include="LoginDAO.cs" />
+    <Compile Include="PermissionDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RevenueDAO.cs" />
+    <Compile Include="RoomManagementDAO.cs" />
+    <Compile Include="SettingDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL_QLKS\DAL_QLKS.csproj">

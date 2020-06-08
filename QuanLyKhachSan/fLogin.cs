@@ -27,6 +27,7 @@ namespace QuanLyKhachSan
             {
                 fHotelManager f = new fHotelManager();
                 this.Hide();
+                f.Permission_to_access = IsManager(userName);
                 f.ShowDialog();
             }
             else
@@ -38,6 +39,13 @@ namespace QuanLyKhachSan
         bool Login(string userName, string passWord)
         {
             return LoginDAO.Instance.Login(userName, passWord);
+        }
+        bool IsManager(string username)
+        {
+            if (PermissionDAO.Instance.Permission(username) == "Manager")
+                return true;
+            else
+                return false;
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
