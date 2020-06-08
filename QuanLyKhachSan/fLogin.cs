@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.BUS;
 
 namespace QuanLyKhachSan
 {
@@ -38,11 +38,11 @@ namespace QuanLyKhachSan
 
         bool Login(string userName, string passWord)
         {
-            return LoginDAO.Instance.Login(userName, passWord);
+            return LoginBUS.Instance.Login(userName, passWord);
         }
         bool IsManager(string username)
         {
-            if (PermissionDAO.Instance.Permission(username) == "Manager")
+            if (PermissionBUS.Instance.Permission(username) == "Manager")
                 return true;
             else
                 return false;

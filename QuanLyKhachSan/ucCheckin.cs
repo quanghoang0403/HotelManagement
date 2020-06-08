@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.BUS;
 using QuanLyKhachSan.DTO;
 
 namespace QuanLyKhachSan
@@ -28,12 +28,12 @@ namespace QuanLyKhachSan
 
         void LoadCheckin()
         {
-            dtgvList.DataSource=CheckinManagementDAO.Instance.LoadCheckinList();
+            dtgvList.DataSource=CheckinManagementBUS.Instance.LoadCheckinList();
         }
 
         void LoadRatio()
         {
-            List<CustomerType> listRatio = CustomerTypeDAO.Instance.GetListType();
+            List<CustomerType> listRatio = CustomerTypeBUS.Instance.GetListType();
             textboxsearch4.DataSource = listRatio;
             textboxsearch4.DisplayMember = "ratio";
         }
@@ -109,7 +109,7 @@ namespace QuanLyKhachSan
                 AdvancedSearch(ref insert);
             else
                 insert = " id_checkin='" + txbSearch.Text + "'";
-            dtgvList.DataSource = CheckinManagementDAO.Instance.SearchCheckin(insert);
+            dtgvList.DataSource = CheckinManagementBUS.Instance.SearchCheckin(insert);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

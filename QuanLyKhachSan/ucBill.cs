@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.BUS;
 using QuanLyKhachSan.DTO;
 
 namespace QuanLyKhachSan
@@ -27,7 +27,7 @@ namespace QuanLyKhachSan
 
         void LoadBill()
         {
-            dtgvListBill.DataSource = BillManagementDAO.Instance.LoadBillList();
+            dtgvListBill.DataSource = BillManagementBUS.Instance.LoadBillList();
         }
 
         void AdvancedSearch(ref string insert)
@@ -68,7 +68,7 @@ namespace QuanLyKhachSan
                 AdvancedSearch(ref insert);
             else
             insert = " id_bill='" + txbSearch.Text + "'";
-            dtgvListBill.DataSource = BillManagementDAO.Instance.SearchBill(insert);
+            dtgvListBill.DataSource = BillManagementBUS.Instance.SearchBill(insert);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
