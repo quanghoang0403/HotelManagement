@@ -22,8 +22,7 @@ namespace QuanLyKhachSan.DAL
 
         public int GetStatusRoom(string id_room)
         {
-            string query = string.Format("select statuss from ROOM where id_room = @id_room");
-            object Status = DataProvider.Instance.ExecuteScalar(query, new object[] { id_room });
+            object Status = DataProvider.Instance.ExecuteScalar("exec USP_GetStatus @id_room ", new object[] { id_room });
             if (Status == null)
                 return -1;
             if (Status.ToString() == "USING")
@@ -40,25 +39,25 @@ namespace QuanLyKhachSan.DAL
 
         public bool updateHomeByCreateCheckin(string id_room)
         {
-            string query = string.Format("update ROOM set statuss = 'USING' where id_room = {0}", id_room);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            string status = "USING";
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateHome @id_room , @statuss ", new object[] { id_room, status });
             return result > 0;
         }
 
         public bool updateHomeByCreateBill(string id_room)
         {
-            string query = string.Format("update ROOM set statuss = 'EMPTY' where id_room = {0}", id_room);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            string status = "EMPTY";
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateHome @id_room , @statuss ", new object[] { id_room, status });
             return result > 0;
         }
         public DataTable LoadRoom()
         {
-            string query = "SELECT * FROM DBO.ROOM";
+            string query = "USP_GetRoom";
             return DataProvider.Instance.ExecuteQuery(query);
         }
         public DataTable LoadRoomType()
         {
-            string query = "SELECT * FROM DBO.ROOMTYPE";
+            string query = "USP_GetRoomType";
             return  DataProvider.Instance.ExecuteQuery(query);
         }
     }

@@ -179,7 +179,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Thông tin chưa được thay đổi !");
                 return;
             }
-            RoomManagementBUS.Instance.UpdateRoomType(txbOldTypeRoom.Text, txbOldPrice.Text, txbNewTypeRoom.Text, txbNewPrice.Text);
+            RoomManagementBUS.Instance.UpdateRoomType(txbOldTypeRoom.Text, txbNewTypeRoom.Text, Int32.Parse(txbNewPrice.Text));
             MessageBox.Show("Cập nhật thành công !");
             LoadRoomType();
             LoadRoom();

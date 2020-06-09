@@ -164,7 +164,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
-            SettingBUS.Instance.AddCustomertype(txbTypeCustomer.Text, txbPrice.Text);
+            SettingBUS.Instance.AddCustomertype(txbTypeCustomer.Text, float.Parse(txbPrice.Text));
             MessageBox.Show("Đã thêm thành công !");
             LoadCustomerType();
             btnCancel.PerformClick();
@@ -200,7 +200,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
-            SettingBUS.Instance.UpdateCustomertype(txbOldct.Text,txbOldratio.Text);
+            SettingBUS.Instance.UpdateCustomertype(txbOldct.Text, float.Parse(txbOldratio.Text));
             MessageBox.Show("Cập nhật thành công !");
             LoadCustomerType();
             btnCancel.PerformClick();

@@ -19,7 +19,7 @@ namespace QuanLyKhachSan.DAL
             private SettingDAL() { }
             public DataTable LoadAmountList()
             {
-              return DataProvider.Instance.ExecuteQuery("USP_GetAmountList");
+                return DataProvider.Instance.ExecuteQuery("USP_GetAmountList");
 
             }
             public DataTable LoadCustomerTypeList()
@@ -28,35 +28,28 @@ namespace QuanLyKhachSan.DAL
             }
             public void ChangeAmount(string customer_ratio,string max_customer,string amount_surchage)
             {
-                string query1 = "delete from dbo.AMOUNT";
-                DataProvider.Instance.ExecuteQuery(query1);
-                string query = "INSERT INTO AMOUNT VALUES('" + customer_ratio + "','" + max_customer + "','" + amount_surchage + "')";
-                DataProvider.Instance.ExecuteQuery(query);
-            }
-            public void AddCustomertype(string customer_type,string ratio)
+                DataProvider.Instance.ExecuteQuery("USP_DeleteAmount");
+                DataProvider.Instance.ExecuteQuery("exec USP_InsertAmount @customer_ratio , @max_customer , @amount_surchage ", new object[] { customer_ratio, max_customer , amount_surchage });
+        }
+            public void AddCustomertype(string customer_type,float ratio)
             {
-                string query = "INSERT INTO CUSTOMER_TYPE VALUES('" + customer_type + "','" + ratio + "')";
-                DataProvider.Instance.ExecuteQuery(query);
-            }
+                DataProvider.Instance.ExecuteQuery("exec USP_AddCustomertype @customer_type , @ratio ", new object[] { customer_type , ratio });
+        }
             public void DeleteCustomertype(string customer_type)
             {
-                string query = "delete from dbo.CUSTOMER_TYPE where customer_type='" + customer_type +"'";
-                DataProvider.Instance.ExecuteQuery(query);
-            }
-            public void UpdateCustomertype(string customer_type, string ratio)
+                DataProvider.Instance.ExecuteQuery("exec USP_DeleteCustomertype @customer_type ", new object[] { customer_type });
+        }
+            public void UpdateCustomertype(string customer_type, float ratio)
             {
-                string query = "Update dbo.CUSTOMER_TYPE Set ratio ='" +ratio+ "' Where customer_type ='" + customer_type + "'";
-                DataProvider.Instance.ExecuteQuery(query);
+                DataProvider.Instance.ExecuteQuery("exec USP_UpdateCustomertype @customer_type , @ratio ", new object[] { customer_type, ratio });
             }
             public void ChangePass(string userName,string passWord)
             {
-                string query = "Update dbo.ACCOUNT Set pass = '" + passWord + "' Where username = '" + userName + "'; ";
-                DataProvider.Instance.ExecuteQuery(query);
+                DataProvider.Instance.ExecuteQuery("exec USP_ChangePassword @pass , @username ", new object[] { passWord, userName });
             }
             public void Signin(string username, string password, string name, string permission)
             {
-                string query = "INSERT INTO ACCOUNT VALUES(N'" + name + "','" + username + "','" + password + "','" + permission + "')";
-                DataProvider.Instance.ExecuteQuery(query);
+                DataProvider.Instance.ExecuteQuery("exec USP_SignIn @name , @username , @pass , @permission ", new object[] { name, username, password, permission });
             }
     }
 }

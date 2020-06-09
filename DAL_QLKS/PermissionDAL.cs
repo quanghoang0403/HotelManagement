@@ -19,8 +19,7 @@ namespace QuanLyKhachSan.DAL
         private PermissionDAL() { }
         public string Permission(string username)
         {
-            string query = "select permission from dbo.ACCOUNT where username= N'" + username +"'";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            DataTable result = DataProvider.Instance.ExecuteQuery("USP_GetPermission @username ", new object[] { username } );
             string permission_position = result.Rows[0].Field<string>(0);
             return permission_position;
         }

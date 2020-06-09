@@ -44,7 +44,7 @@ namespace QuanLyKhachSan.BUS
             {
                 SettingDAL.Instance.ChangeAmount(customer_ratio, max_customer, amount_surchage);
             }
-            public void AddCustomertype(string customer_type,string ratio)
+            public void AddCustomertype(string customer_type, float ratio)
             {
                 SettingDAL.Instance.AddCustomertype(customer_type, ratio);
             }
@@ -52,7 +52,7 @@ namespace QuanLyKhachSan.BUS
             {
                 SettingDAL.Instance.DeleteCustomertype(customer_type);
             }
-            public void UpdateCustomertype(string customer_type, string ratio)
+            public void UpdateCustomertype(string customer_type, float ratio)
             {
                 SettingDAL.Instance.UpdateCustomertype(customer_type, ratio);
             }
