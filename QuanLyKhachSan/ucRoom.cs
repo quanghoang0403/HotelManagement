@@ -67,9 +67,9 @@ namespace QuanLyKhachSan
             {
                 int selectedrowindex = dtgvType.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dtgvType.Rows[selectedrowindex];
-                txbOldTypeRoom.Text = Convert.ToString(selectedRow.Cells["room_type"].Value);
+                txbOldTypeRoom.Text = Convert.ToString(selectedRow.Cells["room_type2"].Value);
                 txbOldPrice.Text = Convert.ToString(selectedRow.Cells["price"].Value);
-                txbNewTypeRoom.Text = Convert.ToString(selectedRow.Cells["room_type"].Value);
+                txbNewTypeRoom.Text = Convert.ToString(selectedRow.Cells["room_type2"].Value);
                 txbNewPrice.Text = Convert.ToString(selectedRow.Cells["price"].Value);
             }
         }
