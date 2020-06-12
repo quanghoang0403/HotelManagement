@@ -172,11 +172,6 @@ namespace QuanLyKhachSan
 
         private void btnDeleteType_Click(object sender, EventArgs e)
         {
-            if (txbTypeCustomer.Text == "")
-            {
-                MessageBox.Show("Nhập loại phòng");
-                return;
-            }
             DialogResult result = MessageBox.Show("Bạn có chắc chắn là muốn loại khách hàng này ?", "XÁC NHẬN XÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
             switch (result)
             {
@@ -226,7 +221,7 @@ namespace QuanLyKhachSan
             {
                 int selectedrowindex = dtgvCustomertype.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dtgvCustomertype.Rows[selectedrowindex];
-                txbOldct.Text = Convert.ToString(selectedRow.Cells["Loaikh"].Value);
+                txbOldct.Text = Convert.ToString(selectedRow.Cells["name"].Value);
                 txbOldratio.Text = Convert.ToString(selectedRow.Cells["ratio"].Value);
             }
         }
