@@ -188,5 +188,10 @@ namespace QuanLyKhachSan
         {
 
         }
+
+        private void button_cuaso_Click(object sender, EventArgs e)
+        {
+
+        }
     }   
 }

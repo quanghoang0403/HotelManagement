@@ -61,22 +61,9 @@ namespace QuanLyKhachSan
             txbPrice.Text = "";
         }
 
-        private void dtgvType_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dtgvType.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dtgvType.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtgvType.Rows[selectedrowindex];
-                txbOldTypeRoom.Text = Convert.ToString(selectedRow.Cells["room_type"].Value);
-                txbOldPrice.Text = Convert.ToString(selectedRow.Cells["price"].Value);
-                txbNewTypeRoom.Text = Convert.ToString(selectedRow.Cells["room_type"].Value);
-                txbNewPrice.Text = Convert.ToString(selectedRow.Cells["price"].Value);
-            }
-        }
+        #endregion
 
-    #endregion
-
-    #region Hàm hỗ trợ phòng
+        #region Hàm hỗ trợ phòng
 
         void LoadRoom()
         {

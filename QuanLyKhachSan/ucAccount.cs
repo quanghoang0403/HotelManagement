@@ -214,17 +214,6 @@ namespace QuanLyKhachSan
                 panel15.Visible = false;
             }
         }
-
-        private void dtgvCustomertype_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dtgvCustomertype.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dtgvCustomertype.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtgvCustomertype.Rows[selectedrowindex];
-                txbOldct.Text = Convert.ToString(selectedRow.Cells["name"].Value);
-                txbOldratio.Text = Convert.ToString(selectedRow.Cells["ratio"].Value);
-            }
-        }
         private void CleanCt()
         {
             txbPrice.Text = "";

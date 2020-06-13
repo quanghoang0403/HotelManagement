@@ -103,11 +103,11 @@
             this.txbOldct = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.dtgvCustomertype = new System.Windows.Forms.DataGridView();
+            this.Loaikh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ratio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Customer_ratio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Max_customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount_surchage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Loaikh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ratio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -774,7 +774,7 @@
             this.panel15.Controls.Add(this.label17);
             this.panel15.Controls.Add(this.panel14);
             this.panel15.Location = new System.Drawing.Point(25, 511);
-            this.panel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(1565, 436);
             this.panel15.TabIndex = 39;
@@ -788,7 +788,7 @@
             this.panel16.Controls.Add(this.panel13);
             this.panel16.Controls.Add(this.dtgvCustomertype);
             this.panel16.Location = new System.Drawing.Point(785, 62);
-            this.panel16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel16.Margin = new System.Windows.Forms.Padding(4);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(764, 359);
             this.panel16.TabIndex = 32;
@@ -910,7 +910,7 @@
             this.dtgvCustomertype.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtgvCustomertype.GridColor = System.Drawing.SystemColors.HighlightText;
             this.dtgvCustomertype.Location = new System.Drawing.Point(53, 59);
-            this.dtgvCustomertype.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgvCustomertype.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvCustomertype.Name = "dtgvCustomertype";
             this.dtgvCustomertype.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -925,7 +925,24 @@
             this.dtgvCustomertype.RowHeadersWidth = 51;
             this.dtgvCustomertype.Size = new System.Drawing.Size(333, 215);
             this.dtgvCustomertype.TabIndex = 40;
-            this.dtgvCustomertype.SelectionChanged += new System.EventHandler(this.dtgvCustomertype_SelectionChanged);
+            // 
+            // Loaikh
+            // 
+            this.Loaikh.DataPropertyName = "Name";
+            this.Loaikh.HeaderText = "Loại KH";
+            this.Loaikh.MinimumWidth = 6;
+            this.Loaikh.Name = "Loaikh";
+            this.Loaikh.ReadOnly = true;
+            this.Loaikh.Width = 125;
+            // 
+            // ratio
+            // 
+            this.ratio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ratio.DataPropertyName = "Ratio";
+            this.ratio.HeaderText = "Tỉ lệ phụ thu";
+            this.ratio.MinimumWidth = 6;
+            this.ratio.Name = "ratio";
+            this.ratio.ReadOnly = true;
             // 
             // Customer_ratio
             // 
@@ -949,28 +966,10 @@
             // 
             this.Amount_surchage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Amount_surchage.DataPropertyName = "Amount_surchage";
-            this.Amount_surchage.HeaderText = "Số khách lơn hơn";
+            this.Amount_surchage.HeaderText = "Số khách tối thiểu để phụ thu";
             this.Amount_surchage.MinimumWidth = 6;
             this.Amount_surchage.Name = "Amount_surchage";
             this.Amount_surchage.ReadOnly = true;
-            // 
-            // Loaikh
-            // 
-            this.Loaikh.DataPropertyName = "Name";
-            this.Loaikh.HeaderText = "Loại KH";
-            this.Loaikh.MinimumWidth = 6;
-            this.Loaikh.Name = "Loaikh";
-            this.Loaikh.ReadOnly = true;
-            this.Loaikh.Width = 125;
-            // 
-            // ratio
-            // 
-            this.ratio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ratio.DataPropertyName = "Ratio";
-            this.ratio.HeaderText = "Tỉ lệ phụ thu";
-            this.ratio.MinimumWidth = 6;
-            this.ratio.Name = "ratio";
-            this.ratio.ReadOnly = true;
             // 
             // ucAccount
             // 
@@ -1098,10 +1097,10 @@
         private System.Windows.Forms.TextBox txbOldct;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Loaikh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ratio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Customer_ratio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Max_customer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount_surchage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Loaikh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ratio;
     }
 }
