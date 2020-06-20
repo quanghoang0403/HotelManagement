@@ -31,6 +31,8 @@
 - Programming tool: Visual Studio, SQL Server
 - Programming language: C#
 - Source code management tool: Github
+## Công nghệ sử dụng
+- ASP.Net
 
                 
 
