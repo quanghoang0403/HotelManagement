@@ -1,0 +1,11 @@
+C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\bin\Release\DTA_QLKS.dll
+C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\bin\Release\DTA_QLKS.pdb
+C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\bin\Release\DTO_QLKS.dll
+C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\bin\Release\System.Data.SqlClient.dll
+C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\bin\Release\DTO_QLKS.pdb
+C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\bin\Release\System.Data.SqlClient.xml
+C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\obj\Release\DAL_QLKS.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\obj\Release\DAL_QLKS.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\obj\Release\DAL_QLKS.csproj.CopyComplete
+C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\obj\Release\DTA_QLKS.dll
+C:\Users\Admin\Documents\GitHub\HotelManagement\DAL_QLKS\obj\Release\DTA_QLKS.pdb

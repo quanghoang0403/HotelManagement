@@ -9,8 +9,13 @@ namespace QuanLyKhachSan.DTO
 {
     public class CustomerType
     {
+        public CustomerType()
+        {
+            this.Name = "";
+            this.Ratio = 0;
+        }
 
-        public CustomerType(string name, float ratio, int max_customer, int amount_surchage)
+        public CustomerType(string name, float ratio)
         {
             this.Name = name;
             this.Ratio = ratio;

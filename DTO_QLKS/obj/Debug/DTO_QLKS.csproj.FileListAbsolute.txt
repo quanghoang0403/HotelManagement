@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 C:\Users\Thi Chuong\Desktop\HotelManagement\DTO_QLKS\bin\Debug\DTO_QLKS.dll
 C:\Users\Thi Chuong\Desktop\HotelManagement\DTO_QLKS\bin\Debug\DTO_QLKS.pdb
 C:\Users\Thi Chuong\Desktop\HotelManagement\DTO_QLKS\obj\Debug\DTO_QLKS.csprojAssemblyReference.cache
@@ -9,8 +10,14 @@ C:\Users\User\Source\Repos\quanghoang0403\HotelManagement\DTO_QLKS\obj\Debug\DTO
 C:\Users\User\Source\Repos\quanghoang0403\HotelManagement\DTO_QLKS\obj\Debug\DTO_QLKS.csproj.CoreCompileInputs.cache
 C:\Users\User\Source\Repos\quanghoang0403\HotelManagement\DTO_QLKS\obj\Debug\DTO_QLKS.dll
 C:\Users\User\Source\Repos\quanghoang0403\HotelManagement\DTO_QLKS\obj\Debug\DTO_QLKS.pdb
+=======
+>>>>>>> Stashed changes
 C:\Users\Admin\Documents\GitHub\HotelManagement\DTO_QLKS\bin\Debug\DTO_QLKS.dll
 C:\Users\Admin\Documents\GitHub\HotelManagement\DTO_QLKS\bin\Debug\DTO_QLKS.pdb
 C:\Users\Admin\Documents\GitHub\HotelManagement\DTO_QLKS\obj\Debug\DTO_QLKS.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\HotelManagement\DTO_QLKS\obj\Debug\DTO_QLKS.dll
 C:\Users\Admin\Documents\GitHub\HotelManagement\DTO_QLKS\obj\Debug\DTO_QLKS.pdb
+<<<<<<< Updated upstream
+=======
+C:\Users\Admin\Documents\GitHub\HotelManagement\DTO_QLKS\obj\Debug\DTO_QLKS.csprojAssemblyReference.cache
+>>>>>>> Stashed changes

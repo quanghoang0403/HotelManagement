@@ -19,8 +19,13 @@ namespace QuanLyKhachSan.DAL
         }
         private DataProvider() { }
 
+<<<<<<< Updated upstream
         //private string connectionSTR = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=KhachSan;Integrated Security=True";
         private string connectionSTR = @"Data Source=DESKTOP-69G9JG9\MSSQLSERVER01;Initial Catalog=KhachSan;Integrated Security=True";
+=======
+        private string connectionSTR = @"Data Source=DESKTOP-69G9JG9\MSSQLSERVER01;Initial Catalog=KhachSan;Integrated Security=True";
+        //private string connectionSTR = @"Data Source=localhost;Initial Catalog=KhachSan;Integrated Security=True";
+>>>>>>> Stashed changes
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();

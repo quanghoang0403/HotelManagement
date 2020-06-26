@@ -9,6 +9,13 @@ namespace QuanLyKhachSan.DTO
 {
     public class Home
     {
+        public Home()
+        {
+            this.ID = "";
+            this.Type = "";
+            this.Notes = "";
+            this.Status = "";
+        }
         public Home(string id_room, string room_type, string notes, string statuss)
         {
             this.ID = id_room;

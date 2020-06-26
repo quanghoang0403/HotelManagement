@@ -7,13 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+<<<<<<< Updated upstream
 using QuanLyKhachSan.DAO;
+=======
+using QuanLyKhachSan.BUS;
+using QuanLyKhachSan.DTO;
+>>>>>>> Stashed changes
 
 namespace QuanLyKhachSan
 {
     public partial class ucAccount : UserControl
     {
         private bool Accessibility=true;
+        AmountBUS _repos = new AmountBUS();
+        CustomerTypeBUS _reposCT = new CustomerTypeBUS();
         public ucAccount()
         {
             InitializeComponent();
@@ -48,8 +55,14 @@ namespace QuanLyKhachSan
             {
                 MessageBox.Show("Mật khẩu nhập lại không khớp mật khẩu mới tạo !");
                 return;
+<<<<<<< Updated upstream
             }          
             SettingDAO.Instance.ChangePass(txbUserName.Text,txbNewPass.Text);
+=======
+            }
+            Account acc = new Account("", txbUserName.Text, txbNewPass.Text, "");
+            AccountBUS.Instance.ChangePassWord(acc);
+>>>>>>> Stashed changes
             MessageBox.Show("Đã đổi thành công !");
             btnRemoveChangePass.PerformClick();
         }
@@ -78,7 +91,12 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Mật khẩu nhập lại không khớp mật khẩu mới tạo");
                 return;
             }
+<<<<<<< Updated upstream
             SettingDAO.Instance.Signin(txbSignin_Username.Text, txbSignin_Password.Text, txbSignin_Name.Text, comboBox_Permission.Text);
+=======
+            Account acc=new Account(txbSignin_Name.Text, txbSignin_Username.Text, txbSignin_Password.Text, comboBox_Permission.Text);
+            AccountBUS.Instance.SignupAccount(acc);
+>>>>>>> Stashed changes
             MessageBox.Show("Đã tạo tài khoản thành công !");
             btnRemoveSignin.PerformClick();          
         }
@@ -95,13 +113,23 @@ namespace QuanLyKhachSan
         #endregion
 
 
-        void LoadAmount()
+        private async void LoadAmount()
         {
+<<<<<<< Updated upstream
             dtgvType.DataSource = SettingDAO.Instance.LoadAmountList();
+=======
+            var listA = await _repos.GetAmount();
+            dtgvType.DataSource = listA;
+>>>>>>> Stashed changes
         }
-        void LoadCustomerType()
+        private async void LoadCustomerType()
         {
+<<<<<<< Updated upstream
             dtgvCustomertype.DataSource = SettingDAO.Instance.LoadCustomerTypeList();
+=======
+            var listCT = await _reposCT.GetCustomerType();
+            dtgvCustomertype.DataSource = listCT;
+>>>>>>> Stashed changes
         }
         private void txbMax_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -142,8 +170,13 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
+<<<<<<< Updated upstream
             SettingDAO.Instance.ChangeAmount(txbRatio.Text, txbMax.Text, txbMaxSurcharge.Text);
             LoadAmount();
+=======
+            Amount amt = new Amount((float)Convert.ToDouble(txbRatio.Text),Convert.ToInt32(txbMax.Text),Convert.ToInt32(txbMaxSurcharge.Text));
+            _repos.ChangeAmount(amt);
+>>>>>>> Stashed changes
             txbRatio.Text = "";
             txbMax.Text = "";
             txbMaxSurcharge.Text = "";
@@ -164,7 +197,12 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
+<<<<<<< Updated upstream
             SettingDAO.Instance.AddCustomertype(txbTypeCustomer.Text, txbPrice.Text);
+=======
+            CustomerType ct = new CustomerType(txbTypeCustomer.Text, (float)Convert.ToDouble(txbPrice.Text));
+            _reposCT.AddCustomerType(ct);
+>>>>>>> Stashed changes
             MessageBox.Show("Đã thêm thành công !");
             LoadCustomerType();
             btnCancel.PerformClick();
@@ -176,8 +214,12 @@ namespace QuanLyKhachSan
             switch (result)
             {
                 case DialogResult.Yes:
+<<<<<<< Updated upstream
                     SettingDAO.Instance.DeleteCustomertype(txbOldct.Text);
                     LoadCustomerType();
+=======
+                    _reposCT.DeleteCustomerType(txbOldct.Text);
+>>>>>>> Stashed changes
                     break;
                 case DialogResult.No:
                     break;
@@ -200,7 +242,12 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
+<<<<<<< Updated upstream
             SettingDAO.Instance.UpdateCustomertype(txbOldct.Text,txbOldratio.Text);
+=======
+            CustomerType ct=new CustomerType(txbOldct.Text, float.Parse(txbOldratio.Text));
+            _reposCT.UpdateCustomerType(txbOldct.Text, ct);
+>>>>>>> Stashed changes
             MessageBox.Show("Cập nhật thành công !");
             LoadCustomerType();
             btnCancel.PerformClick();
@@ -238,6 +285,22 @@ namespace QuanLyKhachSan
             panel13.Visible = false;
             panel17.Visible = false;
             btnCancel.Visible = false;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadAmount();
+            LoadCustomerType();
+        }
+
+        private void dtgvCustomertype_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgvCustomertype.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtgvCustomertype.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtgvCustomertype.Rows[selectedrowindex];
+                txbOldct.Text = Convert.ToString(selectedRow.Cells["Loaikh"].Value);
+            }
         }
     }
 }

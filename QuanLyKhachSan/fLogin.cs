@@ -7,7 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+<<<<<<< Updated upstream
 using QuanLyKhachSan.DAO;
+=======
+using QuanLyKhachSan.BUS;
+using QuanLyKhachSan.DTO;
+>>>>>>> Stashed changes
 
 namespace QuanLyKhachSan
 {
@@ -19,11 +24,12 @@ namespace QuanLyKhachSan
      
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
             string userName = txbUserName.Text;
             string passWord = txbPass.Text;
-            if (Login(userName, passWord))
+            var canlogin=await AccountBUS.Instance.LoginAccount(userName,passWord);
+            if (canlogin == "true")
             {
                 fHotelManager f = new fHotelManager();
                 this.Hide();
@@ -36,10 +42,13 @@ namespace QuanLyKhachSan
             }
         }
 
+<<<<<<< Updated upstream
         bool Login(string userName, string passWord)
         {
             return LoginDAO.Instance.Login(userName, passWord);
         }
+=======
+>>>>>>> Stashed changes
         bool IsManager(string username)
         {
             if (PermissionDAO.Instance.Permission(username) == "Manager")

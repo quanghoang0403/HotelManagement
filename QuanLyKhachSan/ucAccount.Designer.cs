@@ -73,6 +73,9 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.dtgvType = new System.Windows.Forms.DataGridView();
+            this.Customer_ratio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Max_customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount_surchage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
@@ -86,6 +89,7 @@
             this.btnAddType = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
@@ -97,6 +101,11 @@
             this.txbOldct = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.dtgvCustomertype = new System.Windows.Forms.DataGridView();
+<<<<<<< Updated upstream
+=======
+            this.Loaikh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ratio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+>>>>>>> Stashed changes
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -503,7 +512,11 @@
             // 
             this.btnUpdateSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
             this.btnUpdateSetting.ForeColor = System.Drawing.Color.White;
+<<<<<<< Updated upstream
             this.btnUpdateSetting.Location = new System.Drawing.Point(489, 178);
+=======
+            this.btnUpdateSetting.Location = new System.Drawing.Point(489, 208);
+>>>>>>> Stashed changes
             this.btnUpdateSetting.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateSetting.Name = "btnUpdateSetting";
             this.btnUpdateSetting.Size = new System.Drawing.Size(63, 45);
@@ -605,14 +618,61 @@
             this.dtgvType.AllowUserToAddRows = false;
             this.dtgvType.AllowUserToDeleteRows = false;
             this.dtgvType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< Updated upstream
+=======
+            this.dtgvType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Customer_ratio,
+            this.Max_customer,
+            this.Amount_surchage});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvType.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgvType.GridColor = System.Drawing.SystemColors.HighlightText;
+>>>>>>> Stashed changes
             this.dtgvType.Location = new System.Drawing.Point(25, 114);
             this.dtgvType.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvType.Name = "dtgvType";
             this.dtgvType.ReadOnly = true;
             this.dtgvType.RowHeadersWidth = 51;
             this.dtgvType.RowTemplate.Height = 24;
+<<<<<<< Updated upstream
             this.dtgvType.Size = new System.Drawing.Size(527, 60);
+=======
+            this.dtgvType.Size = new System.Drawing.Size(527, 90);
+>>>>>>> Stashed changes
             this.dtgvType.TabIndex = 0;
+            // 
+            // Customer_ratio
+            // 
+            this.Customer_ratio.DataPropertyName = "Customer_ratio";
+            this.Customer_ratio.HeaderText = "Tỉ lệ phụ thu";
+            this.Customer_ratio.MinimumWidth = 6;
+            this.Customer_ratio.Name = "Customer_ratio";
+            this.Customer_ratio.ReadOnly = true;
+            this.Customer_ratio.Width = 150;
+            // 
+            // Max_customer
+            // 
+            this.Max_customer.DataPropertyName = "Max_customer";
+            this.Max_customer.HeaderText = "Số khách tối đa";
+            this.Max_customer.MinimumWidth = 6;
+            this.Max_customer.Name = "Max_customer";
+            this.Max_customer.ReadOnly = true;
+            this.Max_customer.Width = 175;
+            // 
+            // Amount_surchage
+            // 
+            this.Amount_surchage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Amount_surchage.DataPropertyName = "Amount_surchage";
+            this.Amount_surchage.HeaderText = "Số khách tối thiểu để phụ thu";
+            this.Amount_surchage.MinimumWidth = 6;
+            this.Amount_surchage.Name = "Amount_surchage";
+            this.Amount_surchage.ReadOnly = true;
             // 
             // panel13
             // 
@@ -737,7 +797,11 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< Updated upstream
             this.label17.Location = new System.Drawing.Point(398, 10);
+=======
+            this.label17.Location = new System.Drawing.Point(258, 9);
+>>>>>>> Stashed changes
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(477, 39);
@@ -746,6 +810,7 @@
             // 
             // panel15
             // 
+            this.panel15.Controls.Add(this.btnRefresh);
             this.panel15.Controls.Add(this.panel16);
             this.panel15.Controls.Add(this.label17);
             this.panel15.Controls.Add(this.panel14);
@@ -753,6 +818,19 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(1174, 354);
             this.panel15.TabIndex = 39;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(739, 13);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(63, 32);
+            this.btnRefresh.TabIndex = 41;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // panel16
             // 
@@ -865,13 +943,62 @@
             this.dtgvCustomertype.AllowUserToAddRows = false;
             this.dtgvCustomertype.AllowUserToDeleteRows = false;
             this.dtgvCustomertype.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< Updated upstream
             this.dtgvCustomertype.Location = new System.Drawing.Point(40, 48);
             this.dtgvCustomertype.Name = "dtgvCustomertype";
             this.dtgvCustomertype.ReadOnly = true;
+=======
+            this.dtgvCustomertype.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Loaikh,
+            this.ratio});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvCustomertype.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgvCustomertype.GridColor = System.Drawing.SystemColors.HighlightText;
+            this.dtgvCustomertype.Location = new System.Drawing.Point(40, 48);
+            this.dtgvCustomertype.Name = "dtgvCustomertype";
+            this.dtgvCustomertype.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvCustomertype.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dtgvCustomertype.RowHeadersVisible = false;
+            this.dtgvCustomertype.RowHeadersWidth = 51;
+>>>>>>> Stashed changes
             this.dtgvCustomertype.Size = new System.Drawing.Size(250, 175);
             this.dtgvCustomertype.TabIndex = 40;
             this.dtgvCustomertype.SelectionChanged += new System.EventHandler(this.dtgvCustomertype_SelectionChanged);
             // 
+<<<<<<< Updated upstream
+=======
+            // Loaikh
+            // 
+            this.Loaikh.DataPropertyName = "Name";
+            this.Loaikh.HeaderText = "Loại KH";
+            this.Loaikh.MinimumWidth = 6;
+            this.Loaikh.Name = "Loaikh";
+            this.Loaikh.ReadOnly = true;
+            this.Loaikh.Width = 125;
+            // 
+            // ratio
+            // 
+            this.ratio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ratio.DataPropertyName = "Ratio";
+            this.ratio.HeaderText = "Tỉ lệ phụ thu";
+            this.ratio.MinimumWidth = 6;
+            this.ratio.Name = "ratio";
+            this.ratio.ReadOnly = true;
+            // 
+>>>>>>> Stashed changes
             // ucAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -998,5 +1125,14 @@
         private System.Windows.Forms.TextBox txbOldct;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnCancel;
+<<<<<<< Updated upstream
+=======
+        private System.Windows.Forms.DataGridViewTextBoxColumn Loaikh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ratio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_ratio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Max_customer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount_surchage;
+        private System.Windows.Forms.Button btnRefresh;
+>>>>>>> Stashed changes
     }
 }

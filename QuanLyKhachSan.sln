@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS_QLKS", "BUS_QLKS\BUS_QL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL_QLKS", "DAL_QLKS\DAL_QLKS.csproj", "{F119BBB5-7F2A-421E-82A6-B26C5CBA6A1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{9F3B4A6F-EFE2-47B8-B8FB-98728B17120F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F119BBB5-7F2A-421E-82A6-B26C5CBA6A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F119BBB5-7F2A-421E-82A6-B26C5CBA6A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F119BBB5-7F2A-421E-82A6-B26C5CBA6A1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F3B4A6F-EFE2-47B8-B8FB-98728B17120F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F3B4A6F-EFE2-47B8-B8FB-98728B17120F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F3B4A6F-EFE2-47B8-B8FB-98728B17120F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F3B4A6F-EFE2-47B8-B8FB-98728B17120F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

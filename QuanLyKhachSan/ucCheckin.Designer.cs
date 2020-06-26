@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< Updated upstream
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> Stashed changes
             this.label5 = new System.Windows.Forms.Label();
             this.dtgvList = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -73,11 +79,52 @@
             // 
             this.dtgvList.AllowUserToAddRows = false;
             this.dtgvList.AllowUserToDeleteRows = false;
+<<<<<<< Updated upstream
             this.dtgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvList.Location = new System.Drawing.Point(25, 80);
             this.dtgvList.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvList.Name = "dtgvList";
             this.dtgvList.ReadOnly = true;
+=======
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dtgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_checkin,
+            this.Date_start,
+            this.Id_room,
+            this.Money_checkin,
+            this.Type_ratioMAX,
+            this.Number_customer,
+            this.Status_checkin});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvList.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dtgvList.Location = new System.Drawing.Point(25, 80);
+            this.dtgvList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvList.Name = "dtgvList";
+            this.dtgvList.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvList.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dtgvList.RowHeadersVisible = false;
+>>>>>>> Stashed changes
             this.dtgvList.RowHeadersWidth = 51;
             this.dtgvList.RowTemplate.Height = 24;
             this.dtgvList.Size = new System.Drawing.Size(1089, 636);
@@ -90,7 +137,11 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.dtgvList);
             this.panel3.Location = new System.Drawing.Point(28, 2);
+<<<<<<< Updated upstream
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> Stashed changes
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1116, 731);
             this.panel3.TabIndex = 4;
@@ -143,7 +194,11 @@
             this.checkbox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox6.Location = new System.Drawing.Point(7, 191);
             this.checkbox6.Name = "checkbox6";
+<<<<<<< Updated upstream
             this.checkbox6.Size = new System.Drawing.Size(152, 28);
+=======
+            this.checkbox6.Size = new System.Drawing.Size(79, 28);
+>>>>>>> Stashed changes
             this.checkbox6.TabIndex = 26;
             this.checkbox6.Text = "status_checkin";
             this.checkbox6.UseVisualStyleBackColor = true;
@@ -154,7 +209,11 @@
             this.checkbox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox5.Location = new System.Drawing.Point(7, 125);
             this.checkbox5.Name = "checkbox5";
+<<<<<<< Updated upstream
             this.checkbox5.Size = new System.Drawing.Size(183, 28);
+=======
+            this.checkbox5.Size = new System.Drawing.Size(161, 28);
+>>>>>>> Stashed changes
             this.checkbox5.TabIndex = 25;
             this.checkbox5.Text = "number_customer";
             this.checkbox5.UseVisualStyleBackColor = true;
@@ -165,7 +224,11 @@
             this.checkbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox4.Location = new System.Drawing.Point(7, 65);
             this.checkbox4.Name = "checkbox4";
+<<<<<<< Updated upstream
             this.checkbox4.Size = new System.Drawing.Size(152, 28);
+=======
+            this.checkbox4.Size = new System.Drawing.Size(134, 28);
+>>>>>>> Stashed changes
             this.checkbox4.TabIndex = 24;
             this.checkbox4.Text = "type_ratioMAX";
             this.checkbox4.UseVisualStyleBackColor = true;
@@ -176,7 +239,11 @@
             this.checkbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox3.Location = new System.Drawing.Point(165, 65);
             this.checkbox3.Name = "checkbox3";
+<<<<<<< Updated upstream
             this.checkbox3.Size = new System.Drawing.Size(163, 28);
+=======
+            this.checkbox3.Size = new System.Drawing.Size(114, 28);
+>>>>>>> Stashed changes
             this.checkbox3.TabIndex = 23;
             this.checkbox3.Text = "money_checkin";
             this.checkbox3.UseVisualStyleBackColor = true;
@@ -187,7 +254,11 @@
             this.checkbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox2.Location = new System.Drawing.Point(165, 3);
             this.checkbox2.Name = "checkbox2";
+<<<<<<< Updated upstream
             this.checkbox2.Size = new System.Drawing.Size(98, 28);
+=======
+            this.checkbox2.Size = new System.Drawing.Size(106, 28);
+>>>>>>> Stashed changes
             this.checkbox2.TabIndex = 22;
             this.checkbox2.Text = "id_room";
             this.checkbox2.UseVisualStyleBackColor = true;
@@ -198,7 +269,11 @@
             this.checkbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox1.Location = new System.Drawing.Point(7, 3);
             this.checkbox1.Name = "checkbox1";
+<<<<<<< Updated upstream
             this.checkbox1.Size = new System.Drawing.Size(108, 28);
+=======
+            this.checkbox1.Size = new System.Drawing.Size(115, 28);
+>>>>>>> Stashed changes
             this.checkbox1.TabIndex = 21;
             this.checkbox1.Text = "date_start";
             this.checkbox1.UseVisualStyleBackColor = true;
@@ -247,7 +322,11 @@
             this.panel5.Controls.Add(this.btnRefresh);
             this.panel5.Controls.Add(this.btnSearch);
             this.panel5.Location = new System.Drawing.Point(409, 39);
+<<<<<<< Updated upstream
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> Stashed changes
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(531, 40);
             this.panel5.TabIndex = 12;
@@ -258,7 +337,11 @@
             this.btnAdvancedSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdvancedSearch.ForeColor = System.Drawing.Color.Black;
             this.btnAdvancedSearch.Location = new System.Drawing.Point(430, 3);
+<<<<<<< Updated upstream
             this.btnAdvancedSearch.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.btnAdvancedSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> Stashed changes
             this.btnAdvancedSearch.Name = "btnAdvancedSearch";
             this.btnAdvancedSearch.Size = new System.Drawing.Size(94, 35);
             this.btnAdvancedSearch.TabIndex = 16;
@@ -280,7 +363,11 @@
             // 
             this.txbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSearch.Location = new System.Drawing.Point(150, 6);
+<<<<<<< Updated upstream
             this.txbSearch.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.txbSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> Stashed changes
             this.txbSearch.Name = "txbSearch";
             this.txbSearch.Size = new System.Drawing.Size(142, 26);
             this.txbSearch.TabIndex = 2;
@@ -291,7 +378,11 @@
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.Location = new System.Drawing.Point(367, 3);
+<<<<<<< Updated upstream
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> Stashed changes
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(57, 35);
             this.btnRefresh.TabIndex = 3;
@@ -304,7 +395,11 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(101)))), ((int)(((byte)(132)))));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(306, 3);
+<<<<<<< Updated upstream
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> Stashed changes
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(57, 35);
             this.btnSearch.TabIndex = 1;
@@ -316,17 +411,91 @@
             // 
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(29, 16);
+<<<<<<< Updated upstream
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> Stashed changes
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1165, 752);
             this.panel1.TabIndex = 13;
             // 
+<<<<<<< Updated upstream
+=======
+            // id_checkin
+            // 
+            this.id_checkin.DataPropertyName = "id_checkin";
+            this.id_checkin.HeaderText = "ID phiếu thuê";
+            this.id_checkin.MinimumWidth = 6;
+            this.id_checkin.Name = "id_checkin";
+            this.id_checkin.ReadOnly = true;
+            this.id_checkin.Width = 160;
+            // 
+            // Date_start
+            // 
+            this.Date_start.DataPropertyName = "date_start";
+            this.Date_start.HeaderText = "Ngày thuê";
+            this.Date_start.MinimumWidth = 6;
+            this.Date_start.Name = "Date_start";
+            this.Date_start.ReadOnly = true;
+            this.Date_start.Width = 125;
+            // 
+            // Id_room
+            // 
+            this.Id_room.DataPropertyName = "id_room";
+            this.Id_room.HeaderText = "ID phòng";
+            this.Id_room.MinimumWidth = 6;
+            this.Id_room.Name = "Id_room";
+            this.Id_room.ReadOnly = true;
+            this.Id_room.Width = 125;
+            // 
+            // Money_checkin
+            // 
+            this.Money_checkin.DataPropertyName = "money_checkin";
+            this.Money_checkin.HeaderText = "Tổng tiền";
+            this.Money_checkin.MinimumWidth = 6;
+            this.Money_checkin.Name = "Money_checkin";
+            this.Money_checkin.ReadOnly = true;
+            this.Money_checkin.Width = 175;
+            // 
+            // Type_ratioMAX
+            // 
+            this.Type_ratioMAX.DataPropertyName = "type_ratioMAX";
+            this.Type_ratioMAX.HeaderText = "Tỉ lệ phụ thu";
+            this.Type_ratioMAX.MinimumWidth = 6;
+            this.Type_ratioMAX.Name = "Type_ratioMAX";
+            this.Type_ratioMAX.ReadOnly = true;
+            this.Type_ratioMAX.Width = 175;
+            // 
+            // Number_customer
+            // 
+            this.Number_customer.DataPropertyName = "number_customer";
+            this.Number_customer.HeaderText = "Số lượng khách";
+            this.Number_customer.MinimumWidth = 6;
+            this.Number_customer.Name = "Number_customer";
+            this.Number_customer.ReadOnly = true;
+            this.Number_customer.Width = 175;
+            // 
+            // Status_checkin
+            // 
+            this.Status_checkin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Status_checkin.DataPropertyName = "status_checkin";
+            this.Status_checkin.HeaderText = "Status";
+            this.Status_checkin.MinimumWidth = 6;
+            this.Status_checkin.Name = "Status_checkin";
+            this.Status_checkin.ReadOnly = true;
+            // 
+>>>>>>> Stashed changes
             // ucCheckin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
+<<<<<<< Updated upstream
             this.Margin = new System.Windows.Forms.Padding(2);
+=======
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> Stashed changes
             this.Name = "ucCheckin";
             this.Size = new System.Drawing.Size(1212, 782);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvList)).EndInit();

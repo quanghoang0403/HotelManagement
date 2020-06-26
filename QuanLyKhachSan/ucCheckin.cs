@@ -16,6 +16,8 @@ namespace QuanLyKhachSan
     {
         private bool only1searchattribute = true;
         private bool Is_AdvancedSearch = false;
+        CheckinBUS _repos = new CheckinBUS();
+        CustomerTypeBUS _reposCT = new CustomerTypeBUS();
         public ucCheckin()
         {
             InitializeComponent();
@@ -26,15 +28,27 @@ namespace QuanLyKhachSan
 
         #region Xử lí hàm
 
-        void LoadCheckin()
+        private async void LoadCheckin()
         {
+<<<<<<< Updated upstream
             dtgvList.DataSource=CheckinManagementDAO.Instance.LoadCheckinList();
+=======
+            var listCK = await _repos.GetListCheckin();
+            dtgvList.DataSource = listCK;
+>>>>>>> Stashed changes
         }
 
-        void LoadRatio()
+        private async void LoadRatio()
         {
+<<<<<<< Updated upstream
             List<CustomerType> listRatio = CustomerTypeDAO.Instance.GetListType();
             textboxsearch4.DataSource = listRatio;
+=======
+            //List<CustomerType> listRatio = CustomerTypeBUS.Instance.GetListType();
+            //textboxsearch4.DataSource = listRatio;
+            var listCT = await _reposCT.GetCustomerType();
+            textboxsearch4.DataSource = listCT;
+>>>>>>> Stashed changes
             textboxsearch4.DisplayMember = "ratio";
         }
 
@@ -42,7 +56,7 @@ namespace QuanLyKhachSan
         {
             if (checkbox1.Checked == true)
             {
-                insert += checkbox1.Text + " = '" + textboxsearch1.Value.Date.ToString("d") + "'";
+                insert += " DAY(date_start)="+textboxsearch1.Value.Day+" and MONTH(date_start)=" +textboxsearch1.Value.Month+" and YEAR(date_start)="+textboxsearch1.Value.Year;
                 only1searchattribute = false;
             }
             if (checkbox2.Checked == true)
@@ -51,7 +65,7 @@ namespace QuanLyKhachSan
                 {
                     insert += "and ";
                 }
-                insert +=checkbox2.Text + " = '" + textboxsearch2.Text + "'";
+                insert +=" id_room = '" + textboxsearch2.Text + "'";
                 only1searchattribute = false;
             }
             if (checkbox3.Checked == true)
@@ -60,7 +74,7 @@ namespace QuanLyKhachSan
                 {
                     insert += "and ";
                 }
-                insert +=checkbox3.Text + " = '" + textboxsearch3.Text + "'";
+                insert += " money_checkin = '" + textboxsearch3.Text + "'";
                 only1searchattribute = false;
             }
             if (checkbox4.Checked == true)
@@ -69,7 +83,7 @@ namespace QuanLyKhachSan
                 {
                     insert += "and ";
                 }
-                insert +=checkbox4.Text + " = '" + textboxsearch4.Text + "'";
+                insert +="  type_ratioMAX = '" + textboxsearch4.Text + "'";
                 only1searchattribute = false;
             }
             if (checkbox5.Checked == true)
@@ -78,7 +92,7 @@ namespace QuanLyKhachSan
                 {
                     insert += "and ";
                 }
-                insert +=checkbox5.Text + " = '" + textboxsearch5.Text + "'";
+                insert += " number_customer = '" + textboxsearch5.Text + "'";
                 only1searchattribute = false;
             }
             if (checkbox6.Checked == true)
@@ -87,7 +101,7 @@ namespace QuanLyKhachSan
                 {
                     insert += "and ";
                 }
-                insert +=checkbox6.Text + " = '" + textboxsearch6.Text + "'";
+                insert +=" status_checkin = '" + textboxsearch6.Text + "'";
                 only1searchattribute = false;
             }
         }
@@ -96,7 +110,7 @@ namespace QuanLyKhachSan
 
         #region Chức năng quản lí phiếu thuê
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private async void btnSearch_Click(object sender, EventArgs e)
         {
             if (txbSearch.Text == "" && panel2.Visible == false)
             {
@@ -109,7 +123,12 @@ namespace QuanLyKhachSan
                 AdvancedSearch(ref insert);
             else
                 insert = " id_checkin='" + txbSearch.Text + "'";
+<<<<<<< Updated upstream
             dtgvList.DataSource = CheckinManagementDAO.Instance.SearchCheckin(insert);
+=======
+            var listSCK=await _repos.GetSearchCheckin(insert);
+            dtgvList.DataSource = listSCK;
+>>>>>>> Stashed changes
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -127,6 +146,7 @@ namespace QuanLyKhachSan
             textboxsearch4.Text = "";
             textboxsearch5.Text = "";
             textboxsearch6.Text = "";
+            LoadRatio();
         }
 
         private void btnAdvancedSearch_Click(object sender, EventArgs e)

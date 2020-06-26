@@ -16,6 +16,7 @@ namespace QuanLyKhachSan
     {
         private bool Is_AdvancedSearch=false;
         private bool only1attribute = true;
+        BillBUS _repos = new BillBUS();
         public ucBill()
         {
             InitializeComponent();
@@ -25,28 +26,34 @@ namespace QuanLyKhachSan
 
         #region Xử lí hàm
 
-        void LoadBill()
+        private async void LoadBill()
         {
+<<<<<<< Updated upstream
             dtgvListBill.DataSource = BillManagementDAO.Instance.LoadBillList();
+=======
+            var listB = await _repos.GetListBill();
+            dtgvListBill.DataSource = listB;
+
+>>>>>>> Stashed changes
         }
 
         void AdvancedSearch(ref string insert)
         {
             if (checkbox1.Checked == true)
             {
-                insert += checkbox1.Text + " like N'%" + textboxsearch1.Text + "%'";
+                insert += " bill_name like N'%" + textboxsearch1.Text + "%'";
                 only1attribute = false;
             }
             if (checkbox2.Checked == true)
             {
                 if (only1attribute == false) insert += " and ";
-                insert += checkbox2.Text + " like N'%" + textboxsearch2.Text + "%'";
+                insert += " bill_address like N'%" + textboxsearch2.Text + "%'";
                 only1attribute = false;
             }
             if (checkbox3.Checked == true)
             {
                 if (only1attribute == false) insert += " and ";
-                insert += checkbox3.Text + " = '" + textboxsearch3.Text + "'";
+                insert += " total_money = '" + textboxsearch3.Text + "'";
                 only1attribute = false;
             }
         }
@@ -55,7 +62,7 @@ namespace QuanLyKhachSan
 
         #region Chức năng quản lí hóa đơn
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private async void btnSearch_Click(object sender, EventArgs e)
         {
             if (txbSearch.Text == "" && panel2.Visible==false)
             {
@@ -68,7 +75,12 @@ namespace QuanLyKhachSan
                 AdvancedSearch(ref insert);
             else
             insert = " id_bill='" + txbSearch.Text + "'";
+<<<<<<< Updated upstream
             dtgvListBill.DataSource = BillManagementDAO.Instance.SearchBill(insert);
+=======
+            var listSB = await _repos.GetSearchBill(insert);
+            dtgvListBill.DataSource = listSB;
+>>>>>>> Stashed changes
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

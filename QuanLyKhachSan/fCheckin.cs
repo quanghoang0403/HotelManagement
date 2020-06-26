@@ -14,6 +14,7 @@ namespace QuanLyKhachSan
 {
     public partial class fCheckin : Form
     {
+        CustomerTypeBUS _reposCT = new CustomerTypeBUS();
         public fCheckin()
         {
             InitializeComponent();
@@ -35,10 +36,16 @@ namespace QuanLyKhachSan
             }
         }
 
-        void LoadType()
+        private async void LoadType()
         {
+<<<<<<< Updated upstream
             List<CustomerType> listType = CustomerTypeDAO.Instance.GetListType();
             cbType.DataSource = listType;
+=======
+            //List<CustomerType> listType = CustomerTypeBUS.Instance.GetListType();
+            var listCT = await _reposCT.GetCustomerType();
+            cbType.DataSource = listCT;
+>>>>>>> Stashed changes
             cbType.DisplayMember = "name";
         }
 
