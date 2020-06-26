@@ -14,6 +14,7 @@ namespace QuanLyKhachSan
 {
     public partial class fCheckin : Form
     {
+        CustomerTypeBUS _reposCT = new CustomerTypeBUS();
         public fCheckin()
         {
             InitializeComponent();
@@ -35,10 +36,11 @@ namespace QuanLyKhachSan
             }
         }
 
-        void LoadType()
+        private async void LoadType()
         {
-            List<CustomerType> listType = CustomerTypeBUS.Instance.GetListType();
-            cbType.DataSource = listType;
+            //List<CustomerType> listType = CustomerTypeBUS.Instance.GetListType();
+            var listCT = await _reposCT.GetCustomerType();
+            cbType.DataSource = listCT;
             cbType.DisplayMember = "name";
         }
 

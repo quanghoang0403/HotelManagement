@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyKhachSan.BUS;
+using QuanLyKhachSan.DTO;
 
 namespace QuanLyKhachSan
 {
@@ -19,11 +20,12 @@ namespace QuanLyKhachSan
      
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
             string userName = txbUserName.Text;
             string passWord = txbPass.Text;
-            if (Login(userName, passWord))
+            var canlogin=await AccountBUS.Instance.LoginAccount(userName,passWord);
+            if (canlogin == "true")
             {
                 fHotelManager f = new fHotelManager();
                 this.Hide();
@@ -36,10 +38,6 @@ namespace QuanLyKhachSan
             }
         }
 
-        bool Login(string userName, string passWord)
-        {
-            return LoginBUS.Instance.Login(userName, passWord);
-        }
         bool IsManager(string username)
         {
             if (PermissionBUS.Instance.Permission(username) == "Manager")

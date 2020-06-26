@@ -9,6 +9,16 @@ namespace QuanLyKhachSan.DTO
 {
     public class Checkin
     {
+        public Checkin()
+        {
+            this.Id_checkin = 0;
+            this.Date_start = "";
+            this.Id_room = "";
+            this.Money_checkin = "";
+            this.Type_ratioMAX = 0;
+            this.Number_customer = 0;
+            this.Status_checkin = "";
+        }
         public Checkin(int id_checkin, string date_start, string id_room, string money_checkin, float type_ratioMAX, int number_customer, string status_checkin)
         {
             this.Id_checkin = id_checkin;

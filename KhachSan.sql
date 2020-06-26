@@ -257,8 +257,27 @@ begin
 end
 go
 
+CREATE PROC USP_GetAccountList
+AS select * from ACCOUNT
+GO
+
+CREATE PROC USP_GetByRoomType
+(@room_type NVARCHAR(100))
+AS select * from ROOMTYPE where room_type = @room_type
+GO
+
+CREATE PROC USP_GetByRoom
+(@id_room NVARCHAR(100))
+AS select * from ROOM where id_room = @id_room
+GO
+
 CREATE PROC USP_GetListType
 AS SELECT * FROM CUSTOMER_TYPE
+GO
+
+CREATE PROC USP_GetByCustomerType
+(@customer_type NVARCHAR(100))
+AS select * from CUSTOMER_TYPE where customer_type = @customer_type
 GO
 
 CREATE PROC USP_GetStatus

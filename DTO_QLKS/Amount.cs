@@ -9,6 +9,12 @@ namespace QuanLyKhachSan.DTO
 {
     public class Amount
     {
+        public Amount()
+        {
+            this.Customer_ratio = 0;
+            this.max_customer = 0;
+            this.amount_surchage = 0;
+        }
         public Amount(float customer_ratio, int max_customer , int amount_surchage)
         {
             this.Customer_ratio= customer_ratio;

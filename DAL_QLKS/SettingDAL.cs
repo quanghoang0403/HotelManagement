@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QuanLyKhachSan.DTO;
 
 namespace QuanLyKhachSan.DAL
 {
@@ -26,30 +27,26 @@ namespace QuanLyKhachSan.DAL
             {         
                 return DataProvider.Instance.ExecuteQuery("USP_GetCustomertypeList");
             }
-            public void ChangeAmount(string customer_ratio,string max_customer,string amount_surchage)
+            public void ChangeAmount(Amount amt)
             {
                 DataProvider.Instance.ExecuteQuery("USP_DeleteAmount");
-                DataProvider.Instance.ExecuteQuery("exec USP_InsertAmount @customer_ratio , @max_customer , @amount_surchage ", new object[] { customer_ratio, max_customer , amount_surchage });
-        }
-            public void AddCustomertype(string customer_type,float ratio)
+                DataProvider.Instance.ExecuteQuery("exec USP_InsertAmount @customer_ratio , @max_customer , @amount_surchage ", new object[] { amt.Customer_ratio, amt.Max_customer , amt.Amount_surchage });
+            }
+            public DataTable FindByCT(string cus_type)
             {
-                DataProvider.Instance.ExecuteQuery("exec USP_AddCustomertype @customer_type , @ratio ", new object[] { customer_type , ratio });
+               return  DataProvider.Instance.ExecuteQuery("exec USP_GetByCustomerType @customer_type", new object[] { cus_type});
+            }
+            public void AddCustomertype(CustomerType ct)
+            {
+                DataProvider.Instance.ExecuteQuery("exec USP_AddCustomertype @customer_type , @ratio ", new object[] { ct.Name , ct.Ratio });
         }
             public void DeleteCustomertype(string customer_type)
             {
                 DataProvider.Instance.ExecuteQuery("exec USP_DeleteCustomertype @customer_type ", new object[] { customer_type });
         }
-            public void UpdateCustomertype(string customer_type, float ratio)
+            public void UpdateCustomertype(string customer_type, CustomerType ct)
             {
-                DataProvider.Instance.ExecuteQuery("exec USP_UpdateCustomertype @customer_type , @ratio ", new object[] { customer_type, ratio });
-            }
-            public void ChangePass(string userName,string passWord)
-            {
-                DataProvider.Instance.ExecuteQuery("exec USP_ChangePassword @pass , @username ", new object[] { passWord, userName });
-            }
-            public void Signin(string username, string password, string name, string permission)
-            {
-                DataProvider.Instance.ExecuteQuery("exec USP_SignIn @name , @username , @pass , @permission ", new object[] { name, username, password, permission });
+                DataProvider.Instance.ExecuteQuery("exec USP_UpdateCustomertype @customer_type , @ratio ", new object[] { customer_type, ct.Ratio });
             }
     }
 }

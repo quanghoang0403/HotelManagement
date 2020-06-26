@@ -9,6 +9,13 @@ namespace QuanLyKhachSan.DTO
 {
     public class Bill
 {
+    public Bill()
+    {
+            this.Id_bill = 0;
+            this.Bill_name = "";
+            this.Bill_address = "";
+            this.Total_money = "";
+    }
     public Bill(int id_bill,string bill_name,string bill_address,string total_money)
     {
         this.Id_bill = id_bill;

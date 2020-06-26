@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QuanLyKhachSan.DTO;
 
 namespace QuanLyKhachSan.DAL
 {
@@ -16,9 +17,9 @@ namespace QuanLyKhachSan.DAL
             private set { instance = value; }
         }
         private RoomManagementDAL() { }
-        public void AddRoomType(string roomtype, string price)
+        public void AddRoomType(RT rt)
         {
-            DataProvider.Instance.ExecuteQuery("USP_AddRoomType @roomtype , @price ", new object[] { roomtype, price});
+            DataProvider.Instance.ExecuteQuery("USP_AddRoomType @roomtype , @price ", new object[] { rt.room_type, rt.price});
         }
 
         public void DeleteRoomType(string roomtype)
@@ -26,20 +27,17 @@ namespace QuanLyKhachSan.DAL
             DataProvider.Instance.ExecuteQuery("USP_DeleteRoomType @roomtype", new object[] { roomtype });
         }
 
-        public void UpdateRoomType(string oldroomtype, string newroomtype, int newprice)
+        public void UpdateRoomType(string oldroomtype, RT rt)
         {
-            DataProvider.Instance.ExecuteQuery("USP_UpdateRoomType @oldroomtype , @newroomtype , @newprice ", new object[] { oldroomtype, newroomtype, newprice });
+            DataProvider.Instance.ExecuteQuery("USP_UpdateRoomType @oldroomtype , @newroomtype , @newprice ", new object[] { oldroomtype, rt.room_type, rt.price });
         }
-
-        public DataTable SearchRoom(string id_room)
+        public DataTable FindByRT(string roomtype)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("select ROOM.id_room,ROOM.room_type,price,notes,statuss from ROOM,ROOMTYPE where id_room='" + id_room + "'and ROOM.room_type=ROOMTYPE.room_type");
-            return data;
+            return DataProvider.Instance.ExecuteQuery("USP_GetByRoomType @room_type", new object[] { roomtype});
         }
-
-        public void AddRoom(string id_room, string class_room, string note, string status)
+        public void AddRoom(Home r)
         {
-            DataProvider.Instance.ExecuteQuery("USP_AddRoom @id_room , @class_room , @note , @status ", new object[] { id_room, class_room, note, status });
+            DataProvider.Instance.ExecuteQuery("USP_AddRoom @id_room , @class_room , @note , @status ", new object[] { r.ID, r.Type, r.Notes, r.Status });
         }
 
         public void DeleteRoom(string id_room)
@@ -47,9 +45,14 @@ namespace QuanLyKhachSan.DAL
             DataProvider.Instance.ExecuteQuery("USP_DeleteRoom @id_room", new object[] { id_room });
         }
 
-        public void UpdateRoom(string id_room, string class_room, string note, string status)
+        public void UpdateRoom(string id_room, Home r)
         {
-            DataProvider.Instance.ExecuteQuery("USP_UpdateRoom @id_room , @class_room , @note , @status ", new object[] { id_room, class_room, note , status });
+            DataProvider.Instance.ExecuteQuery("USP_UpdateRoom @id_room , @class_room , @note , @status ", new object[] { id_room, r.Type, r.Notes , r.Status });
+        }
+
+        public DataTable FindByRoom(string id_room)
+        {
+            return DataProvider.Instance.ExecuteQuery("USP_GetByRoom @id_room", new object[] { id_room });
         }
     }
 }

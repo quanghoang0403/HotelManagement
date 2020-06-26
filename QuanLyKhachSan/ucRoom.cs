@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyKhachSan.BUS;
+using QuanLyKhachSan.DTO;
 
 namespace QuanLyKhachSan
 {
     public partial class ucRoom : UserControl
     {
         private bool Accessibility=true;
+        RoomTypeBUS _repos = new RoomTypeBUS();
+        RoomBUS _reposR = new RoomBUS();
         public ucRoom()
         {
             InitializeComponent();
@@ -22,6 +25,7 @@ namespace QuanLyKhachSan
             panel13.Visible = false;
             panel5.Visible = false;
             panel17.Visible = false;
+            panel4.Visible = false;
             btnCancelRoomType.Visible = false;
             btnCancelRoom.Visible = false;
             
@@ -48,15 +52,15 @@ namespace QuanLyKhachSan
 
     #region Hàm hỗ trợ loại phòng
 
-        void LoadRoomType()
+        private async void LoadRoomType()
         {
-            dtgvType.DataSource = HomeBUS.Instance.LoadRoomType();
+            var listRT = await _repos.GetListRoomType();
+            dtgvType.DataSource = listRT;
         }
 
         void CleanTextinRoomType()
         {
             txbNewPrice.Text = "";
-            txbNewTypeRoom.Text = "";
             txbTypeRoom.Text = "";
             txbPrice.Text = "";
         }
@@ -65,11 +69,35 @@ namespace QuanLyKhachSan
 
         #region Hàm hỗ trợ phòng
 
-        void LoadRoom()
+        private async void LoadRoom()
         {
-            dtgvRoom.DataSource = HomeBUS.Instance.LoadRoom();
+            var listR = await _reposR.GetListRoom();
+            dtgvRoom.DataSource = listR;
         }
-
+        void Search(string id)
+        {
+            foreach (DataGridViewRow row in dtgvRoom.Rows)
+            {
+                row.Selected = false;
+            }
+            string searchValue = id;
+            dtgvRoom.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in dtgvRoom.Rows)
+                {
+                    if (row.Cells[0].Value.ToString().Equals(searchValue))
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
         void CleanTextinRoom()
         {
             txbID.Text = "";
@@ -79,7 +107,7 @@ namespace QuanLyKhachSan
             txbNewNote.Text = "";
             txbStatus.Text = "";
             txbNewStatus.Text = "";
-            txbUnitPrice.Text = "";
+            textbox1.Text = "";
         }
 
         private void dtgvRoom_SelectionChanged(object sender, EventArgs e)
@@ -125,7 +153,8 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Loại phòng hoặc đơn giá chưa được nhập");
                 return;
             }
-            RoomManagementBUS.Instance.AddRoomType(txbTypeRoom.Text, txbPrice.Text);
+            RT rt = new RT(txbTypeRoom.Text, (float)Convert.ToDouble(txbPrice.Text));
+            _repos.AddRoomType(rt);
             MessageBox.Show("Đã thêm thành công !");
             LoadRoomType();
             btnCancelRoomType.PerformClick();
@@ -137,7 +166,7 @@ namespace QuanLyKhachSan
             switch (result)
             {
                case DialogResult.Yes:
-                    RoomManagementBUS.Instance.DeleteRoomType(txbOldTypeRoom.Text);
+                    _repos.DeleteRoomType(txbOldTypeRoom.Text);
                     LoadRoomType();
                     break;
                case DialogResult.No:
@@ -156,17 +185,18 @@ namespace QuanLyKhachSan
                 btnCancelRoomType.Visible = true;
                 return;
             }            
-            if (txbNewTypeRoom.Text == "" || txbNewPrice.Text == "")
+            if (txbNewPrice.Text == "")
             {
                 MessageBox.Show("Loại phòng mới hoặc đơn giá mới chưa được nhập");
                 return;
             }
-            if (txbNewTypeRoom.Text == txbOldTypeRoom.Text && txbNewPrice.Text == txbOldPrice.Text)
+            if (txbNewPrice.Text == txbOldPrice.Text)
             {
                 MessageBox.Show("Thông tin chưa được thay đổi !");
                 return;
             }
-            RoomManagementBUS.Instance.UpdateRoomType(txbOldTypeRoom.Text, txbNewTypeRoom.Text, Int32.Parse(txbNewPrice.Text));
+            RT rt = new RT(txbOldTypeRoom.Text, (float)Convert.ToDouble(txbNewPrice.Text));
+            _repos.UpdateRoomType(txbOldTypeRoom.Text, rt);
             MessageBox.Show("Cập nhật thành công !");
             LoadRoomType();
             LoadRoom();
@@ -180,17 +210,15 @@ namespace QuanLyKhachSan
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadRoom();
+            LoadRoomType();
         }
 
         private void btnCancelRoom_Click(object sender, EventArgs e)
         {
+            panel4.Visible = false;
             panel17.Visible = false;
-            btnSearch.Visible = true;
-            txbType.ReadOnly = true;
-            txbNotes.ReadOnly = true;
-            txbStatus.ReadOnly = true;
             btnCancelRoom.Visible = false;
-            CleanTextinRoom();         
+            CleanTextinRoom();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -200,29 +228,20 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng nhập mã số phòng");
                 return;
             }
-            DataTable result=RoomManagementBUS.Instance.SearchRoom(txbID.Text);
-            txbType.Text = result.Rows[0].Field<string>(1);
-            txbUnitPrice.Text = Convert.ToString(result.Rows[0].Field<Decimal>(2));
-            txbNotes.Text = result.Rows[0].Field<string>(3);
-            txbStatus.Text = result.Rows[0].Field<string>(4);
+            Search(txbID.Text);
         }
         
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            if(btnSearch.Visible==true || panel17.Visible == true)
+            if(panel4.Visible == false)
             {
-                panel14.Visible = true;
+                panel4.Visible = true;
                 panel17.Visible = false;
-                btnCancelRoom.Visible = true;                
-                txbType.ReadOnly = false;
-                txbNotes.ReadOnly = false;
-                txbStatus.ReadOnly = false;
-                btnSearch.Visible=false;
-                txbUnitPrice.Text = "";
+                btnCancelRoom.Visible = true;
                 CleanTextinRoom();
                 return;
             }
-            if (txbID.Text == "")
+            if (textbox1.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập ID phòng");
                 return;
@@ -237,7 +256,8 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng nhập trình trạng phòng");
                 return;
             }
-            RoomManagementBUS.Instance.AddRoom(txbID.Text, txbType.Text, txbNotes.Text, txbStatus.Text);
+            Home r = new Home(textbox1.Text, txbType.Text, txbNotes.Text, txbStatus.Text);
+            _reposR.AddRoom(r);
             MessageBox.Show("Đã thêm thành công !");
             LoadRoom();
             btnCancelRoom.PerformClick();
@@ -249,7 +269,7 @@ namespace QuanLyKhachSan
             switch (result)
             {
                 case DialogResult.Yes:
-                    RoomManagementBUS.Instance.DeleteRoom(txbOldID.Text);
+                    _reposR.DeleteRoom(txbOldID.Text);
                     LoadRoom();
                     break;
                 case DialogResult.No:
@@ -263,7 +283,8 @@ namespace QuanLyKhachSan
         {
             if(panel17.Visible==false)
             {
-                panel17.Visible=true;
+                panel17.Visible = true;
+                panel4.Visible = false;
                 btnCancelRoom.Visible = true;
                 return;
             }
@@ -282,7 +303,8 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng nhập trình trạng phòng");
                 return;
             }
-            RoomManagementBUS.Instance.UpdateRoom(txbOldID.Text,txbNewType.Text, txbNewNote.Text, txbNewStatus.Text);
+            Home r = new Home(txbOldID.Text, txbNewType.Text, txbNewNote.Text, txbNewStatus.Text);
+            _reposR.UpdateRoom(txbOldID.Text, r);
             MessageBox.Show("Cập nhật thành công !");
             LoadRoom();
             btnCancelRoom.PerformClick();
@@ -306,5 +328,15 @@ namespace QuanLyKhachSan
             }
         }
 
+        private void dtgvType_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgvType.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtgvType.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtgvType.Rows[selectedrowindex];
+                txbOldTypeRoom.Text = Convert.ToString(selectedRow.Cells["room_type2"].Value);
+                txbOldPrice.Text = Convert.ToString(selectedRow.Cells["price"].Value);
+            }
+        }
     }
 }

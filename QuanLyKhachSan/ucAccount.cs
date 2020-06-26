@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyKhachSan.BUS;
+using QuanLyKhachSan.DTO;
 
 namespace QuanLyKhachSan
 {
     public partial class ucAccount : UserControl
     {
         private bool Accessibility=true;
+        AmountBUS _repos = new AmountBUS();
+        CustomerTypeBUS _reposCT = new CustomerTypeBUS();
         public ucAccount()
         {
             InitializeComponent();
@@ -48,8 +51,9 @@ namespace QuanLyKhachSan
             {
                 MessageBox.Show("Mật khẩu nhập lại không khớp mật khẩu mới tạo !");
                 return;
-            }          
-            SettingBUS.Instance.ChangePass(txbUserName.Text,txbNewPass.Text);
+            }
+            Account acc = new Account("", txbUserName.Text, txbNewPass.Text, "");
+            AccountBUS.Instance.ChangePassWord(acc);
             MessageBox.Show("Đã đổi thành công !");
             btnRemoveChangePass.PerformClick();
         }
@@ -78,7 +82,8 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Mật khẩu nhập lại không khớp mật khẩu mới tạo");
                 return;
             }
-            SettingBUS.Instance.Signin(txbSignin_Username.Text, txbSignin_Password.Text, txbSignin_Name.Text, comboBox_Permission.Text);
+            Account acc=new Account(txbSignin_Name.Text, txbSignin_Username.Text, txbSignin_Password.Text, comboBox_Permission.Text);
+            AccountBUS.Instance.SignupAccount(acc);
             MessageBox.Show("Đã tạo tài khoản thành công !");
             btnRemoveSignin.PerformClick();          
         }
@@ -95,13 +100,15 @@ namespace QuanLyKhachSan
         #endregion
 
 
-        void LoadAmount()
+        private async void LoadAmount()
         {
-            dtgvType.DataSource = SettingBUS.Instance.LoadAmountList();
+            var listA = await _repos.GetAmount();
+            dtgvType.DataSource = listA;
         }
-        void LoadCustomerType()
+        private async void LoadCustomerType()
         {
-            dtgvCustomertype.DataSource = SettingBUS.Instance.LoadCustomerTypeList();
+            var listCT = await _reposCT.GetCustomerType();
+            dtgvCustomertype.DataSource = listCT;
         }
         private void txbMax_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -142,8 +149,8 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
-            SettingBUS.Instance.ChangeAmount(txbRatio.Text, txbMax.Text, txbMaxSurcharge.Text);
-            LoadAmount();
+            Amount amt = new Amount((float)Convert.ToDouble(txbRatio.Text),Convert.ToInt32(txbMax.Text),Convert.ToInt32(txbMaxSurcharge.Text));
+            _repos.ChangeAmount(amt);
             txbRatio.Text = "";
             txbMax.Text = "";
             txbMaxSurcharge.Text = "";
@@ -164,7 +171,8 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
-            SettingBUS.Instance.AddCustomertype(txbTypeCustomer.Text, float.Parse(txbPrice.Text));
+            CustomerType ct = new CustomerType(txbTypeCustomer.Text, (float)Convert.ToDouble(txbPrice.Text));
+            _reposCT.AddCustomerType(ct);
             MessageBox.Show("Đã thêm thành công !");
             LoadCustomerType();
             btnCancel.PerformClick();
@@ -176,8 +184,7 @@ namespace QuanLyKhachSan
             switch (result)
             {
                 case DialogResult.Yes:
-                    SettingBUS.Instance.DeleteCustomertype(txbOldct.Text);
-                    LoadCustomerType();
+                    _reposCT.DeleteCustomerType(txbOldct.Text);
                     break;
                 case DialogResult.No:
                     break;
@@ -200,7 +207,8 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
-            SettingBUS.Instance.UpdateCustomertype(txbOldct.Text, float.Parse(txbOldratio.Text));
+            CustomerType ct=new CustomerType(txbOldct.Text, float.Parse(txbOldratio.Text));
+            _reposCT.UpdateCustomerType(txbOldct.Text, ct);
             MessageBox.Show("Cập nhật thành công !");
             LoadCustomerType();
             btnCancel.PerformClick();
@@ -227,6 +235,22 @@ namespace QuanLyKhachSan
             panel13.Visible = false;
             panel17.Visible = false;
             btnCancel.Visible = false;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadAmount();
+            LoadCustomerType();
+        }
+
+        private void dtgvCustomertype_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgvCustomertype.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtgvCustomertype.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtgvCustomertype.Rows[selectedrowindex];
+                txbOldct.Text = Convert.ToString(selectedRow.Cells["Loaikh"].Value);
+            }
         }
     }
 }
