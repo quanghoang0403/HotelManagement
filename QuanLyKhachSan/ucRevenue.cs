@@ -109,7 +109,7 @@ namespace QuanLyKhachSan
                 PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, arial));
                 pdfTable.AddCell(cell);
             }
-            /*
+            
              DataTable dataTable= RevenueBUS.Instance.LoadRevenueList(dateMonth.Value.Month.ToString(), dateMonth.Value.Year.ToString());
 
              for (int i = 0; i < dataTable.Rows.Count; i++)
@@ -119,14 +119,6 @@ namespace QuanLyKhachSan
                      pdfTable.AddCell(dataTable.Rows[i][j].ToString());
                  }
              }
-             */
-            foreach (DataGridViewRow row in dtblTable.Rows)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    pdfTable.AddCell(cell.Value.ToString());
-                }
-            }
             document.Add(pdfTable);
             document.Close();
             writer.Close();
