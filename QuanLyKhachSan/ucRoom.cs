@@ -133,6 +133,11 @@ namespace QuanLyKhachSan
 
         private void btnDeleteType_Click(object sender, EventArgs e)
         {
+            if(txbOldTypeRoom.Text=="")
+            {
+                MessageBox.Show("Vui lòng nhập loại phòng");
+                return;
+            }
             DialogResult result = MessageBox.Show("Bạn có chắc chắn là muốn xóa loại phòng này ?", "XÁC NHẬN XÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
             switch (result)
             {
@@ -245,6 +250,11 @@ namespace QuanLyKhachSan
 
         private void btnDeleteRoom_Click(object sender, EventArgs e)
         {
+            if(txbOldID.Text=="")
+            {
+                MessageBox.Show("Vui lòng nhập ID phòng");
+                return;
+            }
             DialogResult result = MessageBox.Show("Bạn có chắc chắn là muốn xóa phòng này ?", "XÁC NHẬN XÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
             switch (result)
             {
@@ -265,6 +275,11 @@ namespace QuanLyKhachSan
             {
                 panel17.Visible=true;
                 btnCancelRoom.Visible = true;
+                return;
+            }
+            if(txbOldID.Text=="")
+            {
+                MessageBox.Show("Vui lòng nhập ID phòng");
                 return;
             }
             if (txbOldType.Text==txbNewType.Text && txbOldStatus.Text==txbNewStatus.Text && txbOldNote.Text==txbNewNote.Text)

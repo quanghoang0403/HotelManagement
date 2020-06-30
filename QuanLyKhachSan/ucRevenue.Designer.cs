@@ -32,12 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvIncome = new System.Windows.Forms.DataGridView();
+            this.room_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Income = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.dateMonth = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.btnExport = new System.Windows.Forms.Button();
-            this.room_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Income = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvIncome)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +82,22 @@
             this.dtgvIncome.Size = new System.Drawing.Size(1077, 288);
             this.dtgvIncome.TabIndex = 0;
             // 
+            // room_type
+            // 
+            this.room_type.DataPropertyName = "room_type";
+            this.room_type.HeaderText = "Loại phòng";
+            this.room_type.MinimumWidth = 6;
+            this.room_type.Name = "room_type";
+            this.room_type.Width = 250;
+            // 
+            // Income
+            // 
+            this.Income.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Income.DataPropertyName = "Income";
+            this.Income.HeaderText = "Thu nhập";
+            this.Income.MinimumWidth = 6;
+            this.Income.Name = "Income";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -125,22 +141,6 @@
             this.btnExport.Text = "Xuất báo cáo ";
             this.btnExport.UseVisualStyleBackColor = false;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // room_type
-            // 
-            this.room_type.DataPropertyName = "room_type";
-            this.room_type.HeaderText = "Loại phòng";
-            this.room_type.MinimumWidth = 6;
-            this.room_type.Name = "room_type";
-            this.room_type.Width = 250;
-            // 
-            // Income
-            // 
-            this.Income.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Income.DataPropertyName = "Income";
-            this.Income.HeaderText = "Thu nhập";
-            this.Income.MinimumWidth = 6;
-            this.Income.Name = "Income";
             // 
             // ucRevenue
             // 

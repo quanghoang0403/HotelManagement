@@ -149,11 +149,11 @@ namespace QuanLyKhachSan
             foreach (Control item in panel_Menu.Controls)
                 item.BackColor = panel_Menu.BackColor;
             btn.BackColor = Color.Orange;
-
             ucAccount1.Visible = false;
             ucBill1.Visible = false;
             ucCheckin1.Visible = false;
             ucRevenue1.Visible = true;
+            ucRevenue1.Reload();
             ucRoom1.Visible = false;
             ucHome1.Visible = false;
         }
