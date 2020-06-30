@@ -22,14 +22,14 @@ namespace QuanLyKhachSan.DAL
 
         public DataTable GetListCheckinInfo(int id)
         {
-            return DataProvider.Instance.ExecuteQuery("select *from CHECKIN_DETAILS where id_checkin=" + id);
+            return DataProvider.Instance.ExecuteQuery("USP_GetListCheckinInfo @id ", new object[] { id });
         }
 
         public int GetMaxIDCheckin() // lấy id phòng đang tương tác
         {
             try
             {
-                return (int)DataProvider.Instance.ExecuteScalar("select MAX(id_checkin) from CHECKIN");
+                return (int)DataProvider.Instance.ExecuteScalar("USP_GetMaxIDCheckin");
             }
             catch
             {
@@ -41,7 +41,7 @@ namespace QuanLyKhachSan.DAL
         {
             try
             {
-                return (int)DataProvider.Instance.ExecuteScalar("select COUNT(*) from CHECKIN_DETAILS WHERE id_checkin=" + id);
+                return (int)DataProvider.Instance.ExecuteScalar("USP_GetAmountCustomer @id " , new object[] { id });
             }
             catch
             {
@@ -53,7 +53,7 @@ namespace QuanLyKhachSan.DAL
         {
             try
             {
-                return (float)Convert.ToDouble(DataProvider.Instance.ExecuteScalar("select MAX(ratio) from CHECKIN_DETAILS AS CD, CUSTOMER_TYPE AS CT WHERE CD.customer_type= CT.customer_type and CD.id_checkin = " + id).ToString());
+                return (float)Convert.ToDouble(DataProvider.Instance.ExecuteScalar("USP_GetMaxRatio @id ", new object[] { id }).ToString());
             }
             catch
             {
@@ -69,8 +69,7 @@ namespace QuanLyKhachSan.DAL
 
         public bool updateCheckin(float ratio, int count, int id_checkin)
         {
-            string query = string.Format("update CHECKIN set type_ratioMAX = {0}, number_customer = {1} where id_checkin = {2}", ratio, count, id_checkin);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateRatioCheckin @ratio , @count , @id_checkin ", new object[] { ratio, count , id_checkin });
             return result > 0;
         }
 

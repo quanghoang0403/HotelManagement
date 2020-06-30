@@ -152,7 +152,7 @@
             this.panel2.Controls.Add(this.textboxsearch3);
             this.panel2.Controls.Add(this.textboxsearch2);
             this.panel2.Location = new System.Drawing.Point(1035, 101);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(449, 322);
             this.panel2.TabIndex = 15;
@@ -165,7 +165,7 @@
             "1",
             "1.5"});
             this.textboxsearch4.Location = new System.Drawing.Point(9, 114);
-            this.textboxsearch4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textboxsearch4.Margin = new System.Windows.Forms.Padding(4);
             this.textboxsearch4.Name = "textboxsearch4";
             this.textboxsearch4.Size = new System.Drawing.Size(143, 33);
             this.textboxsearch4.TabIndex = 28;
@@ -175,7 +175,7 @@
             this.textboxsearch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxsearch1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.textboxsearch1.Location = new System.Drawing.Point(9, 46);
-            this.textboxsearch1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textboxsearch1.Margin = new System.Windows.Forms.Padding(4);
             this.textboxsearch1.Name = "textboxsearch1";
             this.textboxsearch1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textboxsearch1.ShowUpDown = true;
@@ -187,11 +187,11 @@
             this.checkbox6.AutoSize = true;
             this.checkbox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox6.Location = new System.Drawing.Point(9, 235);
-            this.checkbox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkbox6.Margin = new System.Windows.Forms.Padding(4);
             this.checkbox6.Name = "checkbox6";
-            this.checkbox6.Size = new System.Drawing.Size(192, 33);
+            this.checkbox6.Size = new System.Drawing.Size(101, 33);
             this.checkbox6.TabIndex = 26;
-            this.checkbox6.Text = "status_checkin";
+            this.checkbox6.Text = "Status";
             this.checkbox6.UseVisualStyleBackColor = true;
             // 
             // checkbox5
@@ -199,11 +199,11 @@
             this.checkbox5.AutoSize = true;
             this.checkbox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox5.Location = new System.Drawing.Point(9, 154);
-            this.checkbox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkbox5.Margin = new System.Windows.Forms.Padding(4);
             this.checkbox5.Name = "checkbox5";
-            this.checkbox5.Size = new System.Drawing.Size(229, 33);
+            this.checkbox5.Size = new System.Drawing.Size(200, 33);
             this.checkbox5.TabIndex = 25;
-            this.checkbox5.Text = "number_customer";
+            this.checkbox5.Text = "Số lượng khách";
             this.checkbox5.UseVisualStyleBackColor = true;
             // 
             // checkbox4
@@ -211,11 +211,11 @@
             this.checkbox4.AutoSize = true;
             this.checkbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox4.Location = new System.Drawing.Point(9, 80);
-            this.checkbox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkbox4.Margin = new System.Windows.Forms.Padding(4);
             this.checkbox4.Name = "checkbox4";
-            this.checkbox4.Size = new System.Drawing.Size(192, 33);
+            this.checkbox4.Size = new System.Drawing.Size(167, 33);
             this.checkbox4.TabIndex = 24;
-            this.checkbox4.Text = "type_ratioMAX";
+            this.checkbox4.Text = "Tỉ lệ phụ thu";
             this.checkbox4.UseVisualStyleBackColor = true;
             // 
             // checkbox3
@@ -223,11 +223,11 @@
             this.checkbox3.AutoSize = true;
             this.checkbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox3.Location = new System.Drawing.Point(220, 80);
-            this.checkbox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkbox3.Margin = new System.Windows.Forms.Padding(4);
             this.checkbox3.Name = "checkbox3";
-            this.checkbox3.Size = new System.Drawing.Size(202, 33);
+            this.checkbox3.Size = new System.Drawing.Size(143, 33);
             this.checkbox3.TabIndex = 23;
-            this.checkbox3.Text = "money_checkin";
+            this.checkbox3.Text = "Tổng tiền ";
             this.checkbox3.UseVisualStyleBackColor = true;
             // 
             // checkbox2
@@ -235,11 +235,11 @@
             this.checkbox2.AutoSize = true;
             this.checkbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox2.Location = new System.Drawing.Point(220, 4);
-            this.checkbox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkbox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkbox2.Name = "checkbox2";
-            this.checkbox2.Size = new System.Drawing.Size(124, 33);
+            this.checkbox2.Size = new System.Drawing.Size(132, 33);
             this.checkbox2.TabIndex = 22;
-            this.checkbox2.Text = "id_room";
+            this.checkbox2.Text = "ID phòng";
             this.checkbox2.UseVisualStyleBackColor = true;
             // 
             // checkbox1
@@ -247,11 +247,11 @@
             this.checkbox1.AutoSize = true;
             this.checkbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox1.Location = new System.Drawing.Point(9, 4);
-            this.checkbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkbox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkbox1.Name = "checkbox1";
-            this.checkbox1.Size = new System.Drawing.Size(140, 33);
+            this.checkbox1.Size = new System.Drawing.Size(143, 33);
             this.checkbox1.TabIndex = 21;
-            this.checkbox1.Text = "date_start";
+            this.checkbox1.Text = "Ngày thuê";
             this.checkbox1.UseVisualStyleBackColor = true;
             // 
             // textboxsearch6
@@ -262,7 +262,7 @@
             "DONE",
             "USING"});
             this.textboxsearch6.Location = new System.Drawing.Point(9, 277);
-            this.textboxsearch6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textboxsearch6.Margin = new System.Windows.Forms.Padding(4);
             this.textboxsearch6.Name = "textboxsearch6";
             this.textboxsearch6.Size = new System.Drawing.Size(208, 33);
             this.textboxsearch6.TabIndex = 20;
@@ -271,7 +271,7 @@
             // 
             this.textboxsearch5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxsearch5.Location = new System.Drawing.Point(9, 196);
-            this.textboxsearch5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textboxsearch5.Margin = new System.Windows.Forms.Padding(4);
             this.textboxsearch5.Name = "textboxsearch5";
             this.textboxsearch5.Size = new System.Drawing.Size(208, 30);
             this.textboxsearch5.TabIndex = 12;
@@ -280,7 +280,7 @@
             // 
             this.textboxsearch3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxsearch3.Location = new System.Drawing.Point(220, 114);
-            this.textboxsearch3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textboxsearch3.Margin = new System.Windows.Forms.Padding(4);
             this.textboxsearch3.Name = "textboxsearch3";
             this.textboxsearch3.Size = new System.Drawing.Size(201, 30);
             this.textboxsearch3.TabIndex = 7;
@@ -289,7 +289,7 @@
             // 
             this.textboxsearch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxsearch2.Location = new System.Drawing.Point(220, 41);
-            this.textboxsearch2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textboxsearch2.Margin = new System.Windows.Forms.Padding(4);
             this.textboxsearch2.Name = "textboxsearch2";
             this.textboxsearch2.Size = new System.Drawing.Size(144, 30);
             this.textboxsearch2.TabIndex = 3;
@@ -389,7 +389,7 @@
             // Date_start
             // 
             this.Date_start.DataPropertyName = "Date_start";
-            this.Date_start.HeaderText = "Date_start";
+            this.Date_start.HeaderText = "Ngày thuê";
             this.Date_start.MinimumWidth = 6;
             this.Date_start.Name = "Date_start";
             this.Date_start.ReadOnly = true;
@@ -407,7 +407,7 @@
             // Money_checkin
             // 
             this.Money_checkin.DataPropertyName = "Money_checkin";
-            this.Money_checkin.HeaderText = "Money_checkin";
+            this.Money_checkin.HeaderText = "Tổng tiền";
             this.Money_checkin.MinimumWidth = 6;
             this.Money_checkin.Name = "Money_checkin";
             this.Money_checkin.ReadOnly = true;
@@ -416,7 +416,7 @@
             // Type_ratioMAX
             // 
             this.Type_ratioMAX.DataPropertyName = "Type_ratioMAX";
-            this.Type_ratioMAX.HeaderText = "Type_ratioMAX";
+            this.Type_ratioMAX.HeaderText = "Tỉ lệ phụ thu";
             this.Type_ratioMAX.MinimumWidth = 6;
             this.Type_ratioMAX.Name = "Type_ratioMAX";
             this.Type_ratioMAX.ReadOnly = true;
@@ -425,7 +425,7 @@
             // Number_customer
             // 
             this.Number_customer.DataPropertyName = "Number_customer";
-            this.Number_customer.HeaderText = "Number_customer";
+            this.Number_customer.HeaderText = "Số lượng khách";
             this.Number_customer.MinimumWidth = 6;
             this.Number_customer.Name = "Number_customer";
             this.Number_customer.ReadOnly = true;
@@ -435,7 +435,7 @@
             // 
             this.Status_checkin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Status_checkin.DataPropertyName = "Status_checkin";
-            this.Status_checkin.HeaderText = "Status_checkin";
+            this.Status_checkin.HeaderText = "Status";
             this.Status_checkin.MinimumWidth = 6;
             this.Status_checkin.Name = "Status_checkin";
             this.Status_checkin.ReadOnly = true;

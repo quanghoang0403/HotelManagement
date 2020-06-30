@@ -89,7 +89,7 @@
             this.panel2.Controls.Add(this.textboxsearch1);
             this.panel2.Controls.Add(this.textboxsearch2);
             this.panel2.Location = new System.Drawing.Point(1116, 87);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(365, 260);
             this.panel2.TabIndex = 12;
@@ -99,11 +99,11 @@
             this.checkbox3.AutoSize = true;
             this.checkbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox3.Location = new System.Drawing.Point(9, 167);
-            this.checkbox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkbox3.Margin = new System.Windows.Forms.Padding(4);
             this.checkbox3.Name = "checkbox3";
-            this.checkbox3.Size = new System.Drawing.Size(165, 33);
+            this.checkbox3.Size = new System.Drawing.Size(137, 33);
             this.checkbox3.TabIndex = 23;
-            this.checkbox3.Text = "total_money";
+            this.checkbox3.Text = "Tổng tiền";
             this.checkbox3.UseVisualStyleBackColor = true;
             // 
             // checkbox2
@@ -111,11 +111,11 @@
             this.checkbox2.AutoSize = true;
             this.checkbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox2.Location = new System.Drawing.Point(9, 85);
-            this.checkbox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkbox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkbox2.Name = "checkbox2";
-            this.checkbox2.Size = new System.Drawing.Size(173, 33);
+            this.checkbox2.Size = new System.Drawing.Size(108, 33);
             this.checkbox2.TabIndex = 22;
-            this.checkbox2.Text = "bill_address ";
+            this.checkbox2.Text = "Địa chỉ";
             this.checkbox2.UseVisualStyleBackColor = true;
             // 
             // checkbox1
@@ -123,18 +123,18 @@
             this.checkbox1.AutoSize = true;
             this.checkbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox1.Location = new System.Drawing.Point(9, 4);
-            this.checkbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkbox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkbox1.Name = "checkbox1";
-            this.checkbox1.Size = new System.Drawing.Size(140, 33);
+            this.checkbox1.Size = new System.Drawing.Size(206, 33);
             this.checkbox1.TabIndex = 21;
-            this.checkbox1.Text = "bill_name";
+            this.checkbox1.Text = "Tên khách hàng";
             this.checkbox1.UseVisualStyleBackColor = true;
             // 
             // textboxsearch3
             // 
             this.textboxsearch3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxsearch3.Location = new System.Drawing.Point(8, 209);
-            this.textboxsearch3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textboxsearch3.Margin = new System.Windows.Forms.Padding(4);
             this.textboxsearch3.Name = "textboxsearch3";
             this.textboxsearch3.Size = new System.Drawing.Size(340, 30);
             this.textboxsearch3.TabIndex = 7;
@@ -143,7 +143,7 @@
             // 
             this.textboxsearch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxsearch1.Location = new System.Drawing.Point(8, 46);
-            this.textboxsearch1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textboxsearch1.Margin = new System.Windows.Forms.Padding(4);
             this.textboxsearch1.Name = "textboxsearch1";
             this.textboxsearch1.Size = new System.Drawing.Size(340, 30);
             this.textboxsearch1.TabIndex = 4;
@@ -152,7 +152,7 @@
             // 
             this.textboxsearch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxsearch2.Location = new System.Drawing.Point(8, 128);
-            this.textboxsearch2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textboxsearch2.Margin = new System.Windows.Forms.Padding(4);
             this.textboxsearch2.Name = "textboxsearch2";
             this.textboxsearch2.Size = new System.Drawing.Size(340, 30);
             this.textboxsearch2.TabIndex = 3;
@@ -288,35 +288,35 @@
             // id_bill
             // 
             this.id_bill.DataPropertyName = "id_bill";
-            this.id_bill.HeaderText = "ID Bill";
+            this.id_bill.HeaderText = "ID Hóa đơn";
             this.id_bill.MinimumWidth = 6;
             this.id_bill.Name = "id_bill";
             this.id_bill.ReadOnly = true;
-            this.id_bill.Width = 125;
+            this.id_bill.Width = 250;
             // 
             // Bill_name
             // 
             this.Bill_name.DataPropertyName = "Bill_name";
-            this.Bill_name.HeaderText = "Bill_name";
+            this.Bill_name.HeaderText = "Tên khách hàng";
             this.Bill_name.MinimumWidth = 6;
             this.Bill_name.Name = "Bill_name";
             this.Bill_name.ReadOnly = true;
-            this.Bill_name.Width = 200;
+            this.Bill_name.Width = 250;
             // 
             // Bill_address
             // 
             this.Bill_address.DataPropertyName = "Bill_address";
-            this.Bill_address.HeaderText = "Bill_address";
+            this.Bill_address.HeaderText = "Địa chỉ";
             this.Bill_address.MinimumWidth = 6;
             this.Bill_address.Name = "Bill_address";
             this.Bill_address.ReadOnly = true;
-            this.Bill_address.Width = 200;
+            this.Bill_address.Width = 250;
             // 
             // Total_money
             // 
             this.Total_money.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Total_money.DataPropertyName = "Total_money";
-            this.Total_money.HeaderText = "Total_money";
+            this.Total_money.HeaderText = "Tổng tiền";
             this.Total_money.MinimumWidth = 6;
             this.Total_money.Name = "Total_money";
             this.Total_money.ReadOnly = true;

@@ -22,14 +22,12 @@ namespace QuanLyKhachSan.DAL
 
         public DataTable GetListBillInfo(int id_bill, int id_checkin)
         {
-            string query = string.Format("SELECT C.id_room AS ID_ROOM, BD.date_number AS DATE_NUMBER, RT.price AS PRICE, C.type_ratioMAX AS TYPE_RATIO, BD.surchage_ratio AS NUMBER_RATIO, RT.price*C.type_ratioMAX*BD.surchage_ratio*BD.date_number AS TOTAL FROM BILL_DETAILS AS BD, CHECKIN AS C, ROOM AS R, ROOMTYPE AS RT WHERE BD.id_checkin = C.id_checkin and C.id_room = R.id_room and R.room_type = RT.room_type and BD.id_bill = {0} and BD.id_checkin = {1}", id_bill, id_checkin);
-           return DataProvider.Instance.ExecuteQuery(query);
+            return DataProvider.Instance.ExecuteQuery("USP_GetListBillInfo @id_bill , @id_checkin", new object[] { id_bill, id_checkin });
         }
 
         public int GetStatusCheckin(int id_checkin)
         {
-            string query = string.Format("select status_checkin from CHECKIN where id_checkin = @id_checkin");
-            object Status = DataProvider.Instance.ExecuteScalar(query, new object[] { id_checkin});
+            object Status = DataProvider.Instance.ExecuteScalar("USP_GetStatusCheckin @id_checkin ", new object[] { id_checkin });
             if (Status == null)
                 return -1;
             if (Status.ToString() == "DONE")
@@ -41,7 +39,7 @@ namespace QuanLyKhachSan.DAL
         {
             try
             {
-                return DataProvider.Instance.ExecuteScalar("select id_room from CHECKIN where id_checkin =" + id_checkin).ToString();
+                return DataProvider.Instance.ExecuteScalar("USP_GetIdRoom @id_checkin ", new object[] { id_checkin }).ToString();
             }
             catch
             {
@@ -53,7 +51,7 @@ namespace QuanLyKhachSan.DAL
         {
             try
             {
-                return (int)DataProvider.Instance.ExecuteScalar("select MAX(id_bill) from BILL");
+                return (int)DataProvider.Instance.ExecuteScalar("USP_GetMaxIDBill");
             }
             catch
             {
@@ -65,7 +63,7 @@ namespace QuanLyKhachSan.DAL
         {
             try
             {
-                return (int)DataProvider.Instance.ExecuteScalar("select amount_surchage from AMOUNT");
+                return (int)DataProvider.Instance.ExecuteScalar("USP_GetAmountSurchage");
             }
             catch
             {
@@ -77,7 +75,7 @@ namespace QuanLyKhachSan.DAL
         {
             try
             {
-                return (int)DataProvider.Instance.ExecuteScalar("select number_customer from CHECKIN where id_checkin = " + id_checkin);
+                return (int)DataProvider.Instance.ExecuteScalar("exec USP_GetNumberCustomer @id_checkin ", new object[] { id_checkin });
             }
             catch
             {
@@ -89,7 +87,7 @@ namespace QuanLyKhachSan.DAL
         {
             try
             {
-                return (float)Convert.ToDouble(DataProvider.Instance.ExecuteScalar("Select customer_ratio from AMOUNT").ToString());
+                return (float)Convert.ToDouble(DataProvider.Instance.ExecuteScalar("USP_GetRatioCustomer").ToString());
             }
             catch
             {
@@ -101,7 +99,7 @@ namespace QuanLyKhachSan.DAL
         {
             try
             {
-                return (DateTime)DataProvider.Instance.ExecuteScalar("select date_start from CHECKIN where id_checkin = " + id_checkin);
+                return (DateTime)DataProvider.Instance.ExecuteScalar("exec USP_GetDate @id_checkin", new object[] { id_checkin });
             }
             catch
             {
@@ -111,15 +109,14 @@ namespace QuanLyKhachSan.DAL
 
         public bool updateCheckin(float money, int id_checkin)
         {
-            string query = string.Format("update CHECKIN set money_checkin = {0}, status_checkin = 'DONE' where id_checkin = {1}", money, id_checkin);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            string status_checkin = "DONE";
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateCheckin @money , @status , @id_checkin ", new object[] { money, status_checkin, id_checkin });
             return result > 0;
         }
 
         public bool updateBill(float totalmoney, int id_bill)
         {
-            string query = string.Format("update BILL set total_money = {0} where id_bill = {1}", totalmoney, id_bill);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateBill @totalmoney , @id_bill ", new object[] { totalmoney, id_bill });
             return result > 0;
         }
 

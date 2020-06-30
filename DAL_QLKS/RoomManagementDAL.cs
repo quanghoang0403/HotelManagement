@@ -18,19 +18,17 @@ namespace QuanLyKhachSan.DAL
         private RoomManagementDAL() { }
         public void AddRoomType(string roomtype, string price)
         {
-            string query = "INSERT INTO ROOMTYPE VALUES('" + roomtype + "','" + price + "')";
-            DataProvider.Instance.ExecuteQuery(query);
+            DataProvider.Instance.ExecuteQuery("USP_AddRoomType @roomtype , @price ", new object[] { roomtype, price});
         }
 
         public void DeleteRoomType(string roomtype)
         {
-            string query = "delete from dbo.ROOMTYPE where room_type='" + roomtype + "'";
-            DataProvider.Instance.ExecuteQuery(query);
+            DataProvider.Instance.ExecuteQuery("USP_DeleteRoomType @roomtype", new object[] { roomtype });
         }
-        public void UpdateRoomType(string oldroomtype, string oldprice, string newroomtype, string newprice)
+
+        public void UpdateRoomType(string oldroomtype, string newroomtype, int newprice)
         {
-            string query = "Update dbo.ROOMTYPE Set room_type ='" + newroomtype + "',price ='" + newprice + "' Where room_type ='" + oldroomtype + "'";
-            DataProvider.Instance.ExecuteQuery(query);
+            DataProvider.Instance.ExecuteQuery("USP_UpdateRoomType @oldroomtype , @newroomtype , @newprice ", new object[] { oldroomtype, newroomtype, newprice });
         }
 
         public DataTable SearchRoom(string id_room)
@@ -41,20 +39,17 @@ namespace QuanLyKhachSan.DAL
 
         public void AddRoom(string id_room, string class_room, string note, string status)
         {
-            string query = "INSERT INTO ROOM VALUES('" + id_room + "','" + class_room + "',N'" + note + "','" + status + "')";
-            DataProvider.Instance.ExecuteQuery(query);
+            DataProvider.Instance.ExecuteQuery("USP_AddRoom @id_room , @class_room , @note , @status ", new object[] { id_room, class_room, note, status });
         }
 
         public void DeleteRoom(string id_room)
         {
-            string query = "delete from dbo.ROOM where id_room = '" + id_room + "'";
-            DataProvider.Instance.ExecuteQuery(query);
+            DataProvider.Instance.ExecuteQuery("USP_DeleteRoom @id_room", new object[] { id_room });
         }
 
         public void UpdateRoom(string id_room, string class_room, string note, string status)
         {
-            string query = "Update dbo.ROOM Set room_type ='" + class_room + "',notes =N'" + note + "',statuss ='" + status + "' Where id_room = '" + id_room + "'";
-            DataProvider.Instance.ExecuteQuery(query);
+            DataProvider.Instance.ExecuteQuery("USP_UpdateRoom @id_room , @class_room , @note , @status ", new object[] { id_room, class_room, note , status });
         }
     }
 }

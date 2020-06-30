@@ -174,12 +174,12 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Phụ thu loại khách";
-            this.columnHeader4.Width = 90;
+            this.columnHeader4.Width = 119;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Phụ thu số lượng";
-            this.columnHeader5.Width = 90;
+            this.columnHeader5.Width = 125;
             // 
             // columnHeader6
             // 

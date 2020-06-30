@@ -19,8 +19,8 @@ namespace QuanLyKhachSan.DAL
         }
         private DataProvider() { }
 
-        //private string connectionSTR = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=KhachSan;Integrated Security=True";
-        private string connectionSTR = @"Data Source=localhost;Initial Catalog=KhachSan;Integrated Security=True";
+        private string connectionSTR = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=KhachSan;Integrated Security=True";
+        //private string connectionSTR = @"Data Source=localhost;Initial Catalog=KhachSan;Integrated Security=True";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();

@@ -22,7 +22,7 @@ namespace QuanLyKhachSan.DAL
 
         public DataTable GetListType()
         {
-           return DataProvider.Instance.ExecuteQuery("select *from CUSTOMER_TYPE");
+           return DataProvider.Instance.ExecuteQuery("USP_GetListType");
         }
     }
 } 

@@ -975,7 +975,6 @@
             this.dtgvType.RowTemplate.Height = 24;
             this.dtgvType.Size = new System.Drawing.Size(608, 215);
             this.dtgvType.TabIndex = 0;
-            this.dtgvType.SelectionChanged += new System.EventHandler(this.dtgvType_SelectionChanged);
             // 
             // label7
             // 

@@ -164,7 +164,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
-            SettingBUS.Instance.AddCustomertype(txbTypeCustomer.Text, txbPrice.Text);
+            SettingBUS.Instance.AddCustomertype(txbTypeCustomer.Text, float.Parse(txbPrice.Text));
             MessageBox.Show("Đã thêm thành công !");
             LoadCustomerType();
             btnCancel.PerformClick();
@@ -172,11 +172,6 @@ namespace QuanLyKhachSan
 
         private void btnDeleteType_Click(object sender, EventArgs e)
         {
-            if (txbTypeCustomer.Text == "")
-            {
-                MessageBox.Show("Nhập loại phòng");
-                return;
-            }
             DialogResult result = MessageBox.Show("Bạn có chắc chắn là muốn loại khách hàng này ?", "XÁC NHẬN XÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
             switch (result)
             {
@@ -205,7 +200,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không bỏ trống thông tin");
                 return;
             }
-            SettingBUS.Instance.UpdateCustomertype(txbOldct.Text,txbOldratio.Text);
+            SettingBUS.Instance.UpdateCustomertype(txbOldct.Text, float.Parse(txbOldratio.Text));
             MessageBox.Show("Cập nhật thành công !");
             LoadCustomerType();
             btnCancel.PerformClick();
@@ -217,17 +212,6 @@ namespace QuanLyKhachSan
             {
                 panel6.Visible = false;
                 panel15.Visible = false;
-            }
-        }
-
-        private void dtgvCustomertype_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dtgvCustomertype.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dtgvCustomertype.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtgvCustomertype.Rows[selectedrowindex];
-                txbOldct.Text = Convert.ToString(selectedRow.Cells["Loaikh"].Value);
-                txbOldratio.Text = Convert.ToString(selectedRow.Cells["ratio"].Value);
             }
         }
         private void CleanCt()

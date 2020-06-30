@@ -61,22 +61,9 @@ namespace QuanLyKhachSan
             txbPrice.Text = "";
         }
 
-        private void dtgvType_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dtgvType.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dtgvType.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtgvType.Rows[selectedrowindex];
-                txbOldTypeRoom.Text = Convert.ToString(selectedRow.Cells["room_type2"].Value);
-                txbOldPrice.Text = Convert.ToString(selectedRow.Cells["price"].Value);
-                txbNewTypeRoom.Text = Convert.ToString(selectedRow.Cells["room_type2"].Value);
-                txbNewPrice.Text = Convert.ToString(selectedRow.Cells["price"].Value);
-            }
-        }
+        #endregion
 
-    #endregion
-
-    #region Hàm hỗ trợ phòng
+        #region Hàm hỗ trợ phòng
 
         void LoadRoom()
         {
@@ -179,7 +166,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Thông tin chưa được thay đổi !");
                 return;
             }
-            RoomManagementBUS.Instance.UpdateRoomType(txbOldTypeRoom.Text, txbOldPrice.Text, txbNewTypeRoom.Text, txbNewPrice.Text);
+            RoomManagementBUS.Instance.UpdateRoomType(txbOldTypeRoom.Text, txbNewTypeRoom.Text, Int32.Parse(txbNewPrice.Text));
             MessageBox.Show("Cập nhật thành công !");
             LoadRoomType();
             LoadRoom();

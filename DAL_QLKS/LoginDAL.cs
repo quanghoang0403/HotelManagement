@@ -22,9 +22,7 @@ namespace QuanLyKhachSan.DAL
 
         public bool Login(string userName, string passWord)
         {
-            string query = "USP_LOGIN @userName , @passWord";
-
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
+            DataTable result = DataProvider.Instance.ExecuteQuery("USP_LOGIN @userName , @passWord ", new object[] { userName, passWord });
             return result.Rows.Count > 0;
         }
     }
