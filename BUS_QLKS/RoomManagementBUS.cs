@@ -27,9 +27,9 @@ namespace QuanLyKhachSan.BUS
         {
             RoomManagementDAL.Instance.DeleteRoomType(roomtype);
         }
-        public void UpdateRoomType(string oldroomtype, string newroomtype, int newprice)
+        public void UpdateRoomType(string oldroomtype,int newprice)
         {
-            RoomManagementDAL.Instance.UpdateRoomType(oldroomtype, newroomtype, newprice);
+            RoomManagementDAL.Instance.UpdateRoomType(oldroomtype,newprice);
         }
 
         public DataTable SearchRoom(string id_room)

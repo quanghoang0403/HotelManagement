@@ -34,19 +34,19 @@ namespace QuanLyKhachSan
         {
             if (checkbox1.Checked == true)
             {
-                insert += checkbox1.Text + " like N'%" + textboxsearch1.Text + "%'";
+                insert += " bill_name like N'%" + textboxsearch1.Text + "%'";
                 only1attribute = false;
             }
             if (checkbox2.Checked == true)
             {
                 if (only1attribute == false) insert += " and ";
-                insert += checkbox2.Text + " like N'%" + textboxsearch2.Text + "%'";
+                insert += " bill_address like N'%" + textboxsearch2.Text + "%'";
                 only1attribute = false;
             }
             if (checkbox3.Checked == true)
             {
                 if (only1attribute == false) insert += " and ";
-                insert += checkbox3.Text + " = '" + textboxsearch3.Text + "'";
+                insert += " total_money = '" + textboxsearch3.Text + "'";
                 only1attribute = false;
             }
         }
@@ -64,7 +64,7 @@ namespace QuanLyKhachSan
             }
             only1attribute = true;
             string insert="";
-            if (panel2.Visible == true)
+            if (checkbox1.Checked == true || checkbox2.Checked == true || checkbox3.Checked == true)
                 AdvancedSearch(ref insert);
             else
             insert = " id_bill='" + txbSearch.Text + "'";

@@ -56,9 +56,18 @@ namespace QuanLyKhachSan
         void CleanTextinRoomType()
         {
             txbNewPrice.Text = "";
-            txbNewTypeRoom.Text = "";
             txbTypeRoom.Text = "";
             txbPrice.Text = "";
+        }
+        private void dtgvType_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgvType.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtgvType.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtgvType.Rows[selectedrowindex];
+                txbOldTypeRoom.Text = Convert.ToString(selectedRow.Cells["room_type2"].Value);
+                txbOldPrice.Text = Convert.ToString(selectedRow.Cells["price"].Value);
+            }
         }
 
         #endregion
@@ -156,17 +165,17 @@ namespace QuanLyKhachSan
                 btnCancelRoomType.Visible = true;
                 return;
             }            
-            if (txbNewTypeRoom.Text == "" || txbNewPrice.Text == "")
+            if (txbNewPrice.Text == "")
             {
                 MessageBox.Show("Loại phòng mới hoặc đơn giá mới chưa được nhập");
                 return;
             }
-            if (txbNewTypeRoom.Text == txbOldTypeRoom.Text && txbNewPrice.Text == txbOldPrice.Text)
+            if (txbNewPrice.Text == txbOldPrice.Text)
             {
                 MessageBox.Show("Thông tin chưa được thay đổi !");
                 return;
             }
-            RoomManagementBUS.Instance.UpdateRoomType(txbOldTypeRoom.Text, txbNewTypeRoom.Text, Int32.Parse(txbNewPrice.Text));
+            RoomManagementBUS.Instance.UpdateRoomType(txbOldTypeRoom.Text, Int32.Parse(txbNewPrice.Text));
             MessageBox.Show("Cập nhật thành công !");
             LoadRoomType();
             LoadRoom();
@@ -305,6 +314,7 @@ namespace QuanLyKhachSan
                 e.Handled = true;
             }
         }
+
 
     }
 }

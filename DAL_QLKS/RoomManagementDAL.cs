@@ -26,9 +26,9 @@ namespace QuanLyKhachSan.DAL
             DataProvider.Instance.ExecuteQuery("USP_DeleteRoomType @roomtype", new object[] { roomtype });
         }
 
-        public void UpdateRoomType(string oldroomtype, string newroomtype, int newprice)
+        public void UpdateRoomType(string oldroomtype, int newprice)
         {
-            DataProvider.Instance.ExecuteQuery("USP_UpdateRoomType @oldroomtype , @newroomtype , @newprice ", new object[] { oldroomtype, newroomtype, newprice });
+            DataProvider.Instance.ExecuteQuery("USP_UpdateRoomType @oldroomtype , @newroomtype , @newprice", new object[] { oldroomtype, oldroomtype, newprice});
         }
 
         public DataTable SearchRoom(string id_room)
