@@ -29,7 +29,15 @@ namespace QuanLyKhachSan.DAL
                 return 1;
             return 0;
         }
-
+        public int GetStatusRoomType(string room_type)
+        {
+            object Status = DataProvider.Instance.ExecuteScalar("exec USP_GetStatus @room_type ", new object[] { room_type });
+            if (Status == null)
+                return -1;
+            if (Status.ToString() == "USING")
+                return 1;
+            return 0;
+        }
         public DataTable LoadRoomList()
         {
            

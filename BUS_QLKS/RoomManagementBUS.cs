@@ -51,5 +51,9 @@ namespace QuanLyKhachSan.BUS
         {
             RoomManagementDAL.Instance.UpdateRoom(id_room, class_room, note, status);
         }
+        public bool SearchRoomType(string room_type)
+        {
+            return RoomManagementDAL.Instance.SearchRoomType(room_type);
+        }
     }
 }

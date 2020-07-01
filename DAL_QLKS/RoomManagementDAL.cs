@@ -51,5 +51,12 @@ namespace QuanLyKhachSan.DAL
         {
             DataProvider.Instance.ExecuteQuery("USP_UpdateRoom @id_room , @class_room , @note , @status ", new object[] { id_room, class_room, note , status });
         }
+        public bool SearchRoomType(string room_type)
+        {
+            object roomtype = DataProvider.Instance.ExecuteScalar("exec USP_GetStatus @room_type ", new object[] { room_type });
+            if (roomtype == null)
+                return false;
+            return true;
+        }
     }
 }

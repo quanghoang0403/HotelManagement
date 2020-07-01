@@ -74,6 +74,10 @@
             this.txbID = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvRoom = new System.Windows.Forms.DataGridView();
+            this.id_room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.room_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statuss = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -103,13 +107,9 @@
             this.btnAddType = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.dtgvType = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.id_room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.room_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statuss = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.room_type2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -621,6 +621,42 @@
             this.dtgvRoom.TabIndex = 0;
             this.dtgvRoom.SelectionChanged += new System.EventHandler(this.dtgvRoom_SelectionChanged);
             // 
+            // id_room
+            // 
+            this.id_room.DataPropertyName = "id_room";
+            this.id_room.HeaderText = "ID phòng";
+            this.id_room.MinimumWidth = 6;
+            this.id_room.Name = "id_room";
+            this.id_room.ReadOnly = true;
+            this.id_room.Width = 125;
+            // 
+            // room_type
+            // 
+            this.room_type.DataPropertyName = "room_type";
+            this.room_type.HeaderText = "Loại phòng";
+            this.room_type.MinimumWidth = 6;
+            this.room_type.Name = "room_type";
+            this.room_type.ReadOnly = true;
+            this.room_type.Width = 120;
+            // 
+            // notes
+            // 
+            this.notes.DataPropertyName = "notes";
+            this.notes.HeaderText = "Ghi chú";
+            this.notes.MinimumWidth = 6;
+            this.notes.Name = "notes";
+            this.notes.ReadOnly = true;
+            this.notes.Width = 125;
+            // 
+            // statuss
+            // 
+            this.statuss.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.statuss.DataPropertyName = "statuss";
+            this.statuss.HeaderText = "Tình trạng";
+            this.statuss.MinimumWidth = 6;
+            this.statuss.Name = "statuss";
+            this.statuss.ReadOnly = true;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -976,52 +1012,6 @@
             this.dtgvType.Size = new System.Drawing.Size(608, 215);
             this.dtgvType.TabIndex = 0;
             // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(207, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(235, 51);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Loại phòng";
-            // 
-            // id_room
-            // 
-            this.id_room.DataPropertyName = "id_room";
-            this.id_room.HeaderText = "ID phòng";
-            this.id_room.MinimumWidth = 6;
-            this.id_room.Name = "id_room";
-            this.id_room.ReadOnly = true;
-            // 
-            // room_type
-            // 
-            this.room_type.DataPropertyName = "room_type";
-            this.room_type.HeaderText = "Loại phòng";
-            this.room_type.MinimumWidth = 6;
-            this.room_type.Name = "room_type";
-            this.room_type.ReadOnly = true;
-            this.room_type.Width = 120;
-            // 
-            // notes
-            // 
-            this.notes.DataPropertyName = "notes";
-            this.notes.HeaderText = "Ghi chú";
-            this.notes.MinimumWidth = 6;
-            this.notes.Name = "notes";
-            this.notes.ReadOnly = true;
-            this.notes.Width = 125;
-            // 
-            // statuss
-            // 
-            this.statuss.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.statuss.DataPropertyName = "statuss";
-            this.statuss.HeaderText = "Tình trạng";
-            this.statuss.MinimumWidth = 6;
-            this.statuss.Name = "statuss";
-            this.statuss.ReadOnly = true;
-            // 
             // room_type2
             // 
             this.room_type2.DataPropertyName = "room_type";
@@ -1039,6 +1029,17 @@
             this.price.MinimumWidth = 6;
             this.price.Name = "price";
             this.price.ReadOnly = true;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(207, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(235, 51);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Loại phòng";
             // 
             // ucRoom
             // 

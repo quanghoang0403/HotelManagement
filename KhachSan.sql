@@ -554,8 +554,15 @@ begin
     WHERE id_room = @id_room
 end
 go
+CREATE PROC USP_GetStatusRoomType
+(@room_type NVARCHAR(100))
+AS SELECT statuss FROM ROOMTYPE, ROOM WHERE ROOMTYPE.room_type = @room_type and ROOM.room_type = ROOMTYPE.room_type
+GO
 
-
+CREATE PROC USP_SearchRoomType
+(@room_type NVARCHAR(100))
+AS SELECT room_type FROM ROOMTYPE WHERE room_type = @room_type
+GO
 --test
 SELECT C.id_room AS ID_ROOM, BD.date_number AS DATE_NUMBER, RT.price AS PRICE, C.type_ratioMAX AS TYPE_RATIO, BD.surchage_ratio AS NUMBER_RATIO, RT.price*C.type_ratioMAX*BD.surchage_ratio*BD.date_number AS TOTAL  
 FROM BILL_DETAILS AS BD,CHECKIN AS C, ROOM AS R, ROOMTYPE AS RT
