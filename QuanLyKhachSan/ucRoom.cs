@@ -134,6 +134,11 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Loại phòng hoặc đơn giá chưa được nhập");
                 return;
             }
+            if (RoomManagementBUS.Instance.SearchRoomType(txbType.Text) == true)
+            {
+                MessageBox.Show("Loại phòng này đã có");
+                return;
+            }
             RoomManagementBUS.Instance.AddRoomType(txbTypeRoom.Text, txbPrice.Text);
             MessageBox.Show("Đã thêm thành công !");
             LoadRoomType();
@@ -142,6 +147,21 @@ namespace QuanLyKhachSan
 
         private void btnDeleteType_Click(object sender, EventArgs e)
         {
+            if (txbOldTypeRoom.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập loại phòng");
+                return;
+            }
+            if (HomeBUS.Instance.GetStatusRoom(txbOldTypeRoom.Text) != -1)
+            {
+                MessageBox.Show("Loại phòng này đang dùng không thê xóa");
+                return;
+            }
+            if (RoomManagementBUS.Instance.SearchRoomType(txbOldTypeRoom.Text) == false)
+            {
+                MessageBox.Show("Loại phòng này đã có");
+                return;
+            }
             DialogResult result = MessageBox.Show("Bạn có chắc chắn là muốn xóa loại phòng này ?", "XÁC NHẬN XÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
             switch (result)
             {
@@ -236,14 +256,24 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng nhập ID phòng");
                 return;
             }    
-            else if (txbType.Text == "")
+            if (txbType.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập loại phòng");
                 return;
             }
-            else if (txbStatus.Text == "")
+            if (txbStatus.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập trình trạng phòng");
+                return;
+            }
+            if (HomeBUS.Instance.GetStatusRoom(txbID.Text) != -1)
+            {
+                MessageBox.Show("Phòng đã tồn tại");
+                return;
+            }
+            if (RoomManagementBUS.Instance.SearchRoomType(txbType.Text) == false)
+            {
+                MessageBox.Show("Không có loại phòng này");
                 return;
             }
             RoomManagementBUS.Instance.AddRoom(txbID.Text, txbType.Text, txbNotes.Text, txbStatus.Text);
@@ -254,6 +284,21 @@ namespace QuanLyKhachSan
 
         private void btnDeleteRoom_Click(object sender, EventArgs e)
         {
+            if (txbOldID.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập ID phòng");
+                return;
+            }
+            if (HomeBUS.Instance.GetStatusRoom(txbID.Text) == 1)
+            {
+                MessageBox.Show("Phòng đang được thuê");
+                return;
+            }
+            if (HomeBUS.Instance.GetStatusRoom(txbID.Text) == -1)
+            {
+                MessageBox.Show("Phòng không tồn tại");
+                return;
+            }
             DialogResult result = MessageBox.Show("Bạn có chắc chắn là muốn xóa phòng này ?", "XÁC NHẬN XÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
             switch (result)
             {
@@ -289,6 +334,11 @@ namespace QuanLyKhachSan
             else if (txbNewStatus.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập trình trạng phòng");
+                return;
+            }
+            if (RoomManagementBUS.Instance.SearchRoomType(txbType.Text) == false)
+            {
+                MessageBox.Show("Không có loại phòng này");
                 return;
             }
             RoomManagementBUS.Instance.UpdateRoom(txbOldID.Text,txbNewType.Text, txbNewNote.Text, txbNewStatus.Text);

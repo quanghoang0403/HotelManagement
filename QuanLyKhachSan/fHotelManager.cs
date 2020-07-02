@@ -156,6 +156,7 @@ namespace QuanLyKhachSan
             ucRevenue1.Visible = true;
             ucRoom1.Visible = false;
             ucHome1.Visible = false;
+            ucRevenue1.Reload();
         }
 
         private void Button_thietlap_Click(object sender, EventArgs e)

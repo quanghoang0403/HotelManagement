@@ -28,7 +28,10 @@ namespace QuanLyKhachSan.BUS
         {
             return HomeDAL.Instance.GetStatusRoom(id_room);
         }
-
+        public int GetStatusRoomType(string room_type)
+        {
+            return HomeDAL.Instance.GetStatusRoomType(room_type);
+        }
         public List<Home> LoadRoomList()
         {
             List<Home> RoomList = new List<Home>();
