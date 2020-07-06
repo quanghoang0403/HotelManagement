@@ -64,5 +64,10 @@ namespace QuanLyKhachSan.BUS
             {
                 SettingDAL.Instance.Signin(username, password, name, permission);
             }
+            public bool CheckAccount(string userName)
+            {
+                return SettingDAL.Instance.CheckAccount(userName);
+            }
     }
+
 }

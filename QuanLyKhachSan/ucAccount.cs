@@ -39,16 +39,21 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng điền đầy đủ các thông tin !");
                 return;
             }
-            else if (txbNewPass.Text == txbPassword.Text)
+            if(LoginBUS.Instance.Login(txbUserName.Text, txbPassword.Text)==false)
+            {
+                MessageBox.Show("Nhập sai tài khoản mật khẩu hiện tại");
+                return;
+            }
+            if (txbNewPass.Text == txbPassword.Text)
             {
                 MessageBox.Show("Mật khẩu mới không được trùng mật khẩu hiện tại !");
                 return;
             }
-            else if (txbNewPass.Text != txbReEnterPass.Text)
+            if (txbNewPass.Text != txbReEnterPass.Text)
             {
                 MessageBox.Show("Mật khẩu nhập lại không khớp mật khẩu mới tạo !");
                 return;
-            }          
+            }        
             SettingBUS.Instance.ChangePass(txbUserName.Text,txbNewPass.Text);
             MessageBox.Show("Đã đổi thành công !");
             btnRemoveChangePass.PerformClick();
@@ -73,7 +78,12 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng điền đầy đủ các thông tin");
                 return;
             }
-            else if (txbSignin_Password.Text != txbSignin_RePass.Text)
+            if(SettingBUS.Instance.CheckAccount(txbSignin_Username.Text))
+            {
+                MessageBox.Show("Tên đăng nhập đã tồn tại");
+                return;
+            }
+            if (txbSignin_Password.Text != txbSignin_RePass.Text)
             {
                 MessageBox.Show("Mật khẩu nhập lại không khớp mật khẩu mới tạo");
                 return;

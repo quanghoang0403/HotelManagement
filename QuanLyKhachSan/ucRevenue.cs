@@ -74,9 +74,7 @@ namespace QuanLyKhachSan
             document.SetPageSize(iTextSharp.text.PageSize.A4);
             PdfWriter writer = PdfWriter.GetInstance(document, fs);
             document.Open();
-
             //Report Header
-
             Font fntHead = FontFactory.GetFont("Arial", 16, BaseColor.GRAY);
             Paragraph prgHeading = new Paragraph();
             prgHeading.Alignment = Element.ALIGN_CENTER;

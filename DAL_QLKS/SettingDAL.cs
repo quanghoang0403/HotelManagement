@@ -45,11 +45,28 @@ namespace QuanLyKhachSan.DAL
             }
             public void ChangePass(string userName,string passWord)
             {
-                DataProvider.Instance.ExecuteQuery("exec USP_ChangePassword @pass , @username ", new object[] { passWord, userName });
+                DataProvider.Instance.ExecuteQuery("exec USP_ChangePassword @pass , @username ", new object[] { GetMD5(passWord), userName });
             }
             public void Signin(string username, string password, string name, string permission)
             {
-                DataProvider.Instance.ExecuteQuery("exec USP_SignIn @name , @username , @pass , @permission ", new object[] { name, username, password, permission });
+                DataProvider.Instance.ExecuteQuery("exec USP_SignIn @name , @username , @pass , @permission ", new object[] { name, username, GetMD5(password), permission });
+            }
+            public bool CheckAccount(string userName)
+            {
+                 DataTable result = DataProvider.Instance.ExecuteQuery("USP_CheckAccount @userName ", new object[] { userName });
+                 return result.Rows.Count > 0;
+            }
+            public String GetMD5(string txt)
+            {
+                 String str = "";
+                 Byte[] buffer = System.Text.Encoding.UTF8.GetBytes(txt);
+                System.Security.Cryptography.MD5CryptoServiceProvider md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
+                buffer = md5.ComputeHash(buffer);
+                foreach (Byte b in buffer)
+                {
+                    str += b.ToString("X2");
+                }
+                return str;
             }
     }
 }

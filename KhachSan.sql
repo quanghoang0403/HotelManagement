@@ -24,7 +24,7 @@ CREATE TABLE ACCOUNT
 
 
 INSERT INTO ACCOUNT VALUES('QUAN LY','admin','admin','Manager')
-
+INSERT INTO ACCOUNT VALUES('QUAN LY','admin',CONVERT(NVARCHAR(32),HashBytes('MD5', 'admin'),2),'Manager')
 CREATE TABLE ROOMTYPE
 (
 	room_type NVARCHAR(100) PRIMARY KEY,
@@ -401,13 +401,14 @@ AS
 GO
 
 --setting 
+
 CREATE PROC USP_ChangePassword
    (@pass nvarchar(100),
    @username nvarchar(100))
 as 
 begin 
 	update ACCOUNT
-	SET   pass = @pass
+	SET   pass =  @pass
     WHERE username = @username
 end
 go
@@ -565,6 +566,15 @@ CREATE PROC USP_SearchRoomType
 (@room_type NVARCHAR(100))
 AS SELECT room_type FROM ROOMTYPE WHERE room_type = @room_type
 GO
+
+--Tạo proc kiểm tra tài khoản có tồn tại hay không
+CREATE PROC USP_CheckAccount
+(@username nvarchar(100))
+as
+begin
+	SELECT * FROM ACCOUNT WHERE username = @username
+end 
+go
 --test
 SELECT C.id_room AS ID_ROOM, BD.date_number AS DATE_NUMBER, RT.price AS PRICE, C.type_ratioMAX AS TYPE_RATIO, BD.surchage_ratio AS NUMBER_RATIO, RT.price*C.type_ratioMAX*BD.surchage_ratio*BD.date_number AS TOTAL  
 FROM BILL_DETAILS AS BD,CHECKIN AS C, ROOM AS R, ROOMTYPE AS RT
