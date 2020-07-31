@@ -244,5 +244,13 @@ namespace QuanLyKhachSan
         {
 
         }
+
+        private void cbType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (true)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
