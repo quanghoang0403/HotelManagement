@@ -113,6 +113,7 @@ namespace QuanLyKhachSan
             {
                 MessageBox.Show("Xuất hóa đơn thành công");
                 panel1.Visible = false;
+               
                 this.Close();
             }
             else

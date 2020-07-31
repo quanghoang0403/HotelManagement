@@ -67,12 +67,14 @@ namespace QuanLyKhachSan
         private void btnAddCheckin_Click(object sender, EventArgs e)
         {
             fCheckin f = new fCheckin();
+            f.FormClosed += RefreshUchome;
             f.ShowDialog();
         }
 
         private void btnAddBill_Click(object sender, EventArgs e)
         {
             fBill f = new fBill();
+            f.FormClosed += RefreshUchome;
             f.ShowDialog();
         }
 
@@ -81,7 +83,11 @@ namespace QuanLyKhachSan
             flpHome.Controls.Clear();
             LoadHome();
         }
-
+        public void RefreshUchome(object sender, EventArgs e)
+        {
+            flpHome.Controls.Clear();
+            LoadHome();
+        }
         private void UcHome_Load(object sender, EventArgs e)
         {
 
